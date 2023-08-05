@@ -1,0 +1,147 @@
+body {
+	font-family: sans-serif !important;
+}
+
+a {
+	font-family: sans-serif !important;
+}
+/* tema dark */
+
+/* div, section, footer, nav,table, main, aside, th, td, tr, ul{
+    background-color: rgb(36, 36, 36) !important;
+    color: #ffffff !important;
+}
+span, h1, h2, h3, h4, h5, h6, p{
+    color: #ffffff !important;
+}
+header{
+    background-color: rgb(255, 255, 255) !important;
+    color: #ffffff !important;
+} */
+
+.last-row>* {
+	background-color: #e9e9e9;
+//#fafafa
+}
+.custom-upload .ant-upload-list {
+
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    color: rgba(0,0,0,.85);
+    font-size: 14px;
+    font-variant: tabular-nums;
+    list-style: none;
+    font-feature-settings: "tnum";
+    line-height: 1.5715;
+    display: none;
+}
+.tablePostSale {
+	background-color: #D9EDF7;
+}
+
+.custom-table .ant-table-tbody > tr > td,
+.custom-table .ant-table-thead > tr > th {
+  padding: 0;
+}
+.custom-table .ant-table-thead > tr > th {
+	font-size: 8px;
+	color: black;
+  }
+  
+.row-red  > * {
+	background-color: rgb(255, 181, 181);
+  }
+
+button {
+	font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif !important;
+}
+
+// css para propiedades que utilicen porcentaje
+
+@for $i from 0 through 100 {
+	//margin
+	.margin-#{$i}-porcent {
+		margin: 0% + $i !important;
+	}
+}
+
+// css para propiedades que utilicen unidades enteras
+@for $i from 0 through 1000 {
+	.margin-#{$i} {
+		margin: #{$i}px !important;
+	}
+
+	.margin-top-#{$i} {
+		margin-top: #{$i}px !important;
+	}
+}
+
+
+// Estilos de componente de reporte de informacion estado de cuenta
+@font-face {
+	font-family: 'AtkinsonHyper legible';
+	font-weight: normal;
+	font-style: normal;
+	font-variant: normal;
+	src: url("http://eclecticgeek.com/dompdf/fonts/AtkinsonHyperlegible-Bold.ttf") format("truetype");
+}
+
+.content-pdf {
+	font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif !important;
+	padding: 1%;
+
+}
+.table-report{
+	font-size: 9pt;
+	top:5px;
+	border-collapse: separate;
+	border-spacing: 0;
+	width: 100%;
+	text-align: center;
+}
+
+.table-title-th-td{
+	border: none;
+}
+ .th-report{
+	padding-left: 10px;
+	border: 0.5px solid #ddd;
+	height: 35px;
+}
+.padding-number{
+	padding-right: 10px;
+}
+.head_color{
+	background-color: #ddd;
+}
+.row_titles{
+	height: 60px;
+}
+.row_informtion{
+	padding-left: 10px;
+	height: 40px;
+}
+.cell_not_center{
+	text-align: left;
+}
+.cell_not_center_rigth{
+	text-align: right;
+}
+.title{
+	height: 35px;
+}
+.title-pdf{
+	font-size: 20pt ;
+
+}
+.row_bank_percentage{
+	height: 30px;
+}
+
+.with_for_info_detail_to_date{
+	width:20px;
+}
+
+
+

@@ -1,0 +1,54 @@
+
+.contenedor-1{
+    background-image: url("../../../../includes/images/fondo.png");
+		background-repeat: no-repeat !important;;
+		background-size: cover !important;;
+		width: 100% !important;
+    height: 100% !important;
+
+}
+.divForm{
+    background-color: #ffff;
+    clip-path: polygon(0% 0%, 50% 0%, 20% 100%, 0% 100%);
+    padding-right: 120px;
+    height: 100% !important;
+    width: 100% !important;
+}
+.divForm .logo {
+    min-width: 50px;
+    min-height: 50px;
+    max-width: 120px;
+    max-height: 120px;
+    margin: 0 !important;
+    color: #fff !important;
+    /* background: rgba(255, 255, 255, 0.3); */
+}
+
+.btnLogin{
+    background-color: #1263ce;
+    color: #FFFFFF;
+    width: 100%;
+    border-radius: 3px;
+}
+.form{
+    margin-top:90px
+}
+
+@media screen and (max-width: 600px) {
+    .divForm{
+        background-color: #ffff;
+        clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+        padding-right: 15px;
+        height: 100% !important;
+        width: 100% !important;
+    }
+    .divForm .logo {
+        min-width: 50px;
+        min-height: 50px;
+        max-width: 120px;
+        max-height: 120px;
+        margin: 20px auto !important;
+        color: #fff !important;
+        /* background: rgba(255, 255, 255, 0.3); */
+    }
+  }
