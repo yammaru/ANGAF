@@ -26,7 +26,7 @@ const Dashboard = () => {
 				:<></>
 				}
 				<br/><br/>
-				<Layout style={{ padding: 20 }}> <PaginationTables /> </Layout>
+				<Layout > <PaginationTables /> </Layout>
 			
 			</Card>	
 		</Fragment>

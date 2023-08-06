@@ -4,30 +4,31 @@ import { WhatsAppOutlined } from "@ant-design/icons";
 import ColumSesionItem from "./ColumSesionItem";
 
 const { Footer } = Layout;
-const { Text, Link,Title } = Typography;
-const Contacte = () => {
+const { Text, Link, Title } = Typography;
+const Help = () => {
+
 	const elements = [
 		{
 			path: "https://api.whatsapp.com/send/?phone=573013095065",
-			icon: <WhatsAppOutlined/>,
-			title: "3013095065",
+			icon: "",
+			title: "Envíos",
 		},
 		{
 			path: "https://api.whatsapp.com/send/?phone=573013095065",
 			icon: "",
-			title: <><strong>ppp:</strong>algo mas </>,
+			title: "Cambios y garantías",
 		},
         {
 			path: "https://api.whatsapp.com/send/?phone=573013095065",
 			icon: "",
-			title: "Escríbenos",
+			title: "Preguntas frecuentes",
 		}
 	];
-	const title = "CONTACTO";
+	const title = "AYUDA";
 	return (
 		<>
 			<ColumSesionItem title={title} elements={elements} />
 		</>
 	);
 };
-export default Contacte;
+export default Help;

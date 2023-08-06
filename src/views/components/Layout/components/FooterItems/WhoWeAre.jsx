@@ -5,29 +5,31 @@ import ColumSesionItem from "./ColumSesionItem";
 
 const { Footer } = Layout;
 const { Text, Link,Title } = Typography;
-const Contacte = () => {
+const WhoWeAre= () => {
 	const elements = [
 		{
 			path: "https://api.whatsapp.com/send/?phone=573013095065",
-			icon: <WhatsAppOutlined/>,
-			title: "3013095065",
+			icon: "",
+			title: "Cultura",
 		},
 		{
 			path: "https://api.whatsapp.com/send/?phone=573013095065",
 			icon: "",
-			title: <><strong>ppp:</strong>algo mas </>,
+			title: "Trabaja aquí",
 		},
         {
 			path: "https://api.whatsapp.com/send/?phone=573013095065",
 			icon: "",
-			title: "Escríbenos",
+			title: "La vida en Anga",
 		}
 	];
-	const title = "CONTACTO";
+	const title = "QUIÉNES SOMOS";
 	return (
 		<>
 			<ColumSesionItem title={title} elements={elements} />
 		</>
 	);
+
+	
 };
-export default Contacte;
+export default WhoWeAre;

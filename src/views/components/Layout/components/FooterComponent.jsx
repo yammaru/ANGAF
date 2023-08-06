@@ -2,6 +2,8 @@ import React from "react";
 import { Divider, Layout } from "antd";
 import Contacte from "./FooterItems/Contacte";
 import SocialMediaFooter from "./FooterItems/SocialMediaFooter";
+import DownFooter from "./FooterItems/DownFooter";
+import UpFooter from "./FooterItems/UpFooter";
 
 const { Footer } = Layout;
 
@@ -10,22 +12,25 @@ const FooterComponent = () => {
 
 	return (
 		<Footer
+		className="footer-anga"
 			style={{
 				textAlign: "center",
-				color: "#fff",
-				backgroundColor: "#212529",
+				
+				
+			
 				width: "100%",
 				height: "auto",
 				position: "fixed",
 				bottom: 0,
-				zIndex: 99,
+				//zIndex: 99,
 			}}
 		>
-			<Contacte/>
-            <SocialMediaFooter/>
-            <Divider/>
-			© {today.getFullYear().toString()} Anga Col. CREATING STYLES THAT
-			DEFY GRAVITY.
+			
+				<UpFooter/>
+		
+		
+            <Divider style={{width: "100vw",marginLeft:"-4%"}}/>
+            <DownFooter/>
 		</Footer>
 	);
 };
