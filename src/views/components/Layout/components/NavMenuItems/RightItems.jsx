@@ -1,16 +1,19 @@
 import {
+	DeleteOutlined,
 	SearchOutlined,
 	ShopOutlined,
 	ShoppingCartOutlined,
 	ShoppingOutlined,
 	UserOutlined,
 } from "@ant-design/icons";
-import { Button, Drawer, Modal } from "antd";
+import { Button, Card, Col, Drawer, Image, Modal, Row } from "antd";
 import { useState } from "react";
+import { formatterMoney } from "../../../../handle/FormatterMoney/FormatterMoney";
+import ShoppingItem from "./ShoppingItem";
 
 const RightItems = () => {
 	const [visible, setVisible] = useState(false);
-	const [visibleDrawer, setVisibleDrawer] = useState(false);
+
 	const showModal = () => {
 		setVisible(true);
 	};
@@ -18,14 +21,7 @@ const RightItems = () => {
 	const hideModal = () => {
 		setVisible(false);
 	};
-	const showDrawer = () => {
-		setVisibleDrawer(true);
-	};
-
-	const closeDrawer = () => {
-		setVisibleDrawer(false);
-	};
-	const elements = [{ name: "lobo" }, { name: "lupus" }];
+	
 	return (
 		<div
 			style={{
@@ -49,19 +45,7 @@ const RightItems = () => {
 			/>
 
 			<SearchOutlined style={{ color: "#484848", fontSize: "25px" }} />
-			<Button
-				style={{
-					backgroundColor: "transparent",
-					borderRadius: "50%",
-					border: "2px solid transparent",
-				}}
-				icon={
-					<ShoppingCartOutlined
-						style={{ color: "#484848", fontSize: "25px" }}
-					/>
-				}
-				onClick={showDrawer}
-			/>
+			<ShoppingItem/>
 
 			<Modal
 				title="Mi Cuenta"
@@ -71,32 +55,12 @@ const RightItems = () => {
 				width={180}
 				style={{ position: "absolute", right: "4%", top: "8%" }}
 			>
-				<Button block type="primary" style={{ marginBottom: "10px" }}>
+				<Button block type="primary" style={{ marginBottom: "10px",backgroundColor:"#484848", borderColor:"#484848"}}>
 					Iniciar Sesión
 				</Button>
 				<Button block>Registrarse</Button>
 			</Modal>
-			<Drawer
-				title={<div style={{
-                    display: "flex",
-                    justifyContent: "space-around",
-                    justifyItems: "center",
-                }}><b>Carrito de Compra</b></div>}
-				placement="right"
-				closable={true}
-				onClose={closeDrawer}
-				visible={visibleDrawer}
-			>
-				{elements.forEach((element) => {
-					<Button
-						block
-						type="primary"
-						style={{ marginBottom: "10px" }}
-					>
-						{element.name}
-					</Button>;
-				})}
-			</Drawer>
+		
 		</div>
 	);
 };
