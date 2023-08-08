@@ -240,13 +240,13 @@ const NavMenu = () => {
 			? "transparent-header"
 			: "transparent-header-index";
 	};
-	console.log(visible, "djis", "s", "kk", prevScrollPos);
+	
 
 	return (
 		<>
 			<Header
 				className={navActivation()}
-				style={visible == true ? {} : { display: "none" }}
+				style={visible == true ? {} : navActivation()!="transparent-header"? { display: "none" }:{}}
 			>
 				<Row justify="space-between" align="middle">
 					<Col style={{ color: "#484848" }}>
