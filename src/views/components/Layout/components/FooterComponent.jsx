@@ -11,27 +11,26 @@ const FooterComponent = () => {
 	let today = new Date(Date.now());
 
 	return (
-		<Footer
-		className="footer-anga"
+		<div
+			className="footer-anga"
 			style={{
 				textAlign: "center",
-				
-				
-			
+				backgroundColor: "white",
 				width: "100%",
 				height: "auto",
-				position: "fixed",
-				bottom: 0,
+			
+			
+				
 				//zIndex: 99,
 			}}
 		>
-			
-				<UpFooter/>
-		
-		
-            <Divider style={{width: "100vw",marginLeft:"-4%"}}/>
-            <DownFooter/>
-		</Footer>
+			<Divider style={{ width: "100%" , visibility:"hidden"}} />
+			<UpFooter />
+
+			<Divider style={{ width: "100%" }} />
+			<DownFooter />
+			<Divider style={{ width: "100%" , visibility:"hidden"}} />
+		</div>
 	);
 };
 export default FooterComponent;

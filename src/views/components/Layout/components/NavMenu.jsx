@@ -1,9 +1,9 @@
 import "./../css/layout.scss";
 import { Link } from "react-router-dom";
-import { Menu, Layout, Image, Spin } from "antd";
+import { Menu, Layout, Image, Spin, Row, Col } from "antd";
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import logo from "../../../../includes/images/logo.png";
+import logo from "../../../../includes/images/nav.png";
 import { fetchAllGeneralSetting } from "../../../../redux/actions/Configuration/GeneralSettingAction";
 import {
 	getModulesUserById,
@@ -18,7 +18,15 @@ import {
 	ProjectOutlined,
 	CreditCardOutlined,
 	CodepenCircleOutlined,
+	ShopOutlined,
+	ShoppingOutlined,
+	ShoppingCartOutlined,
+	ThunderboltOutlined,
 } from "@ant-design/icons";
+import { auto } from "@popperjs/core";
+import { Redirect } from "react-router-dom/cjs/react-router-dom.min";
+import CenterItems from "./NavMenuItems/CenterItems";
+import RightItems from "./NavMenuItems/RightItems";
 
 const { Sider, Header } = Layout;
 const { SubMenu } = Menu;
@@ -209,23 +217,64 @@ const NavMenu = () => {
 			);
 		}
 	});
-*/
+*/ const [prevScrollPos, setPrevScrollPos] = useState(0);
+	const [visible, setVisible] = useState(true);
+
+	const handleScroll = () => {
+		const currentScrollPos = window.pageYOffset;
+		const isVisible = prevScrollPos > currentScrollPos;
+		console.log(prevScrollPos > currentScrollPos);
+		setPrevScrollPos(currentScrollPos);
+		setVisible(isVisible || currentScrollPos === 0);
+	};
+
+	useEffect(() => {
+		window.addEventListener("scroll", handleScroll);
+		return () => {
+			window.removeEventListener("scroll", handleScroll);
+		};
+	}, [prevScrollPos]);
+
+	const navActivation = () => {
+		return window.location.pathname !== "/"
+			? "transparent-header"
+			: "transparent-header-index";
+	};
+	console.log(visible, "djis", "s", "kk", prevScrollPos);
+
 	return (
 		<>
-			<Header className="transparent-header">
-				<div className="logo" />
-				<Menu
-					theme="dark"
-					mode="horizontal"
-					defaultSelectedKeys={["2"]}
-					items={new Array(15).fill(null).map((_, index) => {
-						const key = index + 1;
-						return {
-							key,
-							label: `nav ${key}`,
-						};
-					})}
-				/>
+			<Header
+				className={navActivation()}
+				style={visible == true ? {} : { display: "none" }}
+			>
+				<Row justify="space-between" align="middle">
+					<Col style={{ color: "#484848" }}>
+						<a href="/">
+							{1 == 1 ? (
+								<Image
+									className="custom-image"
+									style={{ height: "auto", width: "28px" }}
+									src={logoMenu}
+									preview={false}
+								/>
+							) : (
+								<ThunderboltOutlined
+									style={{
+										color: "#484848",
+										fontSize: "28px",
+									}}
+								/>
+							)}
+						</a>
+					</Col>
+					<Col>
+						<CenterItems />
+					</Col>
+					<Col style={{ width:"10%" }}>
+						<RightItems />
+					</Col>
+				</Row>
 			</Header>
 			{/*
 			<Sider

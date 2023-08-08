@@ -1,4 +1,4 @@
-import { Layout } from "antd";
+import { Layout, Row } from "antd";
 import { connect } from "react-redux";
 import React, { Fragment } from "react";
 import Routes from "../../config/router/Routes";
@@ -12,16 +12,23 @@ const { Content } = Layout;
 const LayoutComponent = ({ user, dispatchLogoutAction }) => {
 	return (
 		<Fragment>
-			<Layout >
-				
+		
 				<NavMenu />
-				
-					{/* RUTAS */}
+		
+		
+				{/* RUTAS */}
 					<Routes />
 					{/* END RUTAS */}
 			
+				
 				<FooterComponent />
-			</Layout>
+		
+				
+				
+				
+					
+			
+		
 		</Fragment>
 	);
 };

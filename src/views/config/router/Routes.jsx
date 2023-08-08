@@ -33,6 +33,7 @@ const Routes = () => {
 		<Switch>
 			<Route exact path="/" component={index}/>
 			<Route exact path="/hombre" component={FilterPage}/>
+			<Route exact path="/mujer" component={FilterPage}/>
 			{/* dashboard */}
 			<Route exact path="/dashboard" component={Dashboard}/>
 			{/* settings */}
