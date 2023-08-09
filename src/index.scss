@@ -104,9 +104,9 @@ header{
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	background-position: center center;
-	background-repeat: no-repeat;
-	background-size: cover;
+	background-position: center center !important;
+	background-repeat: no-repeat !important;
+	background-size: cover !important;
 }
 .transparent-background:hover {
 	background-color: transparent; /* Transparente al hacer hover */
@@ -193,6 +193,16 @@ header{
 	-ms-user-select: none;
 	user-select: none;
 	color: #474735;
+}
+
+.gold-hover-boton:hover {
+	border: 2px solid  #CC9F22 !important;
+}
+.gold-hover-icon:hover {
+	color: #CC9F22 !important;
+}
+a:hover{
+	color: #CC9F22;
 }
 .b2cmattelsa-header-0-x-menu {
 	display: block;

@@ -21,7 +21,7 @@ const RightItems = () => {
 	const hideModal = () => {
 		setVisible(false);
 	};
-	
+
 	return (
 		<div
 			style={{
@@ -31,6 +31,7 @@ const RightItems = () => {
 			}}
 		>
 			<Button
+				className="gold-hover-boton"
 				style={{
 					backgroundColor: "transparent",
 					borderRadius: "50%",
@@ -38,14 +39,18 @@ const RightItems = () => {
 				}}
 				icon={
 					<UserOutlined
+						className="gold-hover-icon"
 						style={{ color: "#484848", fontSize: "25px" }}
 					/>
 				}
 				onClick={showModal}
 			/>
 
-			<SearchOutlined style={{ color: "#484848", fontSize: "25px" }} />
-			<ShoppingItem/>
+			<SearchOutlined
+				className="gold-hover-icon"
+				style={{ color: "#484848", fontSize: "25px" }}
+			/>
+			<ShoppingItem />
 
 			<Modal
 				title="Mi Cuenta"
@@ -55,12 +60,19 @@ const RightItems = () => {
 				width={180}
 				style={{ position: "absolute", right: "4%", top: "8%" }}
 			>
-				<Button block type="primary" style={{ marginBottom: "10px",backgroundColor:"#484848", borderColor:"#484848"}}>
+				<Button
+					block
+					type="primary"
+					style={{
+						marginBottom: "10px",
+						backgroundColor: "#484848",
+						borderColor: "#484848",
+					}}
+				>
 					Iniciar Sesión
 				</Button>
 				<Button block>Registrarse</Button>
 			</Modal>
-		
 		</div>
 	);
 };

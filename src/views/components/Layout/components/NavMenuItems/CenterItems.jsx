@@ -64,15 +64,14 @@ return (
 									</a>
 								</li>
 								<li
-									data-mobile="false"
-									data-submenu="true"
+									data-url="/sale"
 									class="b2cmattelsa-header-0-x-menu--item"
 								>
 									<a
 										class="b2cmattelsa-header-0-x-menu--link"
 										href="/sale"
 									>
-										Promociones
+										Sale
 									</a>
 								</li>
 							</ul>

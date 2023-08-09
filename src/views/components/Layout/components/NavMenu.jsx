@@ -3,7 +3,8 @@ import { Link } from "react-router-dom";
 import { Menu, Layout, Image, Spin, Row, Col } from "antd";
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import logo from "../../../../includes/images/nav.png";
+import logo from "../../../../includes/images/logoInicio.png";
+import logoHover from "../../../../includes/images/logoIniciohover.png";
 import { fetchAllGeneralSetting } from "../../../../redux/actions/Configuration/GeneralSettingAction";
 import {
 	getModulesUserById,
@@ -241,7 +242,12 @@ const NavMenu = () => {
 			: "transparent-header-index";
 	};
 	
-
+const handleChange=()=>{
+	setLogoMenu(logoHover)
+}
+const handleChangeLeave=()=>{
+	setLogoMenu(logo)
+}
 	return (
 		<>
 			<Header
@@ -251,21 +257,16 @@ const NavMenu = () => {
 				<Row justify="space-between" align="middle">
 					<Col style={{ color: "#484848" }}>
 						<a href="/">
-							{1 == 1 ? (
+							
 								<Image
 									className="custom-image"
-									style={{ height: "auto", width: "28px" }}
+									style={{ height: "28px", width: "auto" }}
 									src={logoMenu}
 									preview={false}
+									onMouseOver={handleChange}
+									onMouseLeave={handleChangeLeave}
 								/>
-							) : (
-								<ThunderboltOutlined
-									style={{
-										color: "#484848",
-										fontSize: "28px",
-									}}
-								/>
-							)}
+							
 						</a>
 					</Col>
 					<Col>

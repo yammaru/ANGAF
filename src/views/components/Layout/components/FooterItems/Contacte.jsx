@@ -15,10 +15,10 @@ const Contacte = () => {
 		{
 			path: "https://api.whatsapp.com/send/?phone=573013095065",
 			icon: "",
-			title: <><strong>ppp:</strong>algo mas </>,
+			title: <><strong>PBX:</strong>005+57+20002+3113894327</>,
 		},
         {
-			path: "https://api.whatsapp.com/send/?phone=573013095065",
+			path: "/hombre",
 			icon: "",
 			title: "Escríbenos",
 		}

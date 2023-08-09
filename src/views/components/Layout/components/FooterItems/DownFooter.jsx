@@ -10,7 +10,7 @@ const DownFooter = () => {
 			Términos y condiciones      |      Política de Privacidad      |      Superintendencia
 			</Col>
 
-			<Col>© {today.getFullYear().toString()} Anga Col. S.A.S.</Col>
+			<Col>© {today.getFullYear().toString()} Anga Col.</Col>
 		</Row>
 	);
 };

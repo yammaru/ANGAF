@@ -123,7 +123,6 @@ const FilterSection = () => {
 				>
 					<Button
 						onClick={handlePrevPage}
-						//	disabled={currentPage === 0}
 						icon={<CaretLeftOutlined />}
 					/>
 				</Col>
@@ -148,10 +147,7 @@ const FilterSection = () => {
 										height: "100%",
 										display: "flex",
 										justifyContent: "center",
-										alignItems: "center",
-										backgroundPosition: "center center",
-										backgroundRepeat: "no-repeat",
-										backgroundSize: "cover",
+										alignItems: "center"
 									}}
 									className="image ki"
 								>
@@ -187,7 +183,7 @@ const FilterSection = () => {
 				>
 					<Button
 						onClick={handleNextPage}
-						//	disabled={currentPage === 0}
+				
 						icon={<CaretRightOutlined />}
 					/>
 				</Col>
@@ -195,9 +191,9 @@ const FilterSection = () => {
 			<Divider />
 			<Row
 				justify={"center"}
+				align={"middle"}
 				style={{
 					flexDirection: "column",
-					alignItems: "center",
 					width: "100%",
 					paddingBottom: "2%",
 					color: "#787878",

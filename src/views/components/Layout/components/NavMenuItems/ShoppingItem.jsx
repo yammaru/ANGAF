@@ -1,7 +1,7 @@
 import { Button, Col, Drawer, Image, Row } from "antd";
 import React, { Fragment, useState } from "react";
 
-import { DeleteOutlined, ShoppingCartOutlined } from "@ant-design/icons";
+import { DeleteOutlined, ShoppingCartOutlined, ShoppingOutlined } from "@ant-design/icons";
 import { FORMATTER_PESO } from "../../../../../redux/constants";
 import { formatterMoney } from "../../../../handle/FormatterMoney/FormatterMoney";
 
@@ -57,19 +57,22 @@ const ShoppingItem = () => {
 			imagen: "https://medialab.unmsm.edu.pe/chiqaqnews/wp-content/uploads/2021/01/historia-del-poder-absoluto-en-los-videojuegos_9aam.jpg",
 		},
 	];
+	const eleeee=[];
     const subtotal = elements.reduce((sum, element) => sum + element.value, 0);
     const send=0;
     const total=subtotal+send;
 	return (
 		<>
 			<Button
+		
 				style={{
 					backgroundColor: "transparent",
 					borderRadius: "50%",
 					border: "2px solid transparent",
 				}}
 				icon={
-					<ShoppingCartOutlined
+					<ShoppingOutlined 
+					className="gold-hover-icon"
 						style={{ color: "#484848", fontSize: "25px" }}
 					/>
 				}
@@ -84,7 +87,7 @@ const ShoppingItem = () => {
 							justifyItems: "center",
 						}}
 					>
-						<b>Carrito de Compra</b>
+						<b>Bolsa de Compra</b>
 					</div>
 				}
 				placement="right"
@@ -92,7 +95,7 @@ const ShoppingItem = () => {
 				onClose={closeDrawer}
 				visible={visibleDrawer}
 				footer={
-					<>
+					elements.length>0?<>
                     <br/>
                     	<Row
 							style={{
@@ -144,10 +147,10 @@ const ShoppingItem = () => {
 								IR A PAGAR
 							</Button>
 						</Row>
-					</>
+					</>:null
 				}
 			>
-				{elements?.map((element) => (
+				{elements.length>0?elements?.map((element) => (
 					<>
 						<Row
 							style={{
@@ -214,7 +217,14 @@ const ShoppingItem = () => {
 							</Col>
 						</Row><br/>
 					</>
-				))}
+				)):<Row justify={"center"} align={"middle"} style={{height:"100%", flexDirection:"column", fontSize: "20px"}}>
+					<Col ><ShoppingOutlined 	style={{ color: "#787878", fontSize: "55px" }} />
+					</Col>	<Col style={{visibility:"hidden"}}><ShoppingOutlined />
+					</Col>
+					<Col >No hay productos en tu bolsa
+					</Col>
+					
+					</Row>}
 			</Drawer>
 		</>
 	);
