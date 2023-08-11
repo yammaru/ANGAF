@@ -1,7 +1,21 @@
-import { Button, Card, Carousel, Col, Divider, Row, Typography } from "antd";
+import {
+	Button,
+	Card,
+	Carousel,
+	Checkbox,
+	Col,
+	Collapse,
+	Divider,
+	List,
+	Row,
+	Select,
+	TreeSelect,
+	Typography,
+} from "antd";
 import React, { Fragment, useState } from "react";
 import { FORMATTER_PESO } from "../../../redux/constants";
 import { CaretLeftOutlined, CaretRightOutlined } from "@ant-design/icons";
+import HeaderFilterProduct from "./FilterItems/HeaderFilterProduct";
 
 const { Meta } = Card;
 const { Text, Title } = Typography;
@@ -13,7 +27,7 @@ const contentStyle = {
 	textAlign: "center",
 	background: "#364d79",
 };
-
+const { Panel } = Collapse;
 const FilterSection = () => {
 	const [isHovered, setIsHovered] = useState(false);
 	const [hoveredCardIndex, setHoveredCardIndex] = useState(null);
@@ -83,7 +97,7 @@ const FilterSection = () => {
 			],
 		},
 	];
-	const url =  window.location.pathname;;
+	const url = window.location.pathname;
 
 	// Dividir la URL en partes utilizando "/" como separador
 	const parts = url.split("/");
@@ -91,131 +105,96 @@ const FilterSection = () => {
 	// Obtener la última palabra (último elemento del array)
 	const lastWord = parts[parts.length - 1];
 
-	const [visibleElements, setVisibleElements] = useState(elements);
-	const [noVisibleElements, setNoVisibleElements] = useState(
-		visibleElements.slice(0, 6)
-	);
-	const handlePrevPage = () => {
-		const lastElement = visibleElements.pop();
-		visibleElements.unshift(lastElement);
-		setVisibleElements(visibleElements);
-		setNoVisibleElements(visibleElements.slice(0, 6));
-	};
+	const colorArray = ["#FF5733", "#3366CC", "#33CC33", "#FF9900"]; // Array de colores
+	const [selectedColors, setSelectedColors] = useState([]);
 
-	const handleNextPage = () => {
-		const firstElement = visibleElements.shift();
-		visibleElements.push(firstElement);
-		setVisibleElements(visibleElements);
-		setNoVisibleElements(visibleElements.slice(0, 6));
+	const handleColorClick = (color) => {
+		if (selectedColors.includes(color)) {
+			setSelectedColors(selectedColors.filter((c) => c !== color));
+		} else {
+			setSelectedColors([...selectedColors, color]);
+		}
 	};
+	const treeData = colorArray.map((color) => ({
+		title: color,
+		key: color,
+	}));
 
 	return (
 		<>
-			<Divider />
-			<Row justify={"center"} style={{ width: "100%" }}>
-				<Col
-					style={{
-						width: "10%",
-						display: "flex",
-						justifyContent: "center",
-						alignItems: "center",
-					}}
-				>
-					<Button
-						onClick={handlePrevPage}
-						icon={<CaretLeftOutlined />}
-					/>
-				</Col>
-				<Col style={{ width: "80%" ,display: "flex",
-							flexDirection: "row",
-							justifyContent: "space-between",
-							flexWrap: "wrap"}}>
-				
-						{noVisibleElements.map((element, index) => (
-							<div
-								
-								style={{
-									width: "16%",
-									overflow: "hidden",
-									height: "120px",
-								}}
-							>
-								<div
-									style={{
-										width: "100%",
-										background: `url(${element.path[1]})`,
-										height: "100%",
-										display: "flex",
-										justifyContent: "center",
-										alignItems: "center"
-									}}
-									className="image ki"
-								>
+			{lastWord != "cosas" ? (
+				<HeaderFilterProduct elements={elements} lastWord={lastWord} />
+			) : (
+				<></>
+			)}
+			<Row
+				justify={"end"}
+				align={"middle"}
+				style={{ gap: "1%", paddingBottom: "1%" }}
+			>
+				Ordenar por:{" "}
+				<Select value={1} style={{ width: "10%" }}>
+					<Select.Option value={1}>Nuevo</Select.Option>
+					<Select.Option value={2}>Mayor Precio</Select.Option>
+					<Select.Option value={3}>Menor Precio</Select.Option>
+				</Select>
+			</Row>
+			<Row style={{ width: "100%" }}>
+				<Col style={{ width: "20%" }}>
+					{selectedColors.length != 0 ? (
+						<>
+							<Row justify={"center"}><b>Filtrado Por:</b></Row>
+							<TreeSelect
+								showSearch
+								style={{ width: "100%" }}
+								value={selectedColors}
+								treeData={treeData}
+								treeCheckable={true}
+								onChange={setSelectedColors}
+							/>
+						</>
+					) : null}
+					<Collapse accordion>
+						<Panel header={<b>Categoria</b>} key="1">
+						lupues
+						</Panel>
+						<Panel header={<b>Color</b>} key="2">
+								<div style={{ display: "flex" }}>
+								{colorArray.map((color) => (
 									<div
+										key={color}
 										style={{
+											backgroundColor: color,
+											width: "20px",
+											height: "20px",
+											margin: "5px",
+											position: "relative",
 											display: "flex",
 											justifyContent: "center",
 											alignItems: "center",
+											alignContent: "center",
 										}}
-										className="transparent-background"
+										onClick={() => handleColorClick(color)}
 									>
-										<h3
-											style={{
-												mixBlendMode: "difference",
-												color: "white",
-											}}
-										>
-											{element.name}
-										</h3>
+										{selectedColors.includes(color) && (
+											<Checkbox
+												style={{
+													backgroundColor:
+														"transparent",
+												}}
+												checked={true}
+											/>
+										)}
 									</div>
-								</div>
+								))}
 							</div>
-						))}
-			
+						</Panel>
+						<Panel header={<b>Talla</b>} key="3">
+							Contenido del Panel 2
+						</Panel>
+						{/* Agrega más paneles según sea necesario */}
+					</Collapse>
 				</Col>
-				<Col
-					style={{
-						width: "10%",
-						display: "flex",
-						justifyContent: "center",
-						alignItems: "center",
-					}}
-				>
-					<Button
-						onClick={handleNextPage}
-				
-						icon={<CaretRightOutlined />}
-					/>
-				</Col>
-			</Row>
-			<Divider />
-			<Row
-				justify={"center"}
-				align={"middle"}
-				style={{
-					flexDirection: "column",
-					width: "100%",
-					paddingBottom: "2%",
-					color: "#787878",
-				}}
-			>
-				<h2
-					style={{
-						color: "#484848",
-					}}
-				>
-					Ropa para {lastWord}
-				</h2>
-				<h3
-					style={{
-						color: "#787878",
-					}}
-				>
-					{lastWord=="hombre"?"Ropa de hombre en nuestro sitio web y tiendas del país":"Outfit onfire para mujer"}
-				</h3>
-			</Row>
-			<Row style={{ width: "100%" }}>
-				<Col style={{ width: "20%" }}></Col>
 				<Col style={{ width: "80%" }}>
 					<Row justify={"space-around"} style={{ width: "100%" }}>
 						{elements.map((element, index) => (

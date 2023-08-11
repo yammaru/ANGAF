@@ -6,11 +6,12 @@ import {
 	WhatsAppOutlined,
 	FacebookOutlined,
 	YoutubeOutlined,
+	CaretRightOutlined,
 } from "@ant-design/icons";
-import { Col, Row, Typography } from "antd";
+import { Col, Collapse, Row, Typography } from "antd";
 import WebRedes from "./WebRedes";
 const { Text, Link, Title } = Typography;
-
+const { Panel } = Collapse;
 const SocialMediaFooter = () => {
 	const element = [
 		{
@@ -47,7 +48,8 @@ const SocialMediaFooter = () => {
 			</Row>
 			<Row style={{marginLeft:"-4%"}} >
 				<WebRedes elements={element} />
-				
+			
+
 			</Row>
 		</div>
 	);

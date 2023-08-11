@@ -34,6 +34,9 @@ const Routes = () => {
 			<Route exact path="/" component={index}/>
 			<Route exact path="/hombre" component={FilterPage}/>
 			<Route exact path="/mujer" component={FilterPage}/>
+			<Route exact path="/cosas" component={FilterPage}/>
+			<Route exact path="/tiendas" component={FilterPage}/>
+			<Route exact path="/promosiones" component={FilterPage}/>
 			{/* dashboard */}
 			<Route exact path="/dashboard" component={Dashboard}/>
 			{/* settings */}

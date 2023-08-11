@@ -70,8 +70,9 @@ return (
 									<a
 										class="b2cmattelsa-header-0-x-menu--link"
 										href="/sale"
+										style={{backgroundColor: "gold"}}
 									>
-										Sale
+										SALE
 									</a>
 								</li>
 							</ul>

@@ -27,6 +27,7 @@ const Contacte = () => {
 	return (
 		<>
 			<ColumSesionItem title={title} elements={elements} />
+			
 		</>
 	);
 };
