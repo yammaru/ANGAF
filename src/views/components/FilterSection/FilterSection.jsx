@@ -16,6 +16,8 @@ import React, { Fragment, useState } from "react";
 import { FORMATTER_PESO } from "../../../redux/constants";
 import { CaretLeftOutlined, CaretRightOutlined } from "@ant-design/icons";
 import HeaderFilterProduct from "./FilterItems/HeaderFilterProduct";
+import { Link } from "react-router-dom/cjs/react-router-dom";
+import BestSelling from "../Ventas/BestSelling";
 
 const { Meta } = Card;
 const { Text, Title } = Typography;
@@ -121,12 +123,15 @@ const FilterSection = () => {
 	}));
 
 	return (
-		<>
+		<><Divider style={{paddingBottom:"2%"}}/>
 			{lastWord != "cosas" ? (
-				<HeaderFilterProduct elements={elements} lastWord={lastWord} />
-			) : (
-				<></>
-			)}
+				lastWord != "sale" ? (
+					<HeaderFilterProduct
+						elements={elements}
+						lastWord={lastWord}
+					/>
+				) : null
+			) : null}
 			<Row
 				justify={"end"}
 				align={"middle"}
@@ -143,7 +148,9 @@ const FilterSection = () => {
 				<Col style={{ width: "20%" }}>
 					{selectedColors.length != 0 ? (
 						<>
-							<Row justify={"center"}><b>Filtrado Por:</b></Row>
+							<Row justify={"center"}>
+								<b>Filtrado Por:</b>
+							</Row>
 							<TreeSelect
 								showSearch
 								style={{ width: "100%" }}
@@ -156,10 +163,10 @@ const FilterSection = () => {
 					) : null}
 					<Collapse accordion>
 						<Panel header={<b>Categoria</b>} key="1">
-						lupues
+							lupues
 						</Panel>
 						<Panel header={<b>Color</b>} key="2">
-								<div style={{ display: "flex" }}>
+							<div style={{ display: "flex" }}>
 								{colorArray.map((color) => (
 									<div
 										key={color}
@@ -198,7 +205,8 @@ const FilterSection = () => {
 				<Col style={{ width: "80%" }}>
 					<Row justify={"space-around"} style={{ width: "100%" }}>
 						{elements.map((element, index) => (
-							<Card
+							  <Link to={`/producto/${element.name}`}>
+									<Card
 								hoverable
 								style={{
 									height: 400,
@@ -230,6 +238,8 @@ const FilterSection = () => {
 									)}
 								/>
 							</Card>
+							  </Link>
+						
 						))}
 					</Row>
 				</Col>

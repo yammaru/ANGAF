@@ -37,7 +37,8 @@ header{
 	width: 100%;
 	top: 0;
 	left: 0;
-	background-color: transparent;
+	position: fixed;
+	background-color: white;
 	z-index: 1000;
 }
 .transparent-header-index:hover {

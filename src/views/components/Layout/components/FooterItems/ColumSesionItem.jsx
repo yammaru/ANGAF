@@ -8,59 +8,62 @@ const { Panel } = Collapse;
 const ColumSesionItem = ({ elements, title }) => {
 	return (
 		<>
-        <Row>
-				<strong style={{padding:"5px"}}>{title}</strong>
+			<Row>
+				<strong style={{ padding: "5px" }}>{title}</strong>
 			</Row>
 			{elements?.map((element) => (
 				<Row>
-					<a className="footer-anga"
+					<a
+						className="footer-anga"
 						href={element.path}
 						target="_blank"
 						style={{
 							display: "flex",
 							alignItems: "center",
 							gap: "5px",
-                            padding: "5px"
+							padding: "5px",
 						}}
 					>
-					{element.icon!==""?element.icon:<></>}
+						{element.icon !== "" ? element.icon : <></>}
 
 						{element.title}
 					</a>
 					<br />
 				</Row>
 			))}
-			  <Row>
-			  <Collapse
-      accordion
-      expandIcon={({ isActive }) => <CaretRightOutlined rotate={isActive ? 90 : 0} />}
-    >
-
-      <Panel header={title} key="1">
-	  {elements?.map((element) => (
+			{/*	
 				<Row>
-					<a className="footer-anga"
-						href={element.path}
-						target="_blank"
-						style={{
-							display: "flex",
-							alignItems: "center",
-							gap: "5px",
-                            padding: "5px"
-						}}
-					>
-					{element.icon!==""?element.icon:<></>}
+						<Collapse
+							accordion
+							expandIcon={({ isActive }) => (
+								<CaretRightOutlined rotate={isActive ? 90 : 0} />
+							)}
+						>
+							<Panel header={title} key="1">
+								{elements?.map((element) => (
+									<Row>
+										<a
+											className="footer-anga"
+											href={element.path}
+											target="_blank"
+											style={{
+												display: "flex",
+												alignItems: "center",
+												gap: "5px",
+												padding: "5px",
+											}}
+										>
+											{element.icon !== "" ? element.icon : <></>}
 
-						{element.title}
-					</a>
-					<br />
+											{element.title}
+										</a>
+										<br />
+									</Row>
+								))}
+							</Panel> 
+						</Collapse>
 				</Row>
-			))}
-      </Panel>
-     
-      {/* Agrega más paneles según sea necesario */}
-    </Collapse>
-			</Row>
+			*/}
 		</>
 	);
 };

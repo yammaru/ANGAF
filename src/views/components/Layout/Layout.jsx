@@ -34,7 +34,7 @@ const LayoutComponent = ({ user, dispatchLogoutAction }) => {
 				
 				
 				
-				<div style={{position:"fixed",right:"2%",bottom:"2%"}}>
+				<div style={{position:"fixed",right:"2%",bottom:"6%"}}>
 				<a
 					href="https://api.whatsapp.com/send/?phone=573013095065"
 					target="_blank"

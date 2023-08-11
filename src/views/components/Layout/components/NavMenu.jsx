@@ -252,7 +252,7 @@ const handleChangeLeave=()=>{
 		<>
 			<Header
 				className={navActivation()}
-				style={visible == true ? {} : navActivation()!="transparent-header"? { display: "none" }:{}}
+				style={visible == true ? {} :{ display: "none" }}
 			>
 				<Row justify="space-between" align="middle">
 					<Col style={{ color: "#484848" }}>
