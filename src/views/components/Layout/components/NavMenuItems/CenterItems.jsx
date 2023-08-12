@@ -50,7 +50,7 @@ return (
 										tiendas
 									</a>
 								</li>
-								<li
+							{/* 	<li
 									class="b2cmattelsa-header-0-x-menu--item"
 									data-url="https://comunidad.mattelsa.net/activismo"
 								>
@@ -62,7 +62,7 @@ return (
 									>
 										activismo
 									</a>
-								</li>
+								</li>*/}
 								<li
 									data-url="/sale"
 									class="b2cmattelsa-header-0-x-menu--item"

@@ -6,11 +6,21 @@ const DownFooter = () => {
 
 	return (
 		<Row justify="end" align="stretch">
-			<Col style={{width:"70%"}}>
-			<a>Términos y condiciones </a>     |   <a>Política de Privacidad </a>        |    <a href="https://www.sic.gov.co/" target="_blank">Superintendencia</a>  
+			<Col style={{ width: "70%" }}>
+				<a>Términos y condiciones </a> | <a>Política de Privacidad </a>{" "}
+				|{" "}
+				<a
+					href="https://www.sic.gov.co/"
+					style={{ color: "#484848" }}
+					target="_blank"
+				>
+					Superintendencia
+				</a>
 			</Col>
 
-			<Col  style={{display:"flex",alignItems:"flex-end"}}>© {today.getFullYear().toString()} Anga Col.</Col>
+			<Col style={{ display: "flex", alignItems: "flex-end" }}>
+				© {today.getFullYear().toString()} Anga Col.
+			</Col>
 		</Row>
 	);
 };
