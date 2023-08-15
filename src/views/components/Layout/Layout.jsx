@@ -6,51 +6,44 @@ import NavMenu from "../Layout/components/NavMenu";
 import FooterComponent from "../Layout/components/FooterComponent";
 import HeaderComponent from "../Layout/components/HeaderComponent";
 import { logoutUser } from "../../../redux/actions/Configuration/authAction";
-import logo from "../../../includes/images/nav.png"
-import logoHover from "../../../includes/images/nav2.png"
+import logo from "../../../includes/images/nubeHover.png";
+import logoHover from "../../../includes/images/nube.png";
 const { Content } = Layout;
 
 const LayoutComponent = ({ user, dispatchLogoutAction }) => {
 	const [logoMenu, setLogoMenu] = useState(logo);
-	const handleChange=()=>{
-		setLogoMenu(logoHover)
-	}
-	const handleChangeLeave=()=>{
-		setLogoMenu(logo)
-	}
+	const handleChange = () => {
+		setLogoMenu(logoHover);
+	};
+	const handleChangeLeave = () => {
+		setLogoMenu(logo);
+	};
+
 	return (
 		<Fragment>
-		
-				<NavMenu />
-		
-		
-				{/* RUTAS */}
-					<Routes />
-					{/* END RUTAS */}
-			
-				
-				<FooterComponent />
-		
-				
-				
-				
-				<div style={{position:"fixed",right:"2%",bottom:"6%"}}>
+			<NavMenu />
+
+			{/* RUTAS */}
+			<Routes />
+			{/* END RUTAS */}
+
+			<FooterComponent />
+
+			<div style={{ position: "fixed", right: "2%", bottom: "6%" }}>
 				<a
 					href="https://api.whatsapp.com/send/?phone=573013095065"
 					target="_blank"
 				>
 					<Image
 						className="custom-image"
-						style={{ height: "80px", width: "auto" }}
+						style={{ height: "150px", width: "auto" }}
 						src={logoMenu}
 						preview={false}
 						onMouseOver={handleChange}
 						onMouseLeave={handleChangeLeave}
 					/>
 				</a>
-			</div>	
-			
-		
+			</div>
 		</Fragment>
 	);
 };
