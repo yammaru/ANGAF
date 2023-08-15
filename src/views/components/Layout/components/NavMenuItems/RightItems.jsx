@@ -10,6 +10,7 @@ import { Button, Card, Col, Drawer, Image, Modal, Row } from "antd";
 import { useState } from "react";
 import { formatterMoney } from "../../../../handle/FormatterMoney/FormatterMoney";
 import ShoppingItem from "./ShoppingItem";
+import LogIn from "./loginModal/LogIn";
 
 const RightItems = () => {
 	const [visible, setVisible] = useState(false);
@@ -60,18 +61,8 @@ const RightItems = () => {
 				width={180}
 				style={{ position: "absolute", right: "4%", top: "8%" }}
 			>
-				<Button
-					block
-					type="primary"
-					style={{
-						marginBottom: "10px",
-						backgroundColor: "#484848",
-						borderColor: "#484848",
-					}}
-				>
-					Iniciar Sesión
-				</Button>
-				<Button block>Registrarse</Button>
+				< LogIn/>
+				
 			</Modal>
 		</div>
 	);

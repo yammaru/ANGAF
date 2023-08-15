@@ -1,4 +1,4 @@
-import { Button, Col, Drawer, Image, Row } from "antd";
+import { Badge, Button, Col, Drawer, Image, Row } from "antd";
 import React, { Fragment, useState } from "react";
 
 import { DeleteOutlined, ShoppingCartOutlined, ShoppingOutlined } from "@ant-design/icons";
@@ -7,6 +7,9 @@ import { formatterMoney } from "../../../../handle/FormatterMoney/FormatterMoney
 
 const ShoppingItem = () => {
 	const [visibleDrawer, setVisibleDrawer] = useState(false);
+	
+    const [notificationCount, setNotificationCount] = useState(5); // Ejemplo de contador de notificaciones
+
 	const showDrawer = () => {
 		setVisibleDrawer(true);
 	};
@@ -71,10 +74,13 @@ const ShoppingItem = () => {
 					border: "2px solid transparent",
 				}}
 				icon={
-					<ShoppingOutlined 
+					<Badge count={elements.length}>
+						<ShoppingOutlined 
 					className="gold-hover-icon"
 						style={{ color: "#484848", fontSize: "25px" }}
 					/>
+					</Badge>
+					
 				}
 				onClick={showDrawer}
 			/>
