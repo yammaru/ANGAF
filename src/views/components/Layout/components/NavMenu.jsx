@@ -29,6 +29,7 @@ import { Redirect } from "react-router-dom/cjs/react-router-dom.min";
 import CenterItems from "./NavMenuItems/CenterItems";
 import RightItems from "./NavMenuItems/RightItems";
 
+
 const { Sider, Header } = Layout;
 const { SubMenu } = Menu;
 
@@ -241,38 +242,38 @@ const NavMenu = () => {
 			? "transparent-header"
 			: "transparent-header-index";
 	};
-	
-const handleChange=()=>{
-	setLogoMenu(logoHover)
-}
-const handleChangeLeave=()=>{
-	setLogoMenu(logo)
-}
+
+	const handleChange = () => {
+		setLogoMenu(logoHover);
+	};
+	const handleChangeLeave = () => {
+		setLogoMenu(logo);
+	};
 	return (
 		<>
+	
 			<Header
 				className={navActivation()}
-				style={visible == true ? {} :{ display: "none" }}
+				style={visible == true ? {} : { display: "none" }}
 			>
+				
 				<Row justify="space-between" align="middle">
 					<Col style={{ color: "#484848" }}>
 						<a href="/">
-							
-								<Image
-									className="custom-image"
-									style={{ height: "28px", width: "auto" }}
-									src={logoMenu}
-									preview={false}
-									onMouseOver={handleChange}
-									onMouseLeave={handleChangeLeave}
-								/>
-							
+							<Image
+								className="custom-image"
+								style={{ height: "28px", width: "auto" }}
+								src={logoMenu}
+								preview={false}
+								onMouseOver={handleChange}
+								onMouseLeave={handleChangeLeave}
+							/>
 						</a>
 					</Col>
 					<Col>
 						<CenterItems />
 					</Col>
-					<Col style={{ width:"10%" }}>
+					<Col style={{ width: "10%" }}>
 						<RightItems />
 					</Col>
 				</Row>

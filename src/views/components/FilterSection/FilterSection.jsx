@@ -209,15 +209,16 @@ const FilterSection = () => {
 									<Card
 								hoverable
 								style={{
-									height: 400,
-									width: 250,
+									height: 500,
+									width: 300,
 									overflow: "hidden",
+									padding:"5px"
 								}}
 								cover={
 									<img
 										style={{
-											height: 300,
-											width: 250,
+											height: 420,
+											width: "100%",
 											overflow: "hidden",
 										}}
 										alt="example"
