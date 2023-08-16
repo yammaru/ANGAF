@@ -35,7 +35,7 @@ return (
 										href="/cosas"
 										target="_self"
 									>
-										cosas
+										accesorio 
 									</a>
 								</li>
 								<li
