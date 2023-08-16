@@ -26,6 +26,7 @@ import index from "../../pages/index";
 import FilterPage from "../../pages/FilterPage";
 import HomePage from "../../HomePage";
 import Products from "../../pages/products";
+import Tiendas from "../../pages/tiendas";
 
 const Routes = () => {
 	return (
@@ -34,7 +35,7 @@ const Routes = () => {
 			<Route exact path="/hombre" component={FilterPage} />
 			<Route exact path="/mujer" component={FilterPage} />
 			<Route exact path="/cosas" component={FilterPage} />
-			<Route exact path="/tiendas" component={FilterPage} />
+			<Route exact path="/tiendas" component={Tiendas} />
 			<Route exact path="/sale" component={FilterPage} />
 			<Route exact path="/producto/:id" component={Products} />
 			{/* dashboard */}
