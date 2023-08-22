@@ -4,9 +4,29 @@ import logo from "../../includes/images/fondo.png";
 import { colors } from "@material-ui/core";
 
 const index = () => {
+	const fondo =
+		"https://th.bing.com/th/id/R.b8e8ecb071ad5ae5f194d440bcfbffa5?rik=%2f96u1oRW%2fDAcZg&pid=ImgRaw&r=0";
+	const elements = [
+		{
+			href: "/mujer",
+			src: "https://th.bing.com/th/id/OIP.jp2BPgOGgoRP2fyEenEAOgHaJ2?pid=ImgDet&w=600&h=798&rs=1",
+		},
+		{
+			href: "/mujer",
+			src: "https://http2.mlstatic.com/catalogo-de-ropa-moda-para-mujer-envio-gratis-D_NQ_NP_625214-MLM25772144672_072017-F.jpg",
+		},
+		{
+			href: "/mujer",
+			src: "https://sheideas.com/wp-content/uploads/2016/02/Stylish-Long-Sleeve-Short-Prom-Dresses-2016.jpg",
+		},
+	];
 	return (
 		<>
-			<div className="fullscreen-image"></div>
+			<div
+				className="fullscreen-image"
+				style={{ backgroundImage: `url("${fondo}")` }}
+			></div>
+
 			<div className="button-container">
 				<div className="button">
 					<a href="/hombre" target="_self">
@@ -20,35 +40,18 @@ const index = () => {
 				</div>
 			</div>
 			<Row className="images-container">
-				<Col style={{ width: "33%", overflow: "hidden" }}>
-					<img
-						src={
-							"https://b2cmattelsa.vtexassets.com/assets/vtex.file-manager-graphql/images/64dd62f9-f9b5-490b-9a1f-b4950d948075___6ea0eac9b8f28f17e21b74b4619c7e3f.jpg"
-						}
-						alt="Imagen 1"
-						className="image"
-					/>
-				</Col>
-				<Col style={{ width: "33%", overflow: "hidden" }}>
-					<img
-						src={
-							"https://b2cmattelsa.vtexassets.com/assets/vtex.file-manager-graphql/images/385b0807-a249-4886-8a10-c752c9c180dc___5bfc4b7df59a2d14e22fe2d3e1652c18.jpg"
-						}
-						alt="Imagen 2"
-						className="image"
-					/>
-				</Col>
-				<Col style={{ width: "33%", overflow: "hidden" }}>
-					<img
-						src={
-							"https://b2cmattelsa.vtexassets.com/assets/vtex.file-manager-graphql/images/e06d7c91-8540-448c-8fcd-7a76bcb78ee0___ca3fb1b33569816c1f5ea354baae80f8.jpg"
-						}
-						alt="Imagen 3"
-						className="image"
-					/>
-				</Col>
+				{elements.map((x, index) => (
+					<Col style={{ width: "33%", overflow: "hidden" }}>
+						<a href={x.href} target="_self">
+							<img
+								src={x.src}
+								alt={"Imagen " + index}
+								className="image"
+							/>
+						</a>
+					</Col>
+				))}
 			</Row>
-			
 		</>
 	);
 };

@@ -1,13 +1,13 @@
 const CenterItems=()=>{
 return (
-<nav class="b2cmattelsa-header-0-x-menu">
-							<ul class="b2cmattelsa-header-0-x-menu--list">
+<nav class="b2canga-header-0-x-menu">
+							<ul class="b2canga-header-0-x-menu--list">
 								<li
-									class="b2cmattelsa-header-0-x-menu--item"
+									class="b2canga-header-0-x-menu--item"
 									data-url="/hombre"
 								>
 									<a
-										class="b2cmattelsa-header-0-x-menu--link"
+										class="b2canga-header-0-x-menu--link"
 										href="/hombre"
 										target="_self"
 									>
@@ -15,11 +15,11 @@ return (
 									</a>
 								</li>
 								<li
-									class="b2cmattelsa-header-0-x-menu--item"
+									class="b2canga-header-0-x-menu--item"
 									data-url="/mujer"
 								>
 									<a
-										class="b2cmattelsa-header-0-x-menu--link"
+										class="b2canga-header-0-x-menu--link"
 										href="/mujer"
 										target="_self"
 									>
@@ -27,11 +27,11 @@ return (
 									</a>
 								</li>
 								<li
-									class="b2cmattelsa-header-0-x-menu--item"
+									class="b2canga-header-0-x-menu--item"
 									data-url="/cosas"
 								>
 									<a
-										class="b2cmattelsa-header-0-x-menu--link"
+										class="b2canga-header-0-x-menu--link"
 										href="/cosas"
 										target="_self"
 									>
@@ -39,11 +39,11 @@ return (
 									</a>
 								</li>
 								<li
-									class="b2cmattelsa-header-0-x-menu--item"
+									class="b2canga-header-0-x-menu--item"
 									data-url="/tiendas"
 								>
 									<a
-										class="b2cmattelsa-header-0-x-menu--link"
+										class="b2canga-header-0-x-menu--link"
 										href="/tiendas"
 										target="_self"
 									>
@@ -51,12 +51,12 @@ return (
 									</a>
 								</li>
 							{/* 	<li
-									class="b2cmattelsa-header-0-x-menu--item"
-									data-url="https://comunidad.mattelsa.net/activismo"
+									class="b2canga-header-0-x-menu--item"
+									data-url="https://comunidad.anga.net/activismo"
 								>
 									<a
-										class="b2cmattelsa-header-0-x-menu--link"
-										href="https://comunidad.mattelsa.net/activismo"
+										class="b2canga-header-0-x-menu--link"
+										href="https://comunidad.anga.net/activismo"
 										target="_blank"
 										rel="noopener"
 									>
@@ -65,10 +65,10 @@ return (
 								</li>*/}
 								<li
 									data-url="/sale"
-									class="b2cmattelsa-header-0-x-menu--item"
+									class="b2canga-header-0-x-menu--item"
 								>
 									<a
-										class="b2cmattelsa-header-0-x-menu--link"
+										class="b2canga-header-0-x-menu--link"
 										href="/sale"
 										style={{backgroundColor: "gold"}}
 									>

@@ -18,6 +18,7 @@ import { CaretLeftOutlined, CaretRightOutlined } from "@ant-design/icons";
 import HeaderFilterProduct from "./FilterItems/HeaderFilterProduct";
 import { Link } from "react-router-dom/cjs/react-router-dom";
 import BestSelling from "../Ventas/BestSelling";
+import ColumnFilter from "./FilterItems/ColumFilter";
 
 const { Meta } = Card;
 const { Text, Title } = Typography;
@@ -99,6 +100,36 @@ const FilterSection = () => {
 			],
 		},
 	];
+	const colorArray = [
+		{ name: "rojo", color: "#FF5733" },
+		{ name: "azul", color: "#3366CC" },
+		{ name: "verde", color: "#33CC33" },
+		{ name: "naranja", color: "#FF9900" },
+	]; // Array de colores
+	const tallaArray = [
+		{ name: "S", color: "#FF5733" },
+		{ name: "M", color: "#3366CC" },
+		{ name: "L", color: "#33CC33" },
+		{ name: "XL", color: "#FF9900" },
+	];
+	const categoryArray = [
+		{ name: "c1", color: "#FF5733" },
+		{ name: "c2", color: "#3366CC" },
+		{ name: "c3", color: "#33CC33" },
+		{ name: "c4", color: "#FF9900" },
+		{ name: "c1", color: "#FF5733" },
+		{ name: "c2", color: "#3366CC" },
+		{ name: "c3", color: "#33CC33" },
+		{ name: "c4", color: "#FF9900" },
+		{ name: "c1", color: "#FF5733" },
+		{ name: "c2", color: "#3366CC" },
+		{ name: "c3", color: "#33CC33" },
+		{ name: "c4", color: "#FF9900" },
+		{ name: "c1", color: "#FF5733" },
+		{ name: "c2", color: "#3366CC" },
+		{ name: "c3", color: "#33CC33" },
+		{ name: "c4", color: "#FF9900" },
+	];
 	const url = window.location.pathname;
 
 	// Dividir la URL en partes utilizando "/" como separador
@@ -107,23 +138,11 @@ const FilterSection = () => {
 	// Obtener la última palabra (último elemento del array)
 	const lastWord = parts[parts.length - 1];
 
-	const colorArray = ["#FF5733", "#3366CC", "#33CC33", "#FF9900"]; // Array de colores
 	const [selectedColors, setSelectedColors] = useState([]);
 
-	const handleColorClick = (color) => {
-		if (selectedColors.includes(color)) {
-			setSelectedColors(selectedColors.filter((c) => c !== color));
-		} else {
-			setSelectedColors([...selectedColors, color]);
-		}
-	};
-	const treeData = colorArray.map((color) => ({
-		title: color,
-		key: color,
-	}));
-
 	return (
-		<><Divider style={{paddingBottom:"2%"}}/>
+		<>
+			<Divider style={{ paddingBottom: "2%" }} />
 			{lastWord != "cosas" ? (
 				lastWord != "sale" ? (
 					<HeaderFilterProduct
@@ -145,102 +164,54 @@ const FilterSection = () => {
 				</Select>
 			</Row>
 			<Row style={{ width: "100%" }}>
-				<Col style={{ width: "20%" }}>
-					{selectedColors.length != 0 ? (
-						<>
-							<Row justify={"center"}>
-								<b>Filtrado Por:</b>
-							</Row>
-							<TreeSelect
-								showSearch
-								style={{ width: "100%" }}
-								value={selectedColors}
-								treeData={treeData}
-								treeCheckable={true}
-								onChange={setSelectedColors}
-							/>
-						</>
-					) : null}
-					<Collapse accordion>
-						<Panel header={<b>Categoria</b>} key="1">
-							lupues
-						</Panel>
-						<Panel header={<b>Color</b>} key="2">
-							<div style={{ display: "flex" }}>
-								{colorArray.map((color) => (
-									<div
-										key={color}
-										style={{
-											backgroundColor: color,
-											width: "20px",
-											height: "20px",
-											margin: "5px",
-											position: "relative",
-											display: "flex",
-											justifyContent: "center",
-											alignItems: "center",
-											alignContent: "center",
-										}}
-										onClick={() => handleColorClick(color)}
-									>
-										{selectedColors.includes(color) && (
-											<Checkbox
-												style={{
-													backgroundColor:
-														"transparent",
-												}}
-												checked={true}
-											/>
-										)}
-									</div>
-								))}
-							</div>
-						</Panel>
-						<Panel header={<b>Talla</b>} key="3">
-							Contenido del Panel 2
-						</Panel>
-						{/* Agrega más paneles según sea necesario */}
-					</Collapse>
-				</Col>
+				<ColumnFilter
+					categoryArray={categoryArray}
+					tallaArray={tallaArray}
+					colorArray={colorArray}
+				/>
+
 				<Col style={{ width: "80%" }}>
 					<Row justify={"space-around"} style={{ width: "100%" }}>
 						{elements.map((element, index) => (
-							  <Link to={`/producto/${element.name}`}>
-									<Card
-								hoverable
-								style={{
-									height: 500,
-									width: 300,
-									overflow: "hidden",
-									padding:"5px"
-								}}
-								cover={
-									<img
-										style={{
-											height: 420,
-											width: "100%",
-											overflow: "hidden",
-										}}
-										alt="example"
-										src={
-											index == hoveredCardIndex
-												? element.path[0]
-												: element.path[1]
-										}
+							<Link to={`/producto/${element.name}`}>
+								<Card
+									hoverable
+									style={{
+										height: 500,
+										width: 300,
+										overflow: "hidden",
+										padding: "5px",
+									}}
+									cover={
+										<img
+											style={{
+												height: 420,
+												width: "100%",
+												overflow: "hidden",
+											}}
+											alt="example"
+											src={
+												index == hoveredCardIndex
+													? element.path[0]
+													: element.path[1]
+											}
+										/>
+									}
+									onMouseEnter={() =>
+										setHoveredCardIndex(index)
+									} // Establecer el índice de la tarjeta al hacer hover
+									onMouseLeave={() =>
+										setHoveredCardIndex(null)
+									} // Reiniciar el índice al dejar de hacer hover
+								>
+									<Meta
+										title={element.name}
+										description={FORMATTER_PESO.format(
+											element.value
+										)}
 									/>
-								}
-								onMouseEnter={() => setHoveredCardIndex(index)} // Establecer el índice de la tarjeta al hacer hover
-								onMouseLeave={() => setHoveredCardIndex(null)} // Reiniciar el índice al dejar de hacer hover
-							>
-								<Meta
-									title={element.name}
-									description={FORMATTER_PESO.format(
-										element.value
-									)}
-								/>
-							</Card>
-							  </Link>
-						
+								</Card>
+							</Link>
 						))}
 					</Row>
 				</Col>
