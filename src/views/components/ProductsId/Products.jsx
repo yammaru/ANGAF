@@ -1,11 +1,15 @@
-import { Button, Col, Divider, Image, Row } from "antd";
+import { Button, Col, Divider, Image, Radio, Row } from "antd";
 import { useParams } from "react-router-dom/cjs/react-router-dom";
 import BestSelling from "../Ventas/BestSelling";
 import { FORMATTER_PESO } from "../../../redux/constants";
 import { CheckOutlined } from "@ant-design/icons";
+import { useState } from "react";
 
 const ProductsId = () => {
 	const { id } = useParams();
+	const [selectedSizeMessage, setSelectedSizeMessage] = useState(
+		"Selecciona una talla"
+	);
 	console.log(id);
 	const elements = {
 		name: "lobo1",
@@ -20,6 +24,35 @@ const ProductsId = () => {
 		role_model: "La modelo mide 1.60m y tiene una talla S",
 		available_sizes: ["M", "S", "XL"],
 	};
+	const handleSizeButtonClick = (size) => {
+		setSelectedSizeMessage(`Agregar a la bolsa`);
+	};
+
+	const [selectedSize, setSelectedSize] = useState(null);
+
+	const handleSizeButtonClicks = (size) => {
+		setSelectedSize(size);
+	};
+
+	const go = (size) => {
+		const storedElements =
+			JSON.parse(localStorage.getItem("elements")) || [];
+		const existingElementIndex = storedElements.findIndex(
+			(item) => item.id === elements.id && item.talla === selectedSize
+		);
+		if (existingElementIndex !== -1) {
+			storedElements[existingElementIndex].cantidad++;
+		} else {
+			elements.talla = selectedSize;
+			elements.imagen = elements.path[0];
+			elements.cantidad = 1;
+			storedElements.push(elements);
+		}
+		localStorage.setItem("elements", JSON.stringify(storedElements));
+		window.location.reload();
+	};
+
+	console.log(selectedSize);
 	return (
 		<>
 			<Divider style={{ paddingBottom: "2%" }} />
@@ -91,11 +124,34 @@ const ProductsId = () => {
 						</Col>
 
 						<Col>
-							{elements.available_sizes.map((x) => (
-								<>
-									<Button type="ghost">{x}</Button>
-								</>
-							))}
+							<Radio.Group
+								defaultValue={selectedSize}
+								value={selectedSize}
+								onChange={(e) =>
+									handleSizeButtonClicks(e.target.value)
+								}
+								buttonStyle="solid"
+							>
+								{elements.available_sizes.map((x) => (
+									<>
+										<Radio.Button
+											key={x}
+											onClick={() =>
+												handleSizeButtonClick(x)
+											}
+											value={x}
+											style={{
+												backgroundColor:
+													selectedSize === x
+														? "#484848"
+														: "",
+											}}
+										>
+											{x}
+										</Radio.Button>
+									</>
+								))}
+							</Radio.Group>
 						</Col>
 					</Row>
 					<Row
@@ -104,14 +160,36 @@ const ProductsId = () => {
 						}}
 					>
 						<Button
-							style={{ height: "50px" }}
-							disabled={true}
-							type="ghost"
+							style={{
+								height: "50px",
+								backgroundColor:
+									selectedSizeMessage ===
+									"Selecciona una talla"
+										? ""
+										: "#484848",
+							}}
+							type={
+								selectedSizeMessage === "Selecciona una talla"
+									? "ghost"
+									: "primary"
+							}
 							block
+							disabled={
+								selectedSizeMessage === "Selecciona una talla"
+							}
+							onClick={go}
 						>
 							<h6>
-								<b style={{ color: "#b4b4b4" }}>
-									Selecciona una talla
+								<b
+									style={{
+										color:
+											selectedSizeMessage ===
+											"Selecciona una talla"
+												? "#b4b4b4"
+												: "white",
+									}}
+								>
+									{selectedSizeMessage}
 								</b>
 							</h6>
 						</Button>
@@ -128,20 +206,18 @@ const ProductsId = () => {
 						</Button>
 					</Row>
 					<Row
-                    justify={"space-between"}
+						justify={"space-between"}
 						style={{
 							paddingBottom: "2%",
 						}}
 					>
-						<Col >
-						
-                        <CheckOutlined style={{ color: "#52c41a" }}/>	<b style={{ color: "#484848" }}>Pago en efectivo</b>
-						
+						<Col>
+							<CheckOutlined style={{ color: "#52c41a" }} />{" "}
+							<b style={{ color: "#484848" }}>Pago en efectivo</b>
 						</Col>
-						<Col >
-						
-                        <CheckOutlined style={{ color: "#52c41a" }}/> <b style={{ color: "#484848" }}>Cambios gratis</b>
-						
+						<Col>
+							<CheckOutlined style={{ color: "#52c41a" }} />{" "}
+							<b style={{ color: "#484848" }}>Cambios gratis</b>
 						</Col>
 					</Row>
 				</Col>
