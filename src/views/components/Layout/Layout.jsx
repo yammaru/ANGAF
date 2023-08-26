@@ -28,22 +28,23 @@ const LayoutComponent = ({ user, dispatchLogoutAction }) => {
 			{/* END RUTAS */}
 
 			<FooterComponent />
-
-			<div style={{ position: "fixed", right: "2%", bottom: "6%" }}>
-				<a
-					href="https://api.whatsapp.com/send/?phone=573013095065"
-					target="_blank"
-				>
-					<Image
-						className="custom-image"
-						style={{ height: "150px", width: "auto" }}
-						src={logoMenu}
-						preview={false}
-						onMouseOver={handleChange}
-						onMouseLeave={handleChangeLeave}
-					/>
-				</a>
-			</div>
+			{window.location.pathname.includes("checkout") ? null : (
+				<div style={{ position: "fixed", right: "2%", bottom: "6%" }}>
+					<a
+						href="https://api.whatsapp.com/send/?phone=573013095065"
+						target="_blank"
+					>
+						<Image
+							className="custom-image"
+							style={{ height: "150px", width: "auto" }}
+							src={logoMenu}
+							preview={false}
+							onMouseOver={handleChange}
+							onMouseLeave={handleChangeLeave}
+						/>
+					</a>
+				</div>
+			)}
 		</Fragment>
 	);
 };
