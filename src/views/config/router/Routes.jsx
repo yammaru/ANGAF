@@ -29,6 +29,8 @@ import Products from "../../pages/products";
 import Tiendas from "../../pages/tiendas";
 import LockBookPage from "../../pages/lookbook";
 import LookbookSectionPage from "../../pages/lookbook/LookbookSection";
+import Checkout from "../../pages/checkout";
+import Shipping from "../../pages/checkout/shipping";
 
 const Routes = () => {
 	return (
@@ -42,6 +44,8 @@ const Routes = () => {
 			<Route exact path="/lockbook" component={LockBookPage} />
 			<Route exact path="/lockbook/:id" component={LookbookSectionPage} />
 			<Route exact path="/producto/:id" component={Products} />
+			<Route exact path="/checkout" component={Checkout} />
+			<Route exact path="/checkout/shipping" component={Shipping} />
 			{/* dashboard */}
 			<Route exact path="/dashboard" component={Dashboard} />
 			{/* settings */}
