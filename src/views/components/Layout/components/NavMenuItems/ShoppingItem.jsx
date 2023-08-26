@@ -8,13 +8,15 @@ import {
 } from "@ant-design/icons";
 import { FORMATTER_PESO } from "../../../../../redux/constants";
 import { formatterMoney } from "../../../../handle/FormatterMoney/FormatterMoney";
+import { handleDeleteElement } from "../../../../handle/LocalStorage/handleLocalStorage";
 
 const ShoppingItem = () => {
 	const [visibleDrawer, setVisibleDrawer] = useState(false);
 
 	const [notificationCount, setNotificationCount] = useState({});
+	const [elements, setElements] = useState(JSON.parse(localStorage.getItem("elements")) || []);
 	useEffect(() => {
-	console.log(notificationCount);
+		setElements(JSON.parse(localStorage.getItem("elements")) || []);
 	}, [notificationCount]);
 	const showDrawer = () => {
 		setVisibleDrawer(true);
@@ -24,28 +26,13 @@ const ShoppingItem = () => {
 		setVisibleDrawer(false);
 	};
 
-	const elements = JSON.parse(localStorage.getItem("elements")) || [];
+	
 	const subtotal = elements.reduce((sum, element) => sum + element.value, 0);
 	const send = 0;
 	const total = subtotal + send;
 
 	const handleDelete = (id, talla) => {
-	
-		const storedElements =
-			JSON.parse(localStorage.getItem("elements")) || [];
-		const elementIndex = storedElements.findIndex(
-			(item) => item.id === id && item.talla === talla
-		);
-		if (elementIndex !== -1) {
-			storedElements.splice(elementIndex, 1);
-			localStorage.setItem("elements", JSON.stringify(storedElements));
-			console.log(`Elemento con id ${id} y talla ${talla} eliminado.`);
-		} else {
-			console.log(
-				`No se encontró ningún elemento con id ${id} y talla ${talla}.`
-			);
-		}
-		setNotificationCount({id,talla});
+		setNotificationCount(handleDeleteElement(id, talla));
 	};
 	return (
 		<>
@@ -136,16 +123,18 @@ const ShoppingItem = () => {
 									justifyContent: "center",
 								}}
 							>
-								<Button
-									block
-									style={{
-										backgroundColor: "#484848",
-										color: "white",
-										height: "40px",
-									}}
-								>
-									IR A PAGAR
-								</Button>
+								<a href="/checkout">
+									<Button
+										block
+										style={{
+											backgroundColor: "#484848",
+											color: "white",
+											height: "40px",
+										}}
+									>
+										IR A PAGAR
+									</Button>
+								</a>
 							</Row>
 						</>
 					) : null
