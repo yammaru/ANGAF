@@ -5,24 +5,14 @@ import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import logo from "../../../../includes/images/logoInicio.png";
 import logoHover from "../../../../includes/images/logoIniciohover.png";
+import logoCheck from "../../../../includes/images/logocheout.png";
 import { fetchAllGeneralSetting } from "../../../../redux/actions/Configuration/GeneralSettingAction";
 import {
 	getModulesUserById,
 	savePermissionsLocalStorage,
 } from "../../../../redux/actions/Configuration/usersAction";
 import {
-	SettingOutlined,
-	DashboardOutlined,
-	BarChartOutlined,
-	DollarCircleOutlined,
-	UserOutlined,
-	ProjectOutlined,
-	CreditCardOutlined,
-	CodepenCircleOutlined,
-	ShopOutlined,
-	ShoppingOutlined,
-	ShoppingCartOutlined,
-	ThunderboltOutlined,
+	LockFilled,
 } from "@ant-design/icons";
 import { auto } from "@popperjs/core";
 import { Redirect } from "react-router-dom/cjs/react-router-dom.min";
@@ -250,7 +240,33 @@ const NavMenu = () => {
 		setLogoMenu(logo);
 	};
 	return (
-		<>
+		<>{ window.location.pathname.includes('checkout')?
+		
+		
+		<Header
+		
+		style={{backgroundColor:"#484848"}}
+	>
+		<Row justify="space-between" align="middle">
+			<Col style={{ color: "#484848" }}>
+						<a href="/">
+							<Image
+								className="custom-image"
+								style={{ height: "28px", width: "auto" }}
+								src={logoCheck}
+								preview={false}
+								onMouseOver={handleChange}
+								onMouseLeave={handleChangeLeave}
+							/>
+						</a>
+					</Col>
+					<Col>
+						<LockFilled></LockFilled> Compra 100% segura
+					</Col>
+		</Row>
+					
+	</Header>
+		:
 	
 			<Header
 				className={navActivation()}
@@ -277,7 +293,7 @@ const NavMenu = () => {
 						<RightItems />
 					</Col>
 				</Row>
-			</Header>
+			</Header>}
 			{/*
 			<Sider
 				style={{
