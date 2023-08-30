@@ -11,14 +11,12 @@ import {
 	getModulesUserById,
 	savePermissionsLocalStorage,
 } from "../../../../redux/actions/Configuration/usersAction";
-import {
-	LockFilled,
-} from "@ant-design/icons";
+import { LockFilled } from "@ant-design/icons";
 import { auto } from "@popperjs/core";
 import { Redirect } from "react-router-dom/cjs/react-router-dom.min";
 import CenterItems from "./NavMenuItems/CenterItems";
 import RightItems from "./NavMenuItems/RightItems";
-
+import MarqueeMessage from "./NavMenuItems/letrero/MarqueeMessage";
 
 const { Sider, Header } = Layout;
 const { SubMenu } = Menu;
@@ -211,7 +209,15 @@ const NavMenu = () => {
 	});
 */ const [prevScrollPos, setPrevScrollPos] = useState(0);
 	const [visible, setVisible] = useState(true);
+	const [marqueeVisible, setMarqueeVisible] = useState(true);
 
+	const handleHover = () => {
+		setMarqueeVisible(false);
+	};
+
+	const handleMouseLeave = () => {
+		setMarqueeVisible(true);
+	};
 	const handleScroll = () => {
 		const currentScrollPos = window.pageYOffset;
 		const isVisible = prevScrollPos > currentScrollPos;
@@ -240,60 +246,68 @@ const NavMenu = () => {
 		setLogoMenu(logo);
 	};
 	return (
-		<>{ window.location.pathname.includes('checkout')?
-		
-		
-		<Header
-		
-		style={{backgroundColor:"#484848"}}
-	>
-		<Row justify="space-between" align="middle">
-			<Col style={{ color: "#484848" }}>
-						<a href="/">
-							<Image
-								className="custom-image"
-								style={{ height: "28px", width: "auto" }}
-								src={logoCheck}
-								preview={false}
-								onMouseOver={handleChange}
-								onMouseLeave={handleChangeLeave}
-							/>
-						</a>
-					</Col>
-					<Col>
-						<LockFilled></LockFilled> Compra 100% segura
-					</Col>
-		</Row>
-					
-	</Header>
-		:
-	
-			<Header
-				className={navActivation()}
-				style={visible == true ? {} : { display: "none" }}
-			>
-				
-				<Row justify="space-between" align="middle">
-					<Col style={{ color: "#484848" }}>
-						<a href="/">
-							<Image
-								className="custom-image"
-								style={{ height: "28px", width: "auto" }}
-								src={logoMenu}
-								preview={false}
-								onMouseOver={handleChange}
-								onMouseLeave={handleChangeLeave}
-							/>
-						</a>
-					</Col>
-					<Col>
-						<CenterItems />
-					</Col>
-					<Col style={{ width: "10%" }}>
-						<RightItems />
-					</Col>
-				</Row>
-			</Header>}
+		<>
+			{window.location.pathname.includes("checkout") ? (
+				<Header style={{ backgroundColor: "#484848" }}>
+					<Row justify="space-between" align="middle">
+						<Col style={{ color: "#484848" }}>
+							<a href="/">
+								<Image
+									className="custom-image"
+									style={{ height: "28px", width: "auto" }}
+									src={logoCheck}
+									preview={false}
+									onMouseOver={handleChange}
+									onMouseLeave={handleChangeLeave}
+								/>
+							</a>
+						</Col>
+						<Col>
+							<LockFilled></LockFilled> Compra 100% segura
+						</Col>
+					</Row>
+				</Header>
+			) : (
+				<>
+					{marqueeVisible && navActivation() == "transparent-header-index"  ? <MarqueeMessage />:null}
+					<Header
+						className={navActivation()}
+						style={visible == true ? {} : { display: "none" }}
+						onMouseEnter={handleHover}
+						onMouseLeave={handleMouseLeave}
+					>
+						{navActivation() == "transparent-header-index"  ? (
+						marqueeVisible &&	<Row style={{ visibility: "hidden" }}>
+								<MarqueeMessage />
+							</Row>
+						) : null}
+
+						<Row justify="space-between" align="middle">
+							<Col style={{ color: "#484848" }}>
+								<a href="/">
+									<Image
+										className="custom-image"
+										style={{
+											height: "28px",
+											width: "auto",
+										}}
+										src={logoMenu}
+										preview={false}
+										onMouseOver={handleChange}
+										onMouseLeave={handleChangeLeave}
+									/>
+								</a>
+							</Col>
+							<Col>
+								<CenterItems />
+							</Col>
+							<Col style={{ width: "10%" }}>
+								<RightItems />
+							</Col>
+						</Row>
+					</Header>
+				</>
+			)}
 			{/*
 			<Sider
 				style={{

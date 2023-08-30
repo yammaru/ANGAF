@@ -27,6 +27,7 @@ header{
 }
 .transparent-header-index {
 	width: 100%;
+	height: auto;
 	position: fixed;
 	top: 0;
 	left: 0;
@@ -64,7 +65,6 @@ header{
 	top: 60%;
 	left: 38%;
 }
-
 .button > * {
 	background-color: transparent;
 	border: 1px solid white;
