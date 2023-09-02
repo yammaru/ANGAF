@@ -262,8 +262,8 @@ const NavMenu = () => {
 								/>
 							</a>
 						</Col>
-						<Col>
-							<LockFilled></LockFilled> Compra 100% segura
+						<Col style={{color:"white"}}>
+							<LockFilled/> Compra 100% segura
 						</Col>
 					</Row>
 				</Header>
