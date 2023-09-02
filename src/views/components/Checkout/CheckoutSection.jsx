@@ -3,6 +3,7 @@ import FilterSection from "../../components/FilterSection/FilterSection";
 import {
 	Button,
 	Col,
+	Descriptions,
 	Divider,
 	Image,
 	Input,
@@ -23,11 +24,15 @@ import {
 	handleDeleteElement,
 	handleIncreaseElement,
 } from "../../handle/LocalStorage/handleLocalStorage";
+import TextArea from "antd/lib/input/TextArea";
 
 const CheckoutSection = () => {
 	const [notificationCount, setNotificationCount] = useState({});
 	const [dataSource, setDataSource] = useState(
 		JSON.parse(localStorage.getItem("elements")) || []
+	);
+	const [sedValue, setSedValue] = useState(
+		JSON.parse(localStorage.getItem("sedValue"))
 	);
 	useEffect(() => {
 		setDataSource(JSON.parse(localStorage.getItem("elements")) || []);
@@ -134,6 +139,40 @@ const CheckoutSection = () => {
 			},
 		},
 	];
+	const SaleResumen = [
+		{ title: "Resumen de la compra", style: "title" },
+		{
+			title: "Ítems sin descuento",
+			value: 0,
+		},
+		{
+			title: "Ropa SALE",
+			value: 0,
+			style: "preDivider",
+		},
+		{
+			style: "divider",
+		},
+		{
+			title: "Subtotal",
+			value: 0,
+			style: "SubTitle",
+		},
+		{
+			title: "Envio(estimado)",
+			value: sedValue,
+			style: sedValue ? "" : "nono",
+		},
+		{
+			title: "Total",
+			value: 0,
+			style: "total",
+		},
+	];
+	const handleDiscountCodeChange = (value) => {
+		// Aquí puedes manejar el cambio en el código de descuento
+		console.log("Código de descuento cambiado:", value);
+	};
 
 	return (
 		<Row style={{ backgroundColor: "#f2f2f2" }}>
@@ -157,14 +196,22 @@ const CheckoutSection = () => {
 				<Divider />
 				<Row justify={"space-between"}>
 					<Col style={{ width: "40%" }}>
-						<Row>
+						<Descriptions
+							title={
+								<div style={{ color: "#484848" }}>
+									Tienes un código de descuento?
+								</div>
+							}
+						/>
+
+						<Row justify={"space-between"}>
 							<Col style={{ width: "60%" }}>
 								<Input
 									style={{ height: 40 }}
 									placeholder="codigo"
 								/>
 							</Col>
-							<Col style={{ width: "40%" }}>
+							<Col style={{ width: "35%" }}>
 								<Button
 									style={{
 										backgroundColor: "#484848",
@@ -179,32 +226,71 @@ const CheckoutSection = () => {
 						</Row>
 					</Col>
 					<Col style={{ width: "35%" }}>
-						<Row>Resumen de la compra</Row>
-						<Row>
-							<Col style={{ width: "60%" }}>
-								Ítems sin descuento
-							</Col>
-							<Col style={{ width: "40%" }}></Col>
-						</Row>
-						<Row>
-							<Col style={{ width: "60%" }}>Ropa SALE</Col>
-							<Col style={{ width: "40%" }}></Col>
-						</Row>
-						<Divider />
-						<Row>
-							<Col style={{ width: "60%" }}>Subtotal</Col>
-							<Col style={{ width: "40%" }}></Col>
-						</Row>
-						<Row>
-							<Col style={{ width: "60%" }}>Envio(estimado)</Col>
-							<Col style={{ width: "40%" }}></Col>
-						</Row>
-						<Divider style={{ visibility: "hidden" }} />
-						<Row>
-							<Col style={{ width: "60%" }}>Total</Col>
-							<Col style={{ width: "40%" }}></Col>
-						</Row>
-						<Divider style={{ visibility: "hidden" }} />
+						{SaleResumen.map((x) =>
+							x.style == "divider" ? (
+								<Divider />
+							) : (
+								<Row
+									justify={"space-between"}
+									style={{
+										paddingBottom:
+											x.style == "total"
+												? "10%"
+												: x.style == "preDivider"
+												? "0%"
+												: "3%",
+										display:
+											x.style == "nono" ? "none" : "",
+									}}
+								>
+									<Col
+										style={{
+											width: "60%",
+											fontWeight:
+												x.style == "title" ||
+												x.style == "SubTitle"
+													? "bold"
+													: "",
+										}}
+									>
+										{x.style == "total" ? (
+											<h5>
+												<b style={{ color: "#484848" }}>{x.title}</b>
+											</h5>
+										) : x.style == "SubTitle" ||
+										  x.style == "title" ? (
+											<h6>
+												<b style={{ color: "#484848" }}>
+													{x.title}
+												</b>
+											</h6>
+										) : (
+											x.title
+										)}
+									</Col>
+									{x.style != "title" ? (
+										<Col>
+											<b style={{ color: "#787878" }}>
+												{x.style == "total" ? (
+													<h5>
+														<b style={{ color: "#484848" }}>
+															{FORMATTER_INPUT_NUMBER.formatter(
+																x.value
+															)}
+														</b>
+													</h5>
+												) : (
+													FORMATTER_INPUT_NUMBER.formatter(
+														x.value
+													)
+												)}
+											</b>
+										</Col>
+									) : null}
+								</Row>
+							)
+						)}
+
 						<a href="/checkout/shipping">
 							<Button
 								style={{
