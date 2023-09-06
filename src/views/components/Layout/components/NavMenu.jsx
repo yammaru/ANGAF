@@ -6,6 +6,8 @@ import { useDispatch, useSelector } from "react-redux";
 import logo from "../../../../includes/images/logoInicio.png";
 import logoHover from "../../../../includes/images/logoIniciohover.png";
 import logoCheck from "../../../../includes/images/logocheout.png";
+import logoKids from "../../../../includes/images/angaKids.png";
+import logoKidsHover from "../../../../includes/images/angaKidsColor.png";
 import { fetchAllGeneralSetting } from "../../../../redux/actions/Configuration/GeneralSettingAction";
 import {
 	getModulesUserById,
@@ -32,7 +34,9 @@ const NavMenu = () => {
 	const generalSetting = useSelector(
 		(state) => state?.generalSetting._payload
 	);
-	const [logoMenu, setLogoMenu] = useState(logo);
+	const [logoMenu, setLogoMenu] = useState(
+		window.location.pathname.includes("kids") ? logoKids : logo
+	);
 	const [colorStateMenu, setColorStateMenu] = useState(
 		generalSetting?.menu_bar_color || colorMenu
 	);
@@ -240,10 +244,18 @@ const NavMenu = () => {
 	};
 
 	const handleChange = () => {
-		setLogoMenu(logoHover);
+		if (window.location.pathname.includes("kids")) {
+			setLogoMenu(logoKidsHover);
+		} else {
+			setLogoMenu(logoHover);
+		}
 	};
 	const handleChangeLeave = () => {
-		setLogoMenu(logo);
+		if (window.location.pathname.includes("kids")) {
+			setLogoMenu(logoKids);
+		} else {
+			setLogoMenu(logo);
+		}
 	};
 	return (
 		<>
@@ -262,25 +274,30 @@ const NavMenu = () => {
 								/>
 							</a>
 						</Col>
-						<Col style={{color:"white"}}>
-							<LockFilled/> Compra 100% segura
+						<Col style={{ color: "white" }}>
+							<LockFilled /> Compra 100% segura
 						</Col>
 					</Row>
 				</Header>
 			) : (
 				<>
-					{marqueeVisible && navActivation() == "transparent-header-index"  ? <MarqueeMessage />:null}
+					{marqueeVisible &&
+					navActivation() == "transparent-header-index" ? (
+						<MarqueeMessage />
+					) : null}
 					<Header
 						className={navActivation()}
 						style={visible == true ? {} : { display: "none" }}
 						onMouseEnter={handleHover}
 						onMouseLeave={handleMouseLeave}
 					>
-						{navActivation() == "transparent-header-index"  ? (
-						marqueeVisible &&	<Row style={{ visibility: "hidden" }}>
-								<MarqueeMessage />
-							</Row>
-						) : null}
+						{navActivation() == "transparent-header-index"
+							? marqueeVisible && (
+									<Row style={{ visibility: "hidden" }}>
+										<MarqueeMessage />
+									</Row>
+							  )
+							: null}
 
 						<Row justify="space-between" align="middle">
 							<Col style={{ color: "#484848" }}>
