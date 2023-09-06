@@ -1,5 +1,6 @@
 import { CaretLeftOutlined, CaretRightOutlined } from "@ant-design/icons";
 import { Button, Col, Divider, Row } from "antd";
+import { useEffect } from "react";
 import { useState } from "react";
 
 const HeaderFilterProduct = ({ elements, lastWord }) => {
@@ -20,38 +21,17 @@ const HeaderFilterProduct = ({ elements, lastWord }) => {
 		setVisibleElements(visibleElements);
 		setNoVisibleElements(visibleElements.slice(0, 6));
 	};
+
 	return (
 		<>
-			<Divider />
 			<Row justify={"center"} style={{ width: "100%" }}>
-				<Col
-					style={{
-						width: "10%",
-						display: "flex",
-						justifyContent: "center",
-						alignItems: "center",
-					}}
-				>
-					<Button
-						onClick={handlePrevPage}
-						icon={<CaretLeftOutlined />}
-					/>
-				</Col>
-				<Col
-					style={{
-						width: "80%",
-						display: "flex",
-						flexDirection: "row",
-						justifyContent: "space-between",
-						flexWrap: "wrap",
-					}}
-				>
-					{noVisibleElements.map((element, index) => (
-						<div
+				<div class="box">
+					{elements.map((element, index) => (
+						<span
 							style={{
-								width: "16%",
-								overflow: "hidden",
-								height: "120px",
+								transform: `rotateY(calc(${
+									index + 1
+								}* 45deg)) translateZ(400px)`,
 							}}
 						>
 							<div
@@ -83,23 +63,95 @@ const HeaderFilterProduct = ({ elements, lastWord }) => {
 									</h3>
 								</div>
 							</div>
-						</div>
+						</span>
 					))}
-				</Col>
-				<Col
-					style={{
-						width: "10%",
-						display: "flex",
-						justifyContent: "center",
-						alignItems: "center",
-					}}
-				>
-					<Button
-						onClick={handleNextPage}
-						icon={<CaretRightOutlined />}
-					/>
-				</Col>
+				</div>
 			</Row>
+			{1 != 1 ? (
+				<>
+					<Divider />
+
+					<Row justify={"center"} style={{ width: "100%" }}>
+						<Col
+							style={{
+								width: "10%",
+								display: "flex",
+								justifyContent: "center",
+								alignItems: "center",
+							}}
+						>
+							<Button
+								onClick={handlePrevPage}
+								icon={<CaretLeftOutlined />}
+							/>
+						</Col>
+						<Col
+							style={{
+								width: "80%",
+								display: "flex",
+								flexDirection: "row",
+								justifyContent: "space-between",
+								flexWrap: "wrap",
+							}}
+						>
+							{noVisibleElements.map((element, index) => (
+								<div
+									style={{
+										width: "16%",
+										overflow: "hidden",
+										height: "120px",
+										transformOrigin: "center",
+										transformStyle: "preserve-3d",
+									}}
+								>
+									<div
+										style={{
+											width: "100%",
+											background: `url(${element.path[1]})`,
+											height: "100%",
+											display: "flex",
+											justifyContent: "center",
+											alignItems: "center",
+										}}
+										className="image ki"
+									>
+										<div
+											style={{
+												display: "flex",
+												justifyContent: "center",
+												alignItems: "center",
+											}}
+											className="transparent-background"
+										>
+											<h3
+												style={{
+													mixBlendMode: "difference",
+													color: "white",
+												}}
+											>
+												{element.name}
+											</h3>
+										</div>
+									</div>
+								</div>
+							))}
+						</Col>
+						<Col
+							style={{
+								width: "10%",
+								display: "flex",
+								justifyContent: "center",
+								alignItems: "center",
+							}}
+						>
+							<Button
+								onClick={handleNextPage}
+								icon={<CaretRightOutlined />}
+							/>
+						</Col>
+					</Row>
+				</>
+			) : null}
 			<Divider />
 			<Row
 				justify={"center"}
