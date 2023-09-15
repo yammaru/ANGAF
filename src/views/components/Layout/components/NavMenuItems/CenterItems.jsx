@@ -4,18 +4,6 @@ return (
 							<ul class="b2canga-header-0-x-menu--list">
 								<li
 									class="b2canga-header-0-x-menu--item"
-									data-url="/hombre"
-								>
-									<a
-										class="b2canga-header-0-x-menu--link"
-										href="/hombre"
-										target="_self"
-									>
-										hombre
-									</a>
-								</li>
-								<li
-									class="b2canga-header-0-x-menu--item"
 									data-url="/mujer"
 								>
 									<a
@@ -23,7 +11,32 @@ return (
 										href="/mujer"
 										target="_self"
 									>
-										mujer
+										damas
+									</a>
+								</li>
+								<li
+									class="b2canga-header-0-x-menu--item"
+									data-url="/hombre"
+								>
+									<a
+										class="b2canga-header-0-x-menu--link"
+										href="/hombre"
+										target="_self"
+									>
+										caballeros
+									</a>
+								</li>
+								
+								<li
+									class="b2canga-header-0-x-menu--item"
+									data-url="/cosas"
+								>
+									<a
+										class="b2canga-header-0-x-menu--link"
+										href="/kids"
+										target="_self"
+									>
+										kids
 									</a>
 								</li>
 								<li
