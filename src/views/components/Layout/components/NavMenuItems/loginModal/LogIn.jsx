@@ -8,6 +8,7 @@ import { useEffect, useState } from "react";
 import HomeLoginButton from "./HomeLoginButton";
 import PanelPrincipal from "./PanelPricipal";
 import Registrate from "./Registrate";
+import { renderComponentBasedOnWhoIs } from "../../../../../handle/RendersComponent/RenderComponetLogin";
 const { Title, Text } = Typography;
 
 const LogIn = () => {
@@ -30,21 +31,9 @@ const LogIn = () => {
 	const hideModal = () => {
 		setVisible(false);
 	};
-	console.log(how, whoIs);
+	
 
-	const renderComponentBasedOnWhoIs = () => {
-		console.log("hola",whoIs);
-		switch (whoIs) {
-			case "R":
-				return <PanelPrincipal how={how} whoIsSet={setwhoIs} howSet={setHow} />;
-			case "I":
-				return <HomeLoginButton whoIsSet={setwhoIs} howSet={setHow} />;
-			case "M":
-				return <Registrate how={how} whoIsSet={setwhoIs} howSet={setHow}/>;
-			default:
-				return <></>;
-		}
-	};
+	
 	return (
 		<>
 			<Button
@@ -67,7 +56,7 @@ const LogIn = () => {
 				visible={visible}
 				onCancel={hideModal}
 				footer={null}
-				style={{ overflow: "hidden" }}
+			
 				width={"60%"}
 				bodyStyle={{ padding: 0 }}
 			>
@@ -81,6 +70,7 @@ const LogIn = () => {
 							display: "flex",
 							flexDirection: "column",
 							alignItems: "center",
+							overflow:"hidden"
 						}}
 					>
 						<Row
@@ -92,7 +82,7 @@ const LogIn = () => {
 							}}
 							justify={"center"}
 						>
-							{renderComponentBasedOnWhoIs()}
+							{renderComponentBasedOnWhoIs(how,setHow,setwhoIs,whoIs)}
 						</Row>
 					</Col>
 				</Row>
