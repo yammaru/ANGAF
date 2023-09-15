@@ -150,14 +150,14 @@ form {
     width: 200px;
     height: 100px;
     transform-style: preserve-3d;
-    animation: animate 20s linear infinite;
+    animation: animate 40s linear infinite;
 }
 @keyframes animate {
     0% {
-        transform: perspective(400px) rotateY(0deg);
+        transform: perspective(1000px) rotateY(0deg);
     }
     100% {
-        transform: perspective(400px) rotateY(360deg);
+        transform: perspective(1000px) rotateY(360deg);
     }
 }
 .box span {

@@ -24,50 +24,51 @@ const HeaderFilterProduct = ({ elements, lastWord }) => {
 
 	return (
 		<>
-			<Row justify={"center"} style={{ width: "100%" }}>
-				<div class="box">
-					{elements.map((element, index) => (
-						<span
-							style={{
-								transform: `rotateY(calc(${
-									index + 1
-								}* 45deg)) translateZ(400px)`,
-							}}
-						>
-							<div
+			{1 == 1 ? (
+				<Row justify={"center"} style={{ width: "100%" }}>
+					<div class="box">
+						{elements.map((element, index) => (
+							<span
 								style={{
-									width: "100%",
-									background: `url(${element.path[1]})`,
-									height: "100%",
-									display: "flex",
-									justifyContent: "center",
-									alignItems: "center",
+									transform: `rotateY(calc(${
+										index + 1
+									}* 45deg)) translateZ(400px)`,
 								}}
-								className="image ki"
 							>
 								<div
 									style={{
+										width: "100%",
+										background: `url(${element.path[1]})`,
+										height: "100%",
 										display: "flex",
 										justifyContent: "center",
 										alignItems: "center",
 									}}
-									className="transparent-background"
+									className="image ki"
 								>
-									<h3
+									<div
 										style={{
-											mixBlendMode: "difference",
-											color: "white",
+											display: "flex",
+											justifyContent: "center",
+											alignItems: "center",
 										}}
+										className="transparent-background"
 									>
-										{element.name}
-									</h3>
+										<h3
+											style={{
+												mixBlendMode: "difference",
+												color: "white",
+											}}
+										>
+											{element.name}
+										</h3>
+									</div>
 								</div>
-							</div>
-						</span>
-					))}
-				</div>
-			</Row>
-			{1 != 1 ? (
+							</span>
+						))}
+					</div>
+				</Row>
+			) : (
 				<>
 					<Divider />
 
@@ -151,7 +152,7 @@ const HeaderFilterProduct = ({ elements, lastWord }) => {
 						</Col>
 					</Row>
 				</>
-			) : null}
+			)}
 			<Divider />
 			<Row
 				justify={"center"}
