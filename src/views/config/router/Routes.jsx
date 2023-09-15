@@ -31,8 +31,9 @@ import LockBookPage from "../../pages/lookbook";
 import LookbookSectionPage from "../../pages/lookbook/LookbookSection";
 import Checkout from "../../pages/checkout";
 import Shipping from "../../pages/checkout/shipping";
+import LoginSeccion from "../../components/Auth/LoginSeccion/LoginSeccion";
 
-const Routes = () => {
+const Routes = ({}) => {
 	return (
 		<Switch>
 			<Route exact path="/" component={index} />
@@ -40,6 +41,7 @@ const Routes = () => {
 			<Route exact path="/mujer" component={FilterPage} />
 			<Route exact path="/cosas" component={FilterPage} />
 			<Route exact path="/cosas" component={FilterPage} />
+			<Route exact path="/login" component={LoginSeccion} />
 			<Route exact path="/tiendas" component={Tiendas} />
 			<Route exact path="/kids" component={FilterPage} />
 			<Route exact path="/lockbook" component={LockBookPage} />
