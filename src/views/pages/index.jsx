@@ -26,7 +26,6 @@ const index = () => {
 				className="fullscreen-image"
 				style={{ backgroundImage: `url("${fondo}")` }}
 			></div>
-
 			<div className="button-container">
 				<div className="button">
 					<a href="/hombre" target="_self">
@@ -39,6 +38,22 @@ const index = () => {
 					</a>
 				</div>
 			</div>
+			<div
+				style={{
+					gap: "20%",
+
+					position: "absolute",
+					top: "70%",
+					left: "45%",
+				}}
+			>
+				<div className="button">
+					<a href="/kids" target="_self">
+						<h2 style={{ color: "white" }}>Kids</h2>
+					</a>
+				</div>
+			</div>
+
 			<Row className="images-container">
 				{elements.map((x, index) => (
 					<Col style={{ width: "33%", overflow: "hidden" }}>
