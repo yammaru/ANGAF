@@ -1,16 +1,18 @@
-import { Button, Col, Divider, Image, Radio, Row } from "antd";
+import { Button, Carousel, Col, Divider, Image, Radio, Row } from "antd";
 import { useParams } from "react-router-dom/cjs/react-router-dom";
 import BestSelling from "../Ventas/BestSelling";
 import { FORMATTER_PESO } from "../../../redux/constants";
 import { CheckOutlined } from "@ant-design/icons";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { useWindowWidth } from "../../handle/size/size";
 
 const ProductsId = () => {
 	const { id } = useParams();
+	const anchoPagina = useWindowWidth(useState, useEffect);
 	const [selectedSizeMessage, setSelectedSizeMessage] = useState(
 		"Selecciona una talla"
 	);
-	console.log(id);
+
 	const elements = {
 		name: "lobo1",
 		value: 5524,
@@ -57,20 +59,41 @@ const ProductsId = () => {
 		<>
 			<Divider style={{ paddingBottom: "2%" }} />
 			<Divider />
+			{anchoPagina < 766 ? (
+				<Row>
+					<Col>
+						<Carousel autoplay>
+							{elements.path.map((imagePath, imgIndex) => (
+								<Image
+									width="100%"
+									height={"100vh"}
+									src={imagePath}
+									alt={`Image ${imgIndex}`}
+								/>
+							))}
+						</Carousel>
+					</Col>
+				</Row>
+			) : null}
 			<Row>
-				<Col style={{ width: "65%", paddingLeft: "1%" }}>
-					{elements.path.map((imagePath, imgIndex) => (
-						<img
-							key={imgIndex}
-							style={{ width: "50%", height: "50%" }}
-							src={imagePath}
-							alt={`Image ${imgIndex}`}
-						/>
-					))}
-				</Col>
+				{anchoPagina > 766 ? (
+					<Col style={{ width: "65%", paddingLeft: "1%" }}>
+						{!Array.isArray(elements?.path) &&
+							elements.path.map((imagePath, imgIndex) => (
+								<img
+									key={imgIndex}
+									style={{ width: "50%", height: "50%" }}
+									src={imagePath}
+									alt={`Image ${imgIndex}`}
+								/>
+							))}
+					</Col>
+				) : (
+					<br />
+				)}
 				<Col
 					style={{
-						width: "35%",
+						width: anchoPagina < 766 ? "95%" : "35%",
 						paddingLeft: "5%",
 						color: "#484848",
 					}}
@@ -223,7 +246,7 @@ const ProductsId = () => {
 				</Col>
 			</Row>
 			<Row>
-				<BestSelling />
+				<BestSelling anchoPagina={anchoPagina} />
 			</Row>
 		</>
 	);
