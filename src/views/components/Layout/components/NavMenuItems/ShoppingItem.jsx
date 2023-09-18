@@ -9,8 +9,9 @@ import {
 import { FORMATTER_PESO } from "../../../../../redux/constants";
 import { formatterMoney } from "../../../../handle/FormatterMoney/FormatterMoney";
 import { handleDeleteElement } from "../../../../handle/LocalStorage/handleLocalStorage";
+import zIndex from "@material-ui/core/styles/zIndex";
 
-const ShoppingItem = () => {
+const ShoppingItem = ({anchoPagina}) => {
 	const [visibleDrawer, setVisibleDrawer] = useState(false);
 
 	const [notificationCount, setNotificationCount] = useState({});
@@ -64,6 +65,8 @@ const ShoppingItem = () => {
 						<b>Bolsa de Compra</b>
 					</div>
 				}
+				style={{zIndex:5001}}
+				width={anchoPagina<500?"85vw":""}
 				placement="right"
 				closable={true}
 				onClose={closeDrawer}

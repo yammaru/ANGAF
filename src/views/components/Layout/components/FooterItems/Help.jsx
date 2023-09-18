@@ -5,7 +5,7 @@ import ColumSesionItem from "./ColumSesionItem";
 
 const { Footer } = Layout;
 const { Text, Link, Title } = Typography;
-const Help = () => {
+const Help = ({anchoPagina}) => {
 
 	const elements = [
 		{
@@ -27,7 +27,7 @@ const Help = () => {
 	const title = "AYUDA";
 	return (
 		<>
-			<ColumSesionItem title={title} elements={elements} />
+			<ColumSesionItem title={title} elements={elements}  anchoPagina={anchoPagina}/>
 		</>
 	);
 };

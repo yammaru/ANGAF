@@ -2,38 +2,42 @@ import { CaretLeftOutlined, CaretRightOutlined } from "@ant-design/icons";
 import { Button, Col, Divider, Row } from "antd";
 import { useEffect } from "react";
 import { useState } from "react";
+import { useWindowWidth  } from "../../../handle/size/size";
 
 const HeaderFilterProduct = ({ elements, lastWord }) => {
 	const [visibleElements, setVisibleElements] = useState(elements);
 	const [noVisibleElements, setNoVisibleElements] = useState(
-		visibleElements.slice(0, 6)
+		visibleElements.slice(0, 3)
 	);
 	const handlePrevPage = () => {
 		const lastElement = visibleElements.pop();
 		visibleElements.unshift(lastElement);
 		setVisibleElements(visibleElements);
-		setNoVisibleElements(visibleElements.slice(0, 6));
+		setNoVisibleElements(visibleElements.slice(0, 3));
 	};
 
 	const handleNextPage = () => {
 		const firstElement = visibleElements.shift();
 		visibleElements.push(firstElement);
 		setVisibleElements(visibleElements);
-		setNoVisibleElements(visibleElements.slice(0, 6));
+		setNoVisibleElements(visibleElements.slice(0, 3));
 	};
 
+	const anchoPagina=useWindowWidth(useState, useEffect);
 	return (
 		<>
-			{1 == 1 ? (
+			{anchoPagina >= 768 ? (
 				<Row justify={"center"} style={{ width: "100%" }}>
-					<div class="box">
+				
+					<Col className="box" >
 						{elements.map((element, index) => (
 							<span
 								style={{
 									transform: `rotateY(calc(${
 										index + 1
-									}* 45deg)) translateZ(400px)`,
+									}* ${45}deg)) translateZ(400px)`,
 								}}
+								onClick={console.log(5)}
 							>
 								<div
 									style={{
@@ -66,13 +70,13 @@ const HeaderFilterProduct = ({ elements, lastWord }) => {
 								</div>
 							</span>
 						))}
-					</div>
+					</Col>{" "}
+					
 				</Row>
 			) : (
 				<>
-					<Divider />
-
-					<Row justify={"center"} style={{ width: "100%" }}>
+					<Divider /><Divider />
+					<Row justify={"space-between"} style={{ width: "100%" }}>
 						<Col
 							style={{
 								width: "10%",
@@ -98,7 +102,7 @@ const HeaderFilterProduct = ({ elements, lastWord }) => {
 							{noVisibleElements.map((element, index) => (
 								<div
 									style={{
-										width: "16%",
+										width: "33%",
 										overflow: "hidden",
 										height: "120px",
 										transformOrigin: "center",

@@ -12,7 +12,7 @@ import { formatterMoney } from "../../../../handle/FormatterMoney/FormatterMoney
 import ShoppingItem from "./ShoppingItem";
 import LogIn from "./loginModal/LogIn";
 
-const RightItems = () => {
+const RightItems = ({ anchoPagina }) => {
 	const [visible, setVisible] = useState(false);
 
 	const showModal = () => {
@@ -31,27 +31,28 @@ const RightItems = () => {
 				justifyItems: "center",
 			}}
 		>
-			<Button
-				className="gold-hover-boton"
-				style={{
-					backgroundColor: "transparent",
-					borderRadius: "50%",
-					border: "2px solid #484848",
-				}}
-				icon={
-					<UserOutlined
-						className="gold-hover-icon"
-						style={{ color: "#484848", fontSize: "25px" }}
-					/>
-				}
-				onClick={showModal}
-			/>
-
+			{anchoPagina >= 768 ? (
+				<Button
+					className="gold-hover-boton"
+					style={{
+						backgroundColor: "transparent",
+						borderRadius: "50%",
+						border: "2px solid #484848",
+					}}
+					icon={
+						<UserOutlined
+							className="gold-hover-icon"
+							style={{ color: "#484848", fontSize: "25px" }}
+						/>
+					}
+					onClick={showModal}
+				/>
+			) : null}
 			<SearchOutlined
 				className="gold-hover-icon"
 				style={{ color: "#484848", fontSize: "25px" }}
 			/>
-			<ShoppingItem />
+			<ShoppingItem  anchoPagina={anchoPagina}/>
 
 			<Modal
 				title="Mi Cuenta"
@@ -61,8 +62,7 @@ const RightItems = () => {
 				width={180}
 				style={{ position: "absolute", right: "4%", top: "8%" }}
 			>
-				< LogIn/>
-				
+				<LogIn />
 			</Modal>
 		</div>
 	);

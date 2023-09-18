@@ -5,7 +5,7 @@ import ColumSesionItem from "./ColumSesionItem";
 
 const { Footer } = Layout;
 const { Text, Link,Title } = Typography;
-const Contacte = () => {
+const Contacte = ({anchoPagina}) => {
 	const elements = [
 		{
 			path: "https://api.whatsapp.com/send/?phone=573013095065",
@@ -26,7 +26,7 @@ const Contacte = () => {
 	const title = "CONTACTO";
 	return (
 		<>
-			<ColumSesionItem title={title} elements={elements} />
+			<ColumSesionItem title={title} elements={elements}  anchoPagina={anchoPagina}/>
 			
 		</>
 	);

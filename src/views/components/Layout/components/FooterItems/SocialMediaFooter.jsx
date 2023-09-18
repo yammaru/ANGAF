@@ -8,11 +8,11 @@ import {
 	YoutubeOutlined,
 	CaretRightOutlined,
 } from "@ant-design/icons";
-import { Col, Collapse, Row, Typography } from "antd";
+import { Col, Collapse, Divider, Row, Typography } from "antd";
 import WebRedes from "./WebRedes";
 const { Text, Link, Title } = Typography;
 const { Panel } = Collapse;
-const SocialMediaFooter = () => {
+const SocialMediaFooter = ({anchoPagina}) => {
 	const element = [
 		{
 			path: "https://api.whatsapp.com/send/?phone=573013095065",
@@ -42,14 +42,12 @@ const SocialMediaFooter = () => {
 		}
 	];
 	return (
-		<div>
-			<Row color="#787878">
+		<div style={{paddingTop:anchoPagina<766?"3%":0}}>
+			<Row color="#787878" justify={anchoPagina<766?"center":""}>
 				<Text style={{color:"#787878"}} strong>SÍGUENOS</Text>
 			</Row>
-			<Row style={{marginLeft:"-4%"}} >
+			<Row style={{marginLeft:"-4%"}}  justify={anchoPagina<766?"space-evenly":""} >
 				<WebRedes elements={element} />
-			
-
 			</Row>
 		</div>
 	);

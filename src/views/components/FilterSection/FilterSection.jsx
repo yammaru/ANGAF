@@ -19,6 +19,8 @@ import HeaderFilterProduct from "./FilterItems/HeaderFilterProduct";
 import { Link } from "react-router-dom/cjs/react-router-dom";
 import BestSelling from "../Ventas/BestSelling";
 import ColumnFilter from "./FilterItems/ColumFilter";
+import { useWindowWidth  } from "../../handle/size/size";
+import { useEffect } from "react";
 
 const { Meta } = Card;
 const { Text, Title } = Typography;
@@ -139,7 +141,7 @@ const FilterSection = () => {
 	const lastWord = parts[parts.length - 1];
 
 	const [selectedColors, setSelectedColors] = useState([]);
-
+	const anchoPagina = useWindowWidth(useState, useEffect);
 	return (
 		<>
 			<Divider style={{ paddingBottom: "2%" }} />
@@ -168,9 +170,10 @@ const FilterSection = () => {
 					categoryArray={categoryArray}
 					tallaArray={tallaArray}
 					colorArray={colorArray}
+					anchoPagina={anchoPagina}
 				/>
 
-				<Col style={{ width: "80%" }}>
+				<Col style={{ width: anchoPagina>766?"80%":"100%" }}>
 					<Row justify={"space-around"} style={{ width: "100%" }}>
 						{elements.map((element, index) => (
 							<Link to={`/producto/${element.name}`}>

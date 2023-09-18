@@ -7,13 +7,12 @@ import UpFooter from "./FooterItems/UpFooter";
 
 const { Footer } = Layout;
 
-const FooterComponent = () => {
+const FooterComponent = ({anchoPagina}) => {
 	let today = new Date(Date.now());
 
-	return (
-		<>
-			<div
-				className="footer-anga"
+	return (	
+			<Row
+				//className="footer-anga"
 				style={{
 					textAlign: "center",
 					backgroundColor: "white",
@@ -59,7 +58,7 @@ const FooterComponent = () => {
 						<Divider
 							style={{ width: "100%", visibility: "hidden" }}
 						/>
-						<UpFooter />
+						<UpFooter  anchoPagina={anchoPagina}/>
 
 						<Divider style={{ width: "100%" }} />
 						<DownFooter />
@@ -68,8 +67,7 @@ const FooterComponent = () => {
 						/>
 					</>
 				)}
-			</div>
-		</>
+			</Row>	
 	);
 };
 export default FooterComponent;

@@ -1,7 +1,7 @@
 import { Checkbox, Col, Collapse, Row, TreeSelect } from "antd";
 import { useState } from "react";
 const { Panel } = Collapse;
-const ColumnFilter = ({categoryArray,tallaArray,colorArray}) => {
+const ColumnFilter = ({categoryArray,tallaArray,colorArray,anchoPagina}) => {
 	
 	const [selectedColors, setSelectedColors] = useState([]);
 
@@ -19,6 +19,7 @@ const ColumnFilter = ({categoryArray,tallaArray,colorArray}) => {
 	}));
 
 	return (
+		 anchoPagina>766?
 		<Col style={{ width: "20%" }}>
 			{selectedColors?.length != 0 ? (
 				<>
@@ -101,6 +102,8 @@ const ColumnFilter = ({categoryArray,tallaArray,colorArray}) => {
 				</Panel>
 			</Collapse>
 		</Col>
+		:
+		null
 	);
 };
 export default ColumnFilter;
