@@ -6,24 +6,20 @@ import WhoWeAre from "./WhoWeAre";
 import Help from "./Help";
 import Mark from "./Mark";
 
-const UpFooter = () => {
+const UpFooter = ({ anchoPagina }) => {
 	return (
-		<Row justify="space-between" align="top" style={{ marginLeft: "5%" }}>
-			<Col style={{ width: "20%" }}>
-				<Contacte />
-			</Col>
-			<Col style={{ width: "20%" }}>
-				<WhoWeAre />
-			</Col>
-			<Col style={{ width: "20%" }}>
-				<Help />
-			</Col>
-			<Col style={{ width: "20%" }}>
-				<Mark />
-			</Col>
-			<Col style={{ width: "20%" }}>
-				<SocialMediaFooter />
-			</Col>
+		<Row justify="space-between" align="top" style={{ marginLeft: anchoPagina>=766?"5%":"0%",width: "100%" }}>
+			{[
+				{ Component: Contacte },
+				{ Component: WhoWeAre },
+				{ Component: Help },
+				{ Component: Mark },
+				{ Component: SocialMediaFooter },
+			].map(({ Component }, index) => (
+				<Col key={index} style={{ width:anchoPagina>=766?"20%": "100%" }}>
+					<Component anchoPagina={anchoPagina} />
+				</Col>
+			))}
 		</Row>
 	);
 };
