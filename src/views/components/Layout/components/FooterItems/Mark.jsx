@@ -9,9 +9,9 @@ const Mark = ({anchoPagina}) => {
 
 	const elements = [
 		{
-			path: "https://api.whatsapp.com/send/?phone=573013095065",
+			path: "/Distribuidores",
 			icon: "",
-			title: "Proveedores",
+			title: "Distribuidores",
 		},
 		{
 			path: "/lockbook",
