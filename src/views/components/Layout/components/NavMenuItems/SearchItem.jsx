@@ -1,5 +1,5 @@
 import { SearchOutlined } from "@ant-design/icons";
-import { Button, Col, Divider, Drawer, Input, Row } from "antd";
+import { Button, Card, Col, Divider, Drawer, Input, Row } from "antd";
 import { holdReady } from "jquery";
 import { useState } from "react";
 const listaDePalabras = [
@@ -49,7 +49,13 @@ const SearchItem = ({ anchoPagina }) => {
 				<span>
 					<b>sugerencias</b>
 				</span>
-				<Divider />
+				<Divider
+					style={{
+						width: "100vw",
+						position: "relative",
+						left: "-24px",
+					}}
+				/>
 				{sugerencias.map((sugerencia) => (
 					<>
 						<span>{sugerencia}</span>
@@ -59,10 +65,65 @@ const SearchItem = ({ anchoPagina }) => {
 			</>
 		);
 	};
+	const elements = [
+		{
+			name: "lobo1",
+			value: 5524,
+			path: "https://m.media-amazon.com/images/I/61r6tpWTdcL._AC_UF894,1000_QL80_.jpg",
+		},
+		{
+			name: "lobo2",
+			value: 5524,
+			path: "https://i.pinimg.com/1200x/fa/8d/14/fa8d1414bd5f7897edfaee3e8e288a07.jpg",
+		},
+		{
+			name: "lobo3",
+			value: 5524,
+			path: "https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png",
+		},
+	];
 	const imageSuges =
 		valorInput.length !== 0 ? (
 			<>
-				nooooo <Divider />
+				<Row justify={"space-between"}>
+					{elements.map((element, index) => (
+						<Col style={{ paddingBottom: "2%" }}>
+							<Card
+								style={{ height: "32vh", width: "40vw" }}
+								title={false}
+								extra={null}
+								cover={
+									<img
+										style={{
+											height: "25vh",
+											width: "40vw",
+											overflow: "hidden",
+										}}
+										alt="example"
+										src={element.path}
+									/>
+								}
+								bodyStyle={{
+									padding: 0,
+									border: "transparent",
+									paddingLeft: "2%",
+									color: "#484848",
+								}}
+							>
+								<b>{element.name}</b>
+								<br />
+								Item:{element.value}
+							</Card>
+						</Col>
+					))}
+				</Row>
+				<Divider
+					style={{
+						width: "100vw",
+						position: "relative",
+						left: "-24px",
+					}}
+				/>
 			</>
 		) : null;
 	return (
@@ -119,7 +180,7 @@ const SearchItem = ({ anchoPagina }) => {
 				placement={"top"}
 				onClose={onClose}
 				open={open}
-				width="70vw"
+				height="75vh"
 				footer={false}
 			>
 				{imageSuges}
