@@ -11,6 +11,7 @@ import { useState } from "react";
 import { formatterMoney } from "../../../../handle/FormatterMoney/FormatterMoney";
 import ShoppingItem from "./ShoppingItem";
 import LogIn from "./loginModal/LogIn";
+import SearchItem from "./SearchItem";
 
 const RightItems = ({ anchoPagina }) => {
 	const [visible, setVisible] = useState(false);
@@ -48,10 +49,7 @@ const RightItems = ({ anchoPagina }) => {
 					onClick={showModal}
 				/>
 			) : null}
-			<SearchOutlined
-				className="gold-hover-icon"
-				style={{ color: "#484848", fontSize: "25px" }}
-			/>
+		<SearchItem  anchoPagina={anchoPagina}/>
 			<ShoppingItem  anchoPagina={anchoPagina}/>
 
 			<Modal
