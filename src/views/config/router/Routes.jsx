@@ -33,6 +33,7 @@ import Checkout from "../../pages/checkout";
 import Shipping from "../../pages/checkout/shipping";
 import LoginSeccion from "../../components/Auth/LoginSeccion/LoginSeccion";
 import DistribuitorPage from "../../pages/distributor";
+import YourLookPage from "../../pages/yourlook";
 
 const Routes = ({}) => {
 	return (
@@ -51,6 +52,7 @@ const Routes = ({}) => {
 			<Route exact path="/producto/:id" component={Products} />
 			<Route exact path="/checkout" component={Checkout} />
 			<Route exact path="/checkout/shipping" component={Shipping} />
+			<Route exact path="/yourlook" component={YourLookPage} />
 			{/* dashboard */}
 			<Route exact path="/dashboard" component={Dashboard} />
 			{/* settings */}
