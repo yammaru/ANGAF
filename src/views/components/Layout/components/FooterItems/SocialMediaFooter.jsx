@@ -38,7 +38,7 @@ const SocialMediaFooter = ({anchoPagina}) => {
 		,
 		{
 			path: "https://www.tiktok.com/@anga.col",
-			icon: <i class="fab fa-tiktok social-icon"/>
+			icon: <i className="fab fa-tiktok social-icon"/>
 		}
 	];
 	return (

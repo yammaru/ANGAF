@@ -44,7 +44,7 @@ const BurgerMenu = () => {
 			
 			<li data-url="/all">
 				<a
-					class="b2canga-header-0-x-menu--link"
+					className="b2canga-header-0-x-menu--link"
 					href="/all"
 					target="_self"
 				>
@@ -55,7 +55,7 @@ const BurgerMenu = () => {
 			</li>
 			<li data-url="/mujer">
 				<a
-					class="b2canga-header-0-x-menu--link"
+					className="b2canga-header-0-x-menu--link"
 					href="/mujer"
 					target="_self"
 				>
@@ -66,7 +66,7 @@ const BurgerMenu = () => {
 			</li>
 			<li data-url="/hombre">
 				<a
-					class="b2canga-header-0-x-menu--link"
+					className="b2canga-header-0-x-menu--link"
 					href="/hombre"
 					target="_self"
 				>
@@ -88,7 +88,7 @@ const BurgerMenu = () => {
 		>
 			<li data-url="/mujer">
 				<a
-					class="b2canga-header-0-x-menu--link"
+					className="b2canga-header-0-x-menu--link"
 					href="/mujer"
 					target="_self"
 				>
@@ -99,7 +99,7 @@ const BurgerMenu = () => {
 			</li>
 			<li data-url="/hombre">
 				<a
-					class="b2canga-header-0-x-menu--link"
+					className="b2canga-header-0-x-menu--link"
 					href="/hombre"
 					target="_self"
 				>
@@ -111,7 +111,7 @@ const BurgerMenu = () => {
 
 			<li data-url="/cosas">
 				<a
-					class="b2canga-header-0-x-menu--link"
+					className="b2canga-header-0-x-menu--link"
 					href="/kids"
 					target="_self"
 				>
@@ -122,7 +122,7 @@ const BurgerMenu = () => {
 			</li>
 			<li data-url="/cosas">
 				<a
-					class="b2canga-header-0-x-menu--link"
+					className="b2canga-header-0-x-menu--link"
 					href="/cosas"
 					target="_self"
 				>
@@ -181,7 +181,7 @@ const BurgerMenu = () => {
 					>
 						<li data-url="/tiendas">
 							<a
-								class="b2canga-header-0-x-menu--link"
+								className="b2canga-header-0-x-menu--link"
 								href="/tiendas"
 								target="_self"
 							>
@@ -192,7 +192,7 @@ const BurgerMenu = () => {
 						</li>
 						<li data-url="/tiendas">
 							<a
-								class="b2canga-header-0-x-menu--link"
+								className="b2canga-header-0-x-menu--link"
 								href="/login"
 								target="_self"
 							>
