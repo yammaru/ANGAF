@@ -34,6 +34,8 @@ import Shipping from "../../pages/checkout/shipping";
 import LoginSeccion from "../../components/Auth/LoginSeccion/LoginSeccion";
 import DistribuitorPage from "../../pages/distributor";
 import YourLookPage from "../../pages/yourlook";
+import InfoPage from "../../pages/InfoPage";
+import WriteToUsPage from "../../pages/WriteToUsPage";
 
 const Routes = ({}) => {
 	return (
@@ -50,9 +52,11 @@ const Routes = ({}) => {
 			<Route exact path="/lockbook" component={LockBookPage} />
 			<Route exact path="/lockbook/:id" component={LookbookSectionPage} />
 			<Route exact path="/producto/:id" component={Products} />
+			<Route exact path="/info/:id" component={InfoPage} />
 			<Route exact path="/checkout" component={Checkout} />
 			<Route exact path="/checkout/shipping" component={Shipping} />
 			<Route exact path="/yourlook" component={YourLookPage} />
+			<Route exact path="/escribenos" component={WriteToUsPage} />
 			{/* dashboard */}
 			<Route exact path="/dashboard" component={Dashboard} />
 			{/* settings */}

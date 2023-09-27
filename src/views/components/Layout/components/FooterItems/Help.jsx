@@ -9,17 +9,17 @@ const Help = ({anchoPagina}) => {
 
 	const elements = [
 		{
-			path: "https://api.whatsapp.com/send/?phone=573013095065",
+			path: "/info/envios",
 			icon: "",
 			title: "Envíos",
 		},
 		{
-			path: "https://api.whatsapp.com/send/?phone=573013095065",
+			path: "/info/cambios",
 			icon: "",
-			title: "Cambios y garantías",
+			title: "Cambios, garantías y devoluciones",
 		},
         {
-			path: "https://api.whatsapp.com/send/?phone=573013095065",
+			path: "/info/faq",
 			icon: "",
 			title: "Preguntas frecuentes",
 		}
