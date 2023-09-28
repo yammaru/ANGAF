@@ -10,12 +10,15 @@ import { FORMATTER_PESO } from "../../../../../redux/constants";
 import { formatterMoney } from "../../../../handle/FormatterMoney/FormatterMoney";
 import { handleDeleteElement } from "../../../../handle/LocalStorage/handleLocalStorage";
 import zIndex from "@material-ui/core/styles/zIndex";
-
-const ShoppingItem = ({anchoPagina}) => {
+import bolsa from "../../../../../includes/images/bolsaAnga.png";
+import bolsaG from "../../../../../includes/images/bolsaAngaDorada.png";
+const ShoppingItem = ({ anchoPagina }) => {
 	const [visibleDrawer, setVisibleDrawer] = useState(false);
 
 	const [notificationCount, setNotificationCount] = useState({});
-	const [elements, setElements] = useState(JSON.parse(localStorage.getItem("elements")) || []);
+	const [elements, setElements] = useState(
+		JSON.parse(localStorage.getItem("elements")) || []
+	);
 	useEffect(() => {
 		setElements(JSON.parse(localStorage.getItem("elements")) || []);
 	}, [notificationCount]);
@@ -27,13 +30,19 @@ const ShoppingItem = ({anchoPagina}) => {
 		setVisibleDrawer(false);
 	};
 
-	
 	const subtotal = elements.reduce((sum, element) => sum + element.value, 0);
 	const send = 0;
 	const total = subtotal + send;
 
 	const handleDelete = (id, talla) => {
 		setNotificationCount(handleDeleteElement(id, talla));
+	};
+	const [logoMenu, setLogoMenu] = useState(bolsa);
+	const handleChange = () => {
+		setLogoMenu(bolsaG);
+	};
+	const handleChangeLeave = () => {
+		setLogoMenu(bolsa);
 	};
 	return (
 		<>
@@ -42,17 +51,22 @@ const ShoppingItem = ({anchoPagina}) => {
 					backgroundColor: "transparent",
 					borderRadius: "50%",
 					border: "2px solid transparent",
+					display: "flex",
+					justifyContent: "center",
+					padding: 0,
 				}}
-				icon={
-					<Badge count={elements.length}>
-						<ShoppingOutlined
-							className="gold-hover-icon"
-							style={{ color: "#484848", fontSize: "25px" }}
-						/>
-					</Badge>
-				}
 				onClick={showDrawer}
-			/>
+			>
+				<Badge count={elements.length}>
+					<img
+						style={{ color: "#484848", height: "4.2vh" }}
+						src={logoMenu}
+						alt="BolsaAnga"
+						onMouseOver={handleChange}
+						onMouseLeave={handleChangeLeave}
+					/>
+				</Badge>
+			</Button>
 			<Drawer
 				title={
 					<div
@@ -65,8 +79,8 @@ const ShoppingItem = ({anchoPagina}) => {
 						<b>Bolsa de Compra</b>
 					</div>
 				}
-				style={{zIndex:5001}}
-				width={anchoPagina<500?"85vw":""}
+				style={{ zIndex: 5001 }}
+				width={anchoPagina < 500 ? "85vw" : ""}
 				placement="right"
 				closable={true}
 				onClose={closeDrawer}

@@ -9,7 +9,7 @@ import { useState } from "react";
 const LeftItems = () => {
 	const handleWhenLogo = () => {
 		if (window.location.pathname.includes("kids")) {
-			return logoKids;
+			return logoKidsHover;
 		} else if (window.location.pathname.includes("checkout")) {
 			return logoCheck;
 		} else {
@@ -20,14 +20,14 @@ const LeftItems = () => {
 
 	const handleChange = () => {
 		if (window.location.pathname.includes("kids")) {
-			setLogoMenu(logoKidsHover);
+			setLogoMenu(logoKids);
 		} else {
 			setLogoMenu(logoHover);
 		}
 	};
 	const handleChangeLeave = () => {
 		if (window.location.pathname.includes("kids")) {
-			setLogoMenu(logoKids);
+			setLogoMenu(logoKidsHover);
 		} else {
 			setLogoMenu(logo);
 		}
