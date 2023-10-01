@@ -36,6 +36,7 @@ import DistribuitorPage from "../../pages/distributor";
 import YourLookPage from "../../pages/yourlook";
 import InfoPage from "../../pages/InfoPage";
 import WriteToUsPage from "../../pages/WriteToUsPage";
+import conviccionPage from "../../pages/conviccionPage";
 
 const Routes = ({}) => {
 	return (
@@ -57,6 +58,7 @@ const Routes = ({}) => {
 			<Route exact path="/checkout/shipping" component={Shipping} />
 			<Route exact path="/yourlook" component={YourLookPage} />
 			<Route exact path="/escribenos" component={WriteToUsPage} />
+			<Route exact path="/conviccion" component={conviccionPage} />
 			{/* dashboard */}
 			<Route exact path="/dashboard" component={Dashboard} />
 			{/* settings */}
