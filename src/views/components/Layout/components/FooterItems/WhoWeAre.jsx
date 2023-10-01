@@ -8,19 +8,19 @@ const { Text, Link,Title } = Typography;
 const WhoWeAre= ({anchoPagina}) => {
 	const elements = [
 		{
-			path: "https://api.whatsapp.com/send/?phone=573013095065",
+			path: "/conviccion",
 			icon: "",
-			title: "Cultura",
+			title: "Convicciones",
 		},
 		{
-			path: "https://api.whatsapp.com/send/?phone=573013095065",
+			path: "/login",
 			icon: "",
-			title: "Trabaja aquí",
+			title: "Ficha Anga",
 		},
         {
-			path: "https://api.whatsapp.com/send/?phone=573013095065",
+			path: "/",
 			icon: "",
-			title: "La vida en Anga",
+			title: "Mundo Anga",
 		}
 	];
 	const title = "QUIÉNES SOMOS";

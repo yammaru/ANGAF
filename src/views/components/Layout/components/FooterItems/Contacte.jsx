@@ -18,7 +18,7 @@ const Contacte = ({anchoPagina}) => {
 			title: <><strong>PBX:</strong>005+57+20002+3113894327</>,
 		},
         {
-			path: "/hombre",
+			path: "/escribenos",
 			icon: "",
 			title: "Escríbenos",
 		}
