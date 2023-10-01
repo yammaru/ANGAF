@@ -58,12 +58,21 @@ header{
 		}
 	}
 }
-
+.formContacto{
+	label {
+		margin: 0 0 1px;
+		display: block;
+		font-size: 1.25em;
+		color: #484848;
+		font-weight: 700;
+		font-family: inherit;
+	}
+}
 $darkBlue: #484848;
 $medBlue: #787878;
 $lightBlue: grey;
 $inputBG: #f3fafd;
-form {
+.form {
 	display: block;
 	width: 100%;
 	max-width: 400px;
