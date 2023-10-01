@@ -24,7 +24,7 @@ const DownFooter = () => {
 			</Col>
 
 			<Col style={{width: "30%", display: "flex", alignItems: "flex-end",justifyContent: "flex-end" }}>
-				© {today.getFullYear().toString()} Anga Col.
+				© {today.getFullYear().toString()} Anga.Col
 			</Col>
 		</Row>
 	);

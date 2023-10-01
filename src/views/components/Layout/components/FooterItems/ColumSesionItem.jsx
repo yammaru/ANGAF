@@ -16,7 +16,7 @@ const ColumSesionItem = ({ elements, title, anchoPagina }) => {
 					<a
 						className="footer-anga"
 						href={element.path}
-						target="_blank"
+					
 						style={{
 							display: "flex",
 							alignItems: "center",
@@ -46,7 +46,7 @@ const ColumSesionItem = ({ elements, title, anchoPagina }) => {
 							<a
 								className="footer-anga"
 								href={element.path}
-								target="_blank"
+								
 								style={{
 									display: "flex",
 									alignItems: "center",
