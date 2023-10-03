@@ -37,6 +37,8 @@ import YourLookPage from "../../pages/yourlook";
 import InfoPage from "../../pages/InfoPage";
 import WriteToUsPage from "../../pages/WriteToUsPage";
 import conviccionPage from "../../pages/conviccionPage";
+import { EnvironmentFilled } from "@ant-design/icons";
+import Envios from "../../pages/envios";
 
 const Routes = ({}) => {
 	return (
@@ -59,6 +61,7 @@ const Routes = ({}) => {
 			<Route exact path="/yourlook" component={YourLookPage} />
 			<Route exact path="/escribenos" component={WriteToUsPage} />
 			<Route exact path="/conviccion" component={conviccionPage} />
+			<Route exact path="/envios" component={Envios} />
 			{/* dashboard */}
 			<Route exact path="/dashboard" component={Dashboard} />
 			{/* settings */}
