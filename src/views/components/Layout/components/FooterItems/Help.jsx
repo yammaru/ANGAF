@@ -9,7 +9,7 @@ const Help = ({anchoPagina}) => {
 
 	const elements = [
 		{
-			path: "/info/envios",
+			path: "/envios",
 			icon: "",
 			title: "Envíos",
 		},
