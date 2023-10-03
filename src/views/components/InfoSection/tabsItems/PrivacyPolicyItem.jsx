@@ -212,7 +212,151 @@ const PrivacyPolicyItem = () => {
 			</a>
 			En otras palabras, ANGA COLOMBIA (en adelante, “Nosotros”), es el
 			Responsable del tratamiento. Esto quiere decir que nos hacemos cargo
-			de tratar y proteger tus datos personales.
+			de tratar y proteger tus datos personales.<br />
+			<h2>
+				¿CON QUÉ FINALIDAD TRATAMOS TUS DATOS PERSONALES?
+			</h2>
+			<br />
+Dependiendo de los productos, servicios o funcionalidades de los que quieras disfrutar en cada momento 
+necesitaremos tratar unos datos u otros, que en general serán, según el caso, los siguientes: <br />
+▪ tus datos identificativos (por ejemplo, tu nombre, apellido, imagen, idioma y país desde el que interactúas 
+con nosotros, datos de contacto, etc.);<br />
+▪ información económica y transaccional (por ejemplo, tus datos de pago o de tarjeta, información acerca 
+de tus compras, pedidos, devoluciones, etc.); <br />
+▪ datos de conexión, geolocalización y navegación (por ejemplo, los datos de localización, el número de 
+identificación del dispositivo o el ID de publicidad);<br />
+▪ información comercial (por ejemplo, si estás suscrito a nuestra newsletter), <br />
+▪ datos sobre tus gustos y preferencias. <br />
+Recuerda que, cuando te pidamos que rellenes tus datos personales para darte acceso a alguna funcionalidad o 
+servicio de la Plataforma, marcaremos algunos campos como obligatorios, puesto que son datos que necesitamos 
+para poder prestarte el servicio o darte acceso a la funcionalidad en cuestión. Por favor, ten en cuenta que si 
+decides no facilitarnos esos datos, es posible que no puedas completar tu registro como usuario o que no puedas 
+disfrutar de esos servicios o funcionalidades.
+En otros casos, podemos obtener información de forma pasiva al utilizar herramientas de rastreo, como las cookies 
+de los navegadores u otras tecnologías similares de nuestra Plataforma o de las comunicaciones que te enviamos. 
+En tales casos, únicamente trataremos tus datos en relación con esa funcionalidad o servicio, de conformidad con 
+lo establecido en la presente Política de Privacidad y Cookies.
+En tales casos, únicamente trataremos tus datos en relación con esa funcionalidad o servicio, de conformidad con 
+lo establecido en la presente Política de Privacidad y Cookies. 
+Dependiendo de cómo interactúes con nuestra Plataforma, trataremos tus datos personales para las siguientes 
+finalidades:<br />
+			<h2>FINALIDAD + info</h2>
+			<br />
+1. Para gestionar tu registro 
+como usuario de la Plataforma 
+En caso de que decidas registrarte como usuario en nuestra Plataforma, 
+ANGA necesita tratar tus datos para identificarte como usuario de 
+la misma y darte acceso a sus diferentes funcionalidades, productos y 
+servicios que están a tu disposición como usuario registrado. Puedes 
+cancelar tu cuenta de usuario registrado contactando con nosotros a través 
+de Atención al Cliente.
+Te informamos de que los datos que recopilamos sobre tu actividad, 
+obtenidos a través de los diferentes canales de la Plataforma, y que 
+incluyen tus compras, permanecerán vinculados a tu cuenta para que se 
+pueda acceder a toda la información de una vez.
+Tienes la posibilidad de utilizar el acceso o inicio de sesión a través una red 
+social u otro colaborador que habilite este servicio (login social) cuando esté 
+disponible en nuestra pantalla de inicio de sesión, bien para vincular el inicio 
+de sesión a tu cuenta o registrando una nueva. En ese caso, tus
+credenciales de inicio de sesión, así como tu nombre y email/número de 
+teléfono (puede que necesites autorizarlo), se importarán desde tu cuenta
+<br />
+			<h2>FINALIDAD + info</h2>
+			<br />
+de la red social o del colaborador. Al usar esta opción de inicio de sesión,
+estos terceros podrán enviarnos cierta información adicional de tu perfil 
+público, como, por ejemplo: tu nombre, sexo, edad aproximada o la
+fotografía de perfil, de acuerdo con los términos de uso de la red
+social/colaborador, que te recomendamos que leas con detenimiento. Salvo 
+que nos des tu autorización, no conservaremos estos datos adicionales. Así 
+mismo, la utilización de esta funcionalidad puede implicar que facilites 
+determinada información sobre tu actividad a la red social o al colaborador. 
+En todo caso, te recomendamos revisar la configuración de tu privacidad y 
+las políticas de privacidad del colaborador o red social para conocer cómo 
+tratan tus datos estos terceros.
+
+2. Para el desarrollo, 
+cumplimiento y ejecución del 
+contrato de compraventa o de 
+servicios que hayas contratado 
+con Nosotros en la Plataforma 
+Esta finalidad incluye el tratamiento de tus datos para, principalmente:<br />
+			
+▪ Contactar contigo en relación a actualizaciones o comunicaciones 
+informativas relacionadas con las funcionalidades, productos o 
+servicios contratados, incluyendo el envío de encuestas de 
+calidad sobre los productos o servicios prestados.<br />
+▪ Gestionar el pago de los productos que compres, 
+independientemente del medio de pago utilizado. Por ejemplo:<br />
+▪ Si al comprar alguno de nuestros productos a través de la Web o la 
+App, eliges activar la funcionalidad de guardar tus datos de pago y 
+tu dirección de envío para futuras compras, necesitamos tratar los 
+datos indicados para la activación y desarrollo de dicha funcionalidad. 
+El consentimiento para la activación de esta funcionalidad permite que 
+aparezcan tus datos de pago autocompletados en compras posteriores 
+para que no tengas que volver a introducirlos en cada nuevo proceso, 
+y se entenderán válidos y vigentes para compras posteriores. Podrás 
+modificar o eliminar tus datos de pago en cualquier momento a través 
+del apartado correspondiente a la información de pago, bien de tu 
+cuenta de usuario registrado en la Web, bien de la sección Mi cuenta 
+de la App.<br />
+▪ Activar los mecanismos necesarios con objeto de prevenir y 
+detectar el uso indebido de la Plataforma, por ejemplo, durante 
+el proceso de compra y devolución, así como potenciales fraudes 
+contra ti y/o contra Nosotros durante el proceso de compra. Si 
+consideramos que la operación puede ser fraudulenta o 
+detectamos comportamientos anormales con indicios de tratarse 
+de usos fraudulentos de nuestras funcionalidades, productos y 
+servicios, este tratamiento puede tener consecuencias como el 
+bloqueo de la transacción o la cancelación de tu cuenta de usuario.<br />
+▪ Gestionar posibles cambios o devoluciones una vez hayas 
+realizado una compra y gestionar solicitudes de información 
+sobre la disponibilidad de prendas, reservas de productos a 
+través de la Plataforma, según dichas opciones se encuentren 
+disponibles en cada momento.
+<br />
+			<h2>FINALIDAD + info</h2>
+			<br />
+▪ Con fines de facturación y para poner a tu disposición los tickets y 
+facturas de las compras que hayas realizado en la Plataforma.<br />
+▪ Garantizarte el uso de otras funcionalidades o servicios en la 
+medida que estén disponibles, como la compra, recepción, 
+gestión y uso de la Tarjeta Regalo o del Ticket Regalo, así como 
+para facilitarte el acceso y uso del Wifi que ponemos a disposición 
+de nuestros clientes en Tienda Física.
+Con el fin de ofrecerte a través de la App determinados servicios 
+(como el buscador de artículos, la reserva de probadores, etc.), 
+disponibles en algunas Tiendas Físicas, necesitamos tratar tus 
+datos de localización y contacto. 
+<br />
+3. Para atender las solicitudes o 
+peticiones que realices a través 
+de los canales de Atención al 
+Cliente
+Sólo tratamos los datos personales que sean estrictamente necesarios
+para gestionar o resolver tu solicitud o petición.
+Si está disponible, y decides comunicarte con Atención al Cliente a través 
+del servicio de chat de un red social u otro colaborador, algunos de tus 
+datos, como tu nombre o nombre de usuario, se importarán desde tu cuenta 
+de la red social o del colaborador. Asimismo, debes tener en cuenta que los 
+datos que introduzcas en este servicio estarán disponibles para tu red 
+social o colaborador y quedarán sujetos a sus correspondientes políticas 
+de privacidad. Así pues, te recomendamos que revises tu configuración de 
+privacidad y leas la política de privacidad de la red social o colaborador para 
+obtener información detallada sobre el uso que hacen de tus datos 
+personales al utilizar sus servicios.
+<br />
+			<h2>CAMBIOS A LA POLÍTICA DE PRIVACIDAD Y COOKIES</h2>
+
+			<br />
+Es posible que modifiquemos la información contenida en esta Política de Privacidad cuando lo estimemos 
+conveniente. En caso de que lo hagamos, te lo notificaremos por distintas vías a través de la Plataforma (por 
+ejemplo, a través de un banner, un pop-up o una notificación push), o incluso te lo comunicaremos a tu dirección 
+de correo electrónico cuando el cambio en cuestión sea significativo para con tu privacidad, de manera que puedas 
+revisar los cambios, valorarlos y, en su caso, oponerte o darte de baja en algún servicio o funcionalidad. En 
+cualquier caso, te sugerimos que revises esta Política de Privacidad de vez en cuando por si hubiera cambios 
+menores o introducimos alguna mejora interactiva, aprovechando que siempre la encontrarás como punto 
+permanente de información en nuestra Web y nuestra App.
 		</>
 	);
 };
