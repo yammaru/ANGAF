@@ -58,7 +58,7 @@ header{
 		}
 	}
 }
-.formContacto{
+.formContacto {
 	label {
 		margin: 0 0 1px;
 		display: block;
@@ -67,6 +67,13 @@ header{
 		font-weight: 700;
 		font-family: inherit;
 	}
+}
+/* Estilo personalizado para el borde superior del botón de radio seleccionado */
+.ant-radio-button-wrapper-checked:not(.ant-radio-button-wrapper-disabled):before {
+    background-color: transparent;
+}
+.ant-radio-button-wrapper-checked:not(.ant-radio-button-wrapper-disabled):hover:before {
+    background-color: transparent;
 }
 $darkBlue: #484848;
 $medBlue: #787878;
