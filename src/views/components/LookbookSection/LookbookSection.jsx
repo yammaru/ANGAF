@@ -79,7 +79,7 @@ const LookbookSection = () => {
 	];
 	return (
 		<>
-			<Divider style={{ paddingBottom: "2%" }} />
+		
             <Divider style={{ visibility: "hidden" }} />
 			<Row justify={"center"}>
 				<h1>LOOKBOOK</h1>

@@ -59,7 +59,7 @@ const ProductsId = () => {
 	console.log(selectedSize);
 	return (
 		<>
-			<Divider style={{ paddingBottom: "2%" }} />
+			
 			<Divider />
 			{anchoPagina < 766 ? (
 				<Row>
@@ -78,9 +78,10 @@ const ProductsId = () => {
 				</Row>
 			) : null}
 			<Row>
+				
 				{anchoPagina > 766 ? (
 					<Col style={{ width: "65%", paddingLeft: "1%" }}>
-						{!Array.isArray(elements?.path) &&
+						{
 							elements.path.map((imagePath, imgIndex) => (
 								<img
 									key={imgIndex}

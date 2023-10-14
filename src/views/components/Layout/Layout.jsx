@@ -1,4 +1,4 @@
-import { Image, Layout, Row } from "antd";
+import { Divider, Image, Layout, Row } from "antd";
 import { connect } from "react-redux";
 import React, { Fragment, useState } from "react";
 import Routes from "../../config/router/Routes";
@@ -27,7 +27,10 @@ const LayoutComponent = ({ user, dispatchLogoutAction }) => {
 	return (
 		<Fragment>
 			<NavMenu anchoPagina={anchoPagina}/>
-
+			{
+				 window.location.pathname !== "/"?<Divider style={{ paddingBottom: anchoPagina<=766?"10%":"2%" }} />:<></>
+			}
+			
 			{/* RUTAS */}
 			<Routes />
 			{/* END RUTAS */}

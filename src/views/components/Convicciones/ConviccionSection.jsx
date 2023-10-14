@@ -10,14 +10,11 @@ const ConviccionSection = () => {
 	const anchoPagina = useWindowWidth(useState, useEffect);
 	return (
 		<>
-			<Divider
-				style={{ paddingBottom: anchoPagina > 766 ? "2%" : "10%" }}
-			/>
 			<Card style={{ border: "transparent" }}>
 				<>
-					{" "}
-					<h4>Valores:</h4> <br />
-					<b>• Sostenibilidad:</b>
+			
+					<h4>Valores</h4> <br />
+					<b>Sostenibilidad:</b>
 					<br /> En ANGA nos comprometemos a producir nuestras prendas
 					de manera sostenible y responsable con el medio ambiente.
 					<br />
@@ -48,7 +45,7 @@ const ConviccionSection = () => {
 					-Aumentar el volumen de ventas mayoristas en un 80%,
 					optimizando y automatizando la atencion al cliente y el
 					servicio posventa con el fin de gererar confianza y
-					fidelizacion de clientes. -Crear un equipo de ventas y
+					fidelizacion de clientes.<br/> -Crear un equipo de ventas y
 					marketing lead que conozcan muy bien nuestra filosofía de
 					marca.
 					<br />

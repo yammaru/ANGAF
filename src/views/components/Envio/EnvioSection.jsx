@@ -13,6 +13,7 @@ import { useWindowWidth } from "../../handle/size/size";
 import Shipping from "../../pages/checkout/shipping";
 import ShippingItem from "../InfoSection/tabsItems/ShippingItem";
 import { FORMATTER_INPUT_NUMBER } from "../../../redux/constants";
+import BestSelling from "../Ventas/BestSelling";
 const { Title, Text } = Typography;
 const EnvioSection = () => {
 	const [tabPosition, setTabPosition] = useState("left");
@@ -1135,7 +1136,7 @@ const EnvioSection = () => {
 				<Col style={{ width: "20%" }}>
 					<Card bodyStyle={{ textAlign: "center", gap: "20px" }}>
 						<Text>
-							<Title level={3}>kssk</Title>
+							<Title level={3}>Calcula tu envío</Title>
 							Ingresa tu ubicación para conocer el costo del envío
 							y los días estimados de entrega.
 						</Text>
@@ -1239,6 +1240,7 @@ const EnvioSection = () => {
 				</Col>
 			</Row>
 			<Divider style={{ paddingBottom: "2%", visibility: "hidden" }} />
+			<BestSelling anchoPagina={anchoPagina} />
 		</>
 	);
 };

@@ -6,7 +6,7 @@ import logoKidsHover from "../../../../../includes/images/angaKidsColor.png";
 import { Image } from "antd";
 import { useState } from "react";
 
-const LeftItems = () => {
+const LeftItems = ({WhoWeAre}) => {
 	const handleWhenLogo = () => {
 		if (window.location.pathname.includes("kids")) {
 			return logoKidsHover;
@@ -33,7 +33,7 @@ const LeftItems = () => {
 		}
 	};
 	return (
-		<a href="/">
+		<a href={WhoWeAre?"/":"/genteanga"}>
 			<Image
 				className="custom-image"
 				style={{

@@ -8,7 +8,7 @@ const FAQItem = () => {
 			context: (
 				<>
 					Haciendo una solicitud a través de nuestra página web: Haz
-					la solicitud desde tu cuenta {"->"} click aquí (guest o
+					la solicitud desde tu cuenta {"->"} <a target="_blank" href="www.datavent@anga.com "> click aquí </a>(guest o
 					registrado) Recibirás un mail confirmando la solicitud
 					Recibirás un 2º mail con la etiqueta de devolución. Tienes
 					que imprimir y pegar la etiqueta al paquete y un
@@ -292,6 +292,24 @@ const FAQItem = () => {
 				</>
 			),
 		},
+		{
+			title: "¿DÓNDE PUEDO PRESENTAR MIS SUGERENCIAS, RECLAMOS, SOLICITAR TRABAJOS, REALIZAR DEVOLUCIONES Y OBTENER MÁS INFORMACIÓN?",
+
+			context: (
+				<>
+					Para consultas y novedades, haz "<a target="_blank" href="www.datavent@anga.com ">CLIC AQUÍ</a>". Responderemos a
+					tus inquietudes en un plazo máximo de 15 días.
+				</>
+			),
+		},
+		{
+			title: "¿DÓNDE PUEDO VERIFICAR LOS TIEMPOS DE ENVÍO, LOS COSTOS, EL PROCESO DE COMPRA, RASTREAR MIS PEDIDOS Y AGREGAR MI CONTACTO A LA BASE DE DATOS?",
+			context: (
+				<>
+				Si necesitas información sobre tu pedido, haz "<a target="_blank" href="www.datavent@anga.com ">CLIC AQUÍ</a>" para obtener detalles.
+				</>
+			),
+		},
 	];
 	return (
 		<Collapse accordion style={{ width: "100%" }}>
@@ -300,7 +318,6 @@ const FAQItem = () => {
 					{x.context}
 				</Panel>
 			))}
-			
 		</Collapse>
 	);
 };

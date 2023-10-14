@@ -13,12 +13,12 @@ const WhoWeAre= ({anchoPagina}) => {
 			title: "Convicciones",
 		},
 		{
-			path: "/login",
+			path: "/soyanga",
 			icon: "",
 			title: "Ficha Anga",
 		},
         {
-			path: "/",
+			path: "/mundoanga",
 			icon: "",
 			title: "Mundo Anga",
 		}

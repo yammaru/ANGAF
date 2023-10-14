@@ -16,7 +16,7 @@ const LookbookSectionId = () => {
 	};
 	return (
 		<>
-			<Divider style={{ paddingBottom: "2%" }} />
+			
 			<Divider style={{ visibility: "hidden" }} />
 			<Row justify={"center"}>
 				<h1>{element.name}</h1>

@@ -1,69 +1,70 @@
-const CenterItems=()=>{
-return (
-<nav className="b2canga-header-0-x-menu">
-							<ul className="b2canga-header-0-x-menu--list">
-								<li
-									className="b2canga-header-0-x-menu--item"
-									data-url="/mujer"
-								>
-									<a
-										className="b2canga-header-0-x-menu--link"
-										href="/mujer"
-										target="_self"
-									>
-										damas
-									</a>
-								</li>
-								<li
-									className="b2canga-header-0-x-menu--item"
-									data-url="/hombre"
-								>
-									<a
-										className="b2canga-header-0-x-menu--link"
-										href="/hombre"
-										target="_self"
-									>
-										caballeros
-									</a>
-								</li>
-								
-								<li
-									className="b2canga-header-0-x-menu--item"
-									data-url="/cosas"
-								>
-									<a
-										className="b2canga-header-0-x-menu--link"
-										href="/kids"
-										target="_self"
-									>
-										kids
-									</a>
-								</li>
-								<li
-									className="b2canga-header-0-x-menu--item"
-									data-url="/cosas"
-								>
-									<a
-										className="b2canga-header-0-x-menu--link"
-										href="/cosas"
-										target="_self"
-									>
-										accesorio 
-									</a>
-								</li>
-								<li
-									className="b2canga-header-0-x-menu--item"
-									data-url="/tiendas"
-								>
-									<a
-										className="b2canga-header-0-x-menu--link"
-										href="/tiendas"
-										target="_self"
-									>
-										tiendas
-									</a>
-								</li>
-							{/* 	<li
+const CenterItems = ({ WhoWeAre }) => {
+	return (
+		<nav className="b2canga-header-0-x-menu">
+			{WhoWeAre ? (
+				<ul className="b2canga-header-0-x-menu--list">
+					<li
+						className="b2canga-header-0-x-menu--item"
+						data-url="/mujer"
+					>
+						<a
+							className="b2canga-header-0-x-menu--link"
+							href="/mujer"
+							target="_self"
+						>
+							damas
+						</a>
+					</li>
+					<li
+						className="b2canga-header-0-x-menu--item"
+						data-url="/hombre"
+					>
+						<a
+							className="b2canga-header-0-x-menu--link"
+							href="/hombre"
+							target="_self"
+						>
+							caballeros
+						</a>
+					</li>
+
+					<li
+						className="b2canga-header-0-x-menu--item"
+						data-url="/cosas"
+					>
+						<a
+							className="b2canga-header-0-x-menu--link"
+							href="/kids"
+							target="_self"
+						>
+							kids
+						</a>
+					</li>
+					<li
+						className="b2canga-header-0-x-menu--item"
+						data-url="/cosas"
+					>
+						<a
+							className="b2canga-header-0-x-menu--link"
+							href="/cosas"
+							target="_self"
+						>
+							accesorio
+						</a>
+					</li>
+					<li
+						className="b2canga-header-0-x-menu--item"
+						data-url="/tiendas"
+					>
+						<a
+							className="b2canga-header-0-x-menu--link"
+							href="/tiendas"
+							target="_self"
+						>
+							tiendas
+						</a>
+					</li>
+					{/* 	<li
 									className="b2canga-header-0-x-menu--item"
 									data-url="https://comunidad.anga.net/activismo"
 								>
@@ -76,20 +77,85 @@ return (
 										activismo
 									</a>
 								</li>*/}
-								<li
-									data-url="/sale"
-									className="b2canga-header-0-x-menu--item"
-								>
-									<a
-										className="b2canga-header-0-x-menu--link"
-										href="/sale"
-										style={{backgroundColor: "gold"}}
-									>
-										SALE
-									</a>
-								</li>
-							</ul>
-						</nav>
-);
+					<li
+						data-url="/sale"
+						className="b2canga-header-0-x-menu--item"
+					>
+						<a
+							className="b2canga-header-0-x-menu--link"
+							href="/sale"
+							style={{ backgroundColor: "gold" }}
+						>
+							SALE
+						</a>
+					</li>
+				</ul>
+			) : (
+				<ul className="b2canga-header-0-x-menu--list">
+					<li
+						className="b2canga-header-0-x-menu--item"
+						data-url="/mundoanga"
+					>
+						<a
+							className="b2canga-header-0-x-menu--link"
+							href="/mundoanga"
+							target="_self"
+						>
+							NUESTRO MUNDO ANGA
+						</a>
+					</li>
+					<li
+						className="b2canga-header-0-x-menu--item"
+						data-url="/conviccion"
+					>
+						<a
+							className="b2canga-header-0-x-menu--link"
+							href="/conviccion"
+							target="_self"
+						>
+							VALORES
+						</a>
+					</li>
+					<li
+						className="b2canga-header-0-x-menu--item"
+						data-url="/yourlook"
+					>
+						<a
+							className="b2canga-header-0-x-menu--link"
+							href="/yourlook"
+							target="_self"
+							
+						>
+							YOURLOOK
+						</a>
+					</li>	<li
+						className="b2canga-header-0-x-menu--item"
+						data-url="/capacitacion"
+					>
+						<a
+							className="b2canga-header-0-x-menu--link"
+							href="/capacitacion"
+							target="_self"
+						>
+							CAPACITACION
+						</a>
+					</li>
+					<li
+						className="b2canga-header-0-x-menu--item"
+						data-url="/soyanga"
+					>
+						<a
+							className="b2canga-header-0-x-menu--link"
+							href="/soyanga"
+							target="_self"
+							style={{color:"red"}}
+						>
+							TRABAJOS ANGA
+						</a>
+					</li>
+				</ul>
+			)}
+		</nav>
+	);
 };
 export default CenterItems;

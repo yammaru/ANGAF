@@ -7,8 +7,10 @@ import {
 	IeOutlined,
 	InstagramOutlined,
 } from "@ant-design/icons";
+import dealer from "../../../includes/images/dealer.png"
 const { Meta } = Card;
 const DistribuitorSection = () => {
+	
 	const elements = {
 		nacionales: [
 			{
@@ -91,116 +93,113 @@ const DistribuitorSection = () => {
 		console.log(`La clave "${mode}" no existe en el objeto.`);
 	}
 	const anchoPagina = useWindowWidth(useState, useEffect);
-    const infoList=<div
-    style={{
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-        flexDirection: "column",
-        overflow: "auto",
-        backgroundColor: "rgba(0, 0, 0, 0.7)",
-        color: "white",
-        padding: "10px",
-        transition: "background-color 0.3s",
-        height: "100%",
-        width: "100%",
-    }}
->
-    <h3
-        style={{
-            mixBlendMode: "difference",
-            color: "white",
-        }}
-    >
-        <b>{mode.toUpperCase()}</b>
-    </h3>
+	const infoList = (
+		<div
+			style={{
+				display: "flex",
+				justifyContent: "center",
+				alignItems: "center",
+				flexDirection: "column",
+				overflow: "auto",
+				backgroundColor: "rgba(0, 0, 0, 0.7)",
+				color: "white",
+				padding: "10px",
+				transition: "background-color 0.3s",
+				height: "100%",
+				width: "100%",
+			}}
+		>
+			<h3
+				style={{
+					mixBlendMode: "difference",
+					color: "white",
+				}}
+			>
+				<b>{mode.toUpperCase()}</b>
+			</h3>
 
-    {datos.map((element) => (
-        <>
-            <Divider
-                style={{ visibility: "hidden" }}
-            />
-            <h3
-                style={{
-                    mixBlendMode: "difference",
-                    color: "white",
-                }}
-            >
-                {element.title}
-            </h3>
-            {element.dis.map((x) => (
-                <>
-                    <span
-                        style={{
-                            display: "flex",
-                            alignItems: "center",
-                            flexDirection: "row",
-                            width: "100%",
-                            gap: "5px",
-                            justifyContent:
-                                "center",
-                        }}
-                    >
-                        <h5
-                            style={{
-                                mixBlendMode:
-                                    "difference",
-                                color: "white",
-                            }}
-                        >
-                            {x.name.toUpperCase()}
-                        </h5>
-                        -
-                        <h5
-                            style={{
-                                mixBlendMode:
-                                    "difference",
-                                color: "white",
-                            }}
-                        >
-                            {x.city.toUpperCase()}
-                        </h5>
-                        -
-                        <a
-                            style={{
-                                mixBlendMode:
-                                    "difference",
-                                color: "white",
-                            }}
-                            href={x.webpath}
-                            target="_blank"
-                        >
-                            <IeOutlined />
-                        </a>
-                        -
-                        <a
-                        style={{
-                            mixBlendMode:
-                                "difference",
-                            color: "white",
-                        }}
-                            href={x.socialpath}
-                            target="_blank"
-                        >
-                            <InstagramOutlined />
-                        </a>
-                    </span>
-                </>
-            ))}
-            <Divider
-                style={{
-                    visibility: "hidden",
-                }}
-            />
-        </>
-    ))}
-</div>
+			{datos.map((element) => (
+				<>
+					<Divider style={{ visibility: "hidden" }} />
+					<h3
+						style={{
+							mixBlendMode: "difference",
+							color: "white",
+						}}
+					>
+						{element.title}
+					</h3>
+					{element.dis.map((x) => (
+						<>
+							<span
+								style={{
+									display: "flex",
+									alignItems: "center",
+									flexDirection: "row",
+									width: "100%",
+									gap: "5px",
+									justifyContent: "center",
+								}}
+							>
+								<h5
+									style={{
+										mixBlendMode: "difference",
+										color: "white",
+									}}
+								>
+									{x.name.toUpperCase()}
+								</h5>
+								-
+								<h5
+									style={{
+										mixBlendMode: "difference",
+										color: "white",
+									}}
+								>
+									{x.city.toUpperCase()}
+								</h5>
+								-
+								<a
+									style={{
+										mixBlendMode: "difference",
+										color: "white",
+									}}
+									href={x.webpath}
+									target="_blank"
+								>
+									<IeOutlined />
+								</a>
+								-
+								<a
+									style={{
+										mixBlendMode: "difference",
+										color: "white",
+									}}
+									href={x.socialpath}
+									target="_blank"
+								>
+									<InstagramOutlined />
+								</a>
+							</span>
+						</>
+					))}
+					<Divider
+						style={{
+							visibility: "hidden",
+						}}
+					/>
+				</>
+			))}
+		</div>
+	);
 	return (
 		<>
 			<Divider style={{ paddingBottom: "2%" }} />
 			<Divider style={{ visibility: "hidden" }} />
 			<Row justify={"center"}>
-				<h1>DISTRIBUIDORES</h1>
+				<Image
+					width={anchoPagina < 576?"90%":"50%"}
+				 src={dealer} />
 			</Row>
 			<Divider style={{ visibility: "hidden" }} />
 			<Row style={{ width: "100vw", height: "100vh" }}>
@@ -223,9 +222,7 @@ const DistribuitorSection = () => {
 						}}
 						className=" ki"
 					>
-						{anchoPagina < 576 ? (
-							infoList
-						) : null}
+						{anchoPagina < 576 ? infoList : null}
 					</div>
 				</Col>
 				{anchoPagina >= 576 ? (

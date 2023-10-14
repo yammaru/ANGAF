@@ -128,9 +128,7 @@ const YourLookSection = () => {
 									/>
 								</Link>
 							}
-							onMouseEnter={() => setHoveredCardIndex(index)} // Establecer el índice de la tarjeta al hacer hover
-							onMouseLeave={() => setHoveredCardIndex(null)} // Reiniciar el índice al dejar de hacer hover
-						>
+								>
 							<Meta
                              avatar={<Avatar src="https://joeschmoe.io/api/v1/random" />}
 								title={element.name}

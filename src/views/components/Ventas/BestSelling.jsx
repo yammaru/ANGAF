@@ -6,7 +6,7 @@ import { FORMATTER_PESO } from "../../../redux/constants";
 import Title from "antd/lib/typography/Title";
 const { Meta } = Card;
 const BestSelling = ({ anchoPagina }) => {
-	console.log(anchoPagina, anchoPagina > 1025);
+	
 	const elements = [
 		{
 			name: "lobo2",
@@ -60,6 +60,7 @@ const BestSelling = ({ anchoPagina }) => {
 	const mayoA1025 = () => {
 		return anchoPagina > 1025 ?? false;
 	};
+	
 	useEffect(() => {
 		setNoVisibleElements(visibleElements.slice(0, mayoA1025() ? 4 : 2));
 	}, [anchoPagina]);

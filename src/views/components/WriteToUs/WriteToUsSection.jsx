@@ -91,9 +91,7 @@ const WriteToUsSection = () => {
 				width: "100%",
 			}}
 		>
-			<Divider
-				style={{ paddingBottom: anchoPagina > 766 ? "5%" : "10%" }}
-			/>
+		
 			<Row
 				style={{
 					width: "100%",

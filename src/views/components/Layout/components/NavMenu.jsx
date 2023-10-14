@@ -20,13 +20,14 @@ import CenterItems from "./NavMenuItems/CenterItems";
 import RightItems from "./NavMenuItems/RightItems";
 import MarqueeMessage from "./NavMenuItems/letrero/MarqueeMessage";
 import LeftItems from "./NavMenuItems/LeftItems";
-import { useWindowWidth  } from "../../../handle/size/size";
+import { useWindowWidth } from "../../../handle/size/size";
 import BurgerMenu from "./NavMenuItems/BurgerMenu";
+import { isCheckoutPage } from "../../../handle/Path/path";
 
 const { Sider, Header } = Layout;
 const { SubMenu } = Menu;
 
-const NavMenu = ({anchoPagina}) => {
+const NavMenu = ({ anchoPagina }) => {
 	const dispatch = useDispatch();
 	const colorMenu = localStorage.getItem("colorMenu");
 	const colorIcon = localStorage.getItem("colorIcon");
@@ -62,7 +63,7 @@ const NavMenu = ({anchoPagina}) => {
 	const handleScroll = () => {
 		const currentScrollPos = window.pageYOffset;
 		const isVisible = prevScrollPos > currentScrollPos;
-		
+
 		setPrevScrollPos(currentScrollPos);
 		setVisible(isVisible || currentScrollPos === 0);
 	};
@@ -75,11 +76,12 @@ const NavMenu = ({anchoPagina}) => {
 	}, [prevScrollPos]);
 
 	const navActivation = () => {
-		return window.location.pathname !== "/" || anchoPagina<=766
+		return window.location.pathname !== "/" || anchoPagina <= 766
 			? "transparent-header"
 			: "transparent-header-index";
 	};
-
+	
+	console.log(isCheckoutPage());
 	return (
 		<>
 			{window.location.pathname.includes("checkout") ? (
@@ -120,27 +122,29 @@ const NavMenu = ({anchoPagina}) => {
 						<Row justify="space-between" align="middle">
 							<Col>
 								{anchoPagina >= 768 ? (
-									<LeftItems useState={useState} />
+									<LeftItems useState={useState} WhoWeAre={!isCheckoutPage()} />
 								) : (
 									<BurgerMenu />
 								)}
 							</Col>
 							<Col>
 								{anchoPagina >= 768 ? (
-									<CenterItems />
+									<CenterItems WhoWeAre={!isCheckoutPage()} />
 								) : (
 									<LeftItems useState={useState} />
 								)}
 							</Col>
-							<Col style={{ width: "10%" }}>
-								<RightItems anchoPagina={anchoPagina} />
-							</Col>
+							{isCheckoutPage() ? (
+								<></>
+							) : (
+								<Col style={{ width: "10%" }}>
+									<RightItems anchoPagina={anchoPagina} />
+								</Col>
+							)}
 						</Row>
 					</Header>
 				</>
 			)}
-			
-		
 		</>
 	);
 };
