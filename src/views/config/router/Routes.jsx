@@ -39,6 +39,10 @@ import WriteToUsPage from "../../pages/WriteToUsPage";
 import conviccionPage from "../../pages/conviccionPage";
 import { EnvironmentFilled } from "@ant-design/icons";
 import Envios from "../../pages/envios";
+import Entrenamiento from "../../pages/entrenamiento";
+import IncioComunidad from "../../pages/incioComunidad";
+import MundoAnga from "../../pages/mundoAnga";
+import GenteAnga from "../../pages/genteAnga";
 
 const Routes = ({}) => {
 	return (
@@ -62,6 +66,10 @@ const Routes = ({}) => {
 			<Route exact path="/escribenos" component={WriteToUsPage} />
 			<Route exact path="/conviccion" component={conviccionPage} />
 			<Route exact path="/envios" component={Envios} />
+			<Route exact path="/capacitacion" component={Entrenamiento} />
+			<Route exact path="/soyanga" component={GenteAnga} />
+			<Route exact path="/mundoanga" component={MundoAnga} />
+			<Route exact path="/genteanga" component={IncioComunidad} />
 			{/* dashboard */}
 			<Route exact path="/dashboard" component={Dashboard} />
 			{/* settings */}
