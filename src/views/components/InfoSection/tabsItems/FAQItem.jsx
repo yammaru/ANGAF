@@ -8,13 +8,16 @@ const FAQItem = () => {
 			context: (
 				<>
 					Haciendo una solicitud a través de nuestra página web: Haz
-					la solicitud desde tu cuenta {"->"} <a target="_blank" href="www.datavent@anga.com "> click aquí </a>(guest o
-					registrado) Recibirás un mail confirmando la solicitud
-					Recibirás un 2º mail con la etiqueta de devolución. Tienes
-					que imprimir y pegar la etiqueta al paquete y un
-					transportista se pondrá en contacto contigo para la recogida
-					*El importe del envío de la devolución se descontará del
-					reembolso.
+					la solicitud desde tu cuenta {"->"}{" "}
+					<a target="_blank" href="www.datavent@anga.com ">
+						 click aquí 
+					</a>
+					(guest o registrado) Recibirás un mail confirmando la
+					solicitud Recibirás un 2º mail con la etiqueta de
+					devolución. Tienes que imprimir y pegar la etiqueta al
+					paquete y un transportista se pondrá en contacto contigo
+					para la recogida *El importe del envío de la devolución se
+					descontará del reembolso.
 				</>
 			),
 		},
@@ -297,8 +300,12 @@ const FAQItem = () => {
 
 			context: (
 				<>
-					Para consultas y novedades, haz "<a target="_blank" href="www.datavent@anga.com ">CLIC AQUÍ</a>". Responderemos a
-					tus inquietudes en un plazo máximo de 15 días.
+					Para consultas y novedades, haz "
+					<a target="_blank" href="www.datavent@anga.com ">
+						CLIC AQUÍ
+					</a>
+					". Responderemos a tus inquietudes en un plazo máximo de 15
+					días.
 				</>
 			),
 		},
@@ -306,7 +313,86 @@ const FAQItem = () => {
 			title: "¿DÓNDE PUEDO VERIFICAR LOS TIEMPOS DE ENVÍO, LOS COSTOS, EL PROCESO DE COMPRA, RASTREAR MIS PEDIDOS Y AGREGAR MI CONTACTO A LA BASE DE DATOS?",
 			context: (
 				<>
-				Si necesitas información sobre tu pedido, haz "<a target="_blank" href="www.datavent@anga.com ">CLIC AQUÍ</a>" para obtener detalles.
+					Si necesitas información sobre tu pedido, haz "
+					<a target="_blank" href="www.datavent@anga.com ">
+						CLIC AQUÍ
+					</a>
+					" para obtener detalles.
+				</>
+			),
+		},
+		{
+			title: "¿CUÁL TRANSPORTADOR TRAERÁ MI PEDIDO?",
+			context: (
+				<>
+					Enviamos tu pedido a través de TCC, envía, Servientrega,
+					Interrapidísimo o Servientrega, dependiendo de la ciudad o
+					municipio en el que te encuentres.
+				</>
+			),
+		},
+		{
+			title: "¿CUÁNTO CUESTA EL ENVÍO A MI DIRECCIÓN?",
+			context: (
+				<>
+					Si compras ropa por un valor superior a $433,000 sin
+					descuento, el envío será gratuito. En caso contrario, puedes
+					conocer el costo de envío a tu ciudad de destino aquí:{" "}
+					<b>Costo de Envío</b>{" "}
+					<a
+						target="_blank"
+						href="https://www.angaoficial.com/costo-de-envio"
+					>
+						https://www.angaoficial.com/costo-de-envio
+					</a>
+					.
+				</>
+			),
+		},
+		{
+			title: "¿A QUÉ CIUDADES LLEGAN LOS PEDIDOS?",
+			context: (
+				<>
+					Realizamos envíos a varias ciudades y municipios en todo el
+					país. Puedes consultar los costos y tiempos de envío en el
+					siguiente enlace:<b>Enlace a costos de envío</b>{" "}
+					<a target="_blank" href="www.datavent@anga.com ">
+						https://www.angaoficial.com/costo-de-envio
+					</a>
+					.
+				</>
+			),
+		},
+		{
+			title: "¿CÓMO PUEDO OBTENER EL NÚMERO DE GUÍA DE MI PEDIDO Y CÓMO RASTREARLO?",
+			context: (
+				<>
+					Una vez que enviemos tu pedido, recibirás el número de guía
+					a través de correo o chat. Puedes realizar el seguimiento de
+					acuerdo a la transportadora:
+					<br />
+					Si la guía inicia con 13, el envío se realiza a través de
+					TCC, y puedes rastrearlo en <b>TCC Tracking</b>{" "}
+					<a target="_blank" href="www.datavent@anga.com ">
+						https://tcc.com.co/ .
+					</a><br />
+					Si la guía inicia con 70, el envío se realiza por
+					Interrapidísimo, y puedes rastrearlo con la información
+					disponible en <b>Interrapidísimo Tracking</b>
+					<a target="_blank" href="www.datavent@anga.com ">
+						https://interrapidisimo.com/sigue-tu-envio/ .
+					</a><br />
+					Si la guía inicia con 01, se trata de Envía, y puedes
+					obtener información en <b>*Envía Tracking*</b>{" "}
+					<a target="_blank" href="www.datavent@anga.com ">
+						https://envia.co/ .
+					</a><br />
+					Si la guía inicia con 21, es un envío de Servientrega, y
+					puedes realizar el seguimiento en{" "}
+					<b>Servientrega Tracking</b>{" "} 
+					<a target="_blank" href="www.datavent@anga.com ">
+						https://www.servientrega.com/
+					</a>
 				</>
 			),
 		},
