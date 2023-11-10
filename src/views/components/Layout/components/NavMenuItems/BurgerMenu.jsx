@@ -155,10 +155,10 @@ const BurgerMenu = () => {
 	return (
 		<>
 			<Space>
-				<Button
+				<Button 	className="footer-anga"
 					type="ghost"
 					style={{ borderColor: "transparent" }}
-					icon={<MenuOutlined />}
+					icon={<MenuOutlined style={{ fontSize: window.location.pathname.includes("yourlook") ?"30px":""}} />}
 					onClick={showDrawer}
 				/>
 			</Space>
