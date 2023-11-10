@@ -23,7 +23,8 @@ import LeftItems from "./NavMenuItems/LeftItems";
 import { useWindowWidth } from "../../../handle/size/size";
 import BurgerMenu from "./NavMenuItems/BurgerMenu";
 import { isCheckoutPage } from "../../../handle/Path/path";
-
+import yourLookLogo from "../../../../includes/images/yourLook.jpeg";
+import SearchItem from "./NavMenuItems/SearchItem";
 const { Sider, Header } = Layout;
 const { SubMenu } = Menu;
 
@@ -80,7 +81,7 @@ const NavMenu = ({ anchoPagina }) => {
 			? "transparent-header"
 			: "transparent-header-index";
 	};
-	
+
 	console.log(isCheckoutPage());
 	return (
 		<>
@@ -122,7 +123,20 @@ const NavMenu = ({ anchoPagina }) => {
 						<Row justify="space-between" align="middle">
 							<Col>
 								{anchoPagina >= 768 ? (
-									<LeftItems useState={useState} WhoWeAre={!isCheckoutPage()} />
+									<LeftItems
+										useState={useState}
+										WhoWeAre={!isCheckoutPage()}
+									/>
+								) : window.location.pathname.includes(
+										"yourlook"
+								  ) ? (
+									<a href="yourlook">
+										<Image
+											width={200}
+											preview={false}
+											src={yourLookLogo}
+										/>
+									</a>
 								) : (
 									<BurgerMenu />
 								)}
@@ -130,8 +144,12 @@ const NavMenu = ({ anchoPagina }) => {
 							<Col>
 								{anchoPagina >= 768 ? (
 									<CenterItems WhoWeAre={!isCheckoutPage()} />
+								) : window.location.pathname.includes(
+										"yourlook"
+								  ) ? (
+									<SearchItem anchoPagina={anchoPagina} />
 								) : (
-									<LeftItems useState={useState} />
+									<LeftItems useState={useState} 	WhoWeAre={!isCheckoutPage()}/>
 								)}
 							</Col>
 							{isCheckoutPage() ? (
