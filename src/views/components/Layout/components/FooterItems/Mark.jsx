@@ -17,6 +17,11 @@ const Mark = ({anchoPagina}) => {
 			path: "/lockbook",
 			icon: "",
 			title: "Lockbook",
+		},
+		{
+			path: "/yourlook",
+			icon: "",
+			title: "YourLook",
 		}
 	];
 	const title = "MARCA";
