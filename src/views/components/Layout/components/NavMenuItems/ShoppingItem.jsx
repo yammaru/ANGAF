@@ -12,6 +12,8 @@ import { handleDeleteElement } from "../../../../handle/LocalStorage/handleLocal
 import zIndex from "@material-ui/core/styles/zIndex";
 import bolsa from "../../../../../includes/images/bolsaAnga.png";
 import bolsaG from "../../../../../includes/images/bolsaAngaDorada.png";
+import bolsaAnimada from "../../../../../includes/images/BolsaAnimada.png";
+import bolsaAnimada2 from "../../../../../includes/images/bolsaAnimadapose2.png";
 const ShoppingItem = ({ anchoPagina }) => {
 	const [visibleDrawer, setVisibleDrawer] = useState(false);
 
@@ -242,10 +244,13 @@ const ShoppingItem = ({ anchoPagina }) => {
 						}}
 					>
 						<Col>
-							<ShoppingOutlined
-								style={{ color: "#787878", fontSize: "55px" }}
-							/>
-						</Col>{" "}
+						<Image
+											width={150}
+											preview={false}
+											src={bolsaAnimada2}
+										/>
+							
+						</Col>
 						<Col style={{ visibility: "hidden" }}>
 							<ShoppingOutlined />
 						</Col>
