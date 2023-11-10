@@ -144,7 +144,7 @@ const FilterSection = () => {
 	const anchoPagina = useWindowWidth(useState, useEffect);
 	return (
 		<>
-			<Divider style={{ paddingBottom: "2%" }} />
+			
 			{lastWord != "cosas" ? (
 				lastWord != "sale" ? (
 					<HeaderFilterProduct

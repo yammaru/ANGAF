@@ -75,7 +75,7 @@ const HeaderFilterProduct = ({ elements, lastWord }) => {
 				</Row>
 			) : (
 				<>
-					<Divider /><Divider />
+					
 					<Row justify={"space-between"} style={{ width: "100%" }}>
 						<Col
 							style={{
