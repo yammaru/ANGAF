@@ -23,7 +23,7 @@ import LeftItems from "./NavMenuItems/LeftItems";
 import { useWindowWidth } from "../../../handle/size/size";
 import BurgerMenu from "./NavMenuItems/BurgerMenu";
 import { isCheckoutPage } from "../../../handle/Path/path";
-import yourLookLogo from "../../../../includes/images/yourLook.jpeg";
+import yourLookLogo from "../../../../includes/images/yourLookAmarillo2.png";
 import SearchItem from "./NavMenuItems/SearchItem";
 const { Sider, Header } = Layout;
 const { SubMenu } = Menu;
@@ -96,6 +96,8 @@ const NavMenu = ({ anchoPagina }) => {
 						</Col>
 					</Row>
 				</Header>
+			) : window.location.pathname.includes("yourmarketlook") ? (
+				<></>
 			) : (
 				<>
 					{marqueeVisible &&
@@ -149,7 +151,10 @@ const NavMenu = ({ anchoPagina }) => {
 								  ) ? (
 									<SearchItem anchoPagina={anchoPagina} />
 								) : (
-									<LeftItems useState={useState} 	WhoWeAre={!isCheckoutPage()}/>
+									<LeftItems
+										useState={useState}
+										WhoWeAre={!isCheckoutPage()}
+									/>
 								)}
 							</Col>
 							{isCheckoutPage() ? (
