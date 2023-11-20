@@ -30,8 +30,8 @@ const LayoutComponent = ({ user, dispatchLogoutAction }) => {
 		<Fragment>
 			<NavMenu anchoPagina={anchoPagina} />
 			{window.location.pathname !== "/" ? (
-				<Divider
-					style={{ paddingBottom: anchoPagina <= 766 ? "10%" : "2%" }}
+				window.location.pathname.includes("yourmarketlook")?null:<Divider
+					style={{ paddingBottom: anchoPagina <= 766 ? "10%" : "2%",  }}
 				/>
 			) : (
 				<></>
