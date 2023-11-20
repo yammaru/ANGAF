@@ -36,13 +36,113 @@ import { Link } from "react-router-dom/cjs/react-router-dom";
 import { FORMATTER_PESO } from "../../../redux/constants";
 import Title from "antd/lib/typography/Title";
 import { useWindowWidth } from "../../handle/size/size";
-import yourLookLogo from "../../../includes/images/yourLook.jpeg";
+import yourLookLogo from "../../../includes/images/yourLookAmarillo.jpg";
 import BurgerMenu from "../Layout/components/NavMenuItems/BurgerMenu";
+import ComentModal from "./componet/ComentModal";
+import NavYourLook from "./componet/NavYourLook";
 const { TextArea } = Input;
 const { Meta } = Card;
 const YourLookSection = () => {
 	const anchoPagina = useWindowWidth(useState, useEffect);
+	const [loadedItems, setLoadedItems] = useState(10);
+
 	const elements = [
+		{
+			name: "lobo2",
+			value: 554,
+			path: [
+				"https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png",
+				"https://i.pinimg.com/1200x/fa/8d/14/fa8d1414bd5f7897edfaee3e8e288a07.jpg",
+			],
+		},
+		{
+			name: "lobo1",
+			value: 5524,
+			path: [
+				"https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png",
+				"https://m.media-amazon.com/images/I/61r6tpWTdcL._AC_UF894,1000_QL80_.jpg",
+			],
+		},
+		{
+			name: "lobo2",
+			value: 5555,
+			path: [
+				"https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png",
+				"https://i.pinimg.com/1200x/fa/8d/14/fa8d1414bd5f7897edfaee3e8e288a07.jpg",
+			],
+		},
+		{
+			name: "lobo2",
+			value: 554,
+			path: [
+				"https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png",
+				"https://i.pinimg.com/1200x/fa/8d/14/fa8d1414bd5f7897edfaee3e8e288a07.jpg",
+			],
+		},
+		{
+			name: "lobo1",
+			value: 5524,
+			path: [
+				"https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png",
+				"https://m.media-amazon.com/images/I/61r6tpWTdcL._AC_UF894,1000_QL80_.jpg",
+			],
+		},
+		{
+			name: "lobo2",
+			value: 5555,
+			path: [
+				"https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png",
+				"https://i.pinimg.com/1200x/fa/8d/14/fa8d1414bd5f7897edfaee3e8e288a07.jpg",
+			],
+		},
+		{
+			name: "lobo2",
+			value: 554,
+			path: [
+				"https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png",
+				"https://i.pinimg.com/1200x/fa/8d/14/fa8d1414bd5f7897edfaee3e8e288a07.jpg",
+			],
+		},
+		{
+			name: "lobo1",
+			value: 5524,
+			path: [
+				"https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png",
+				"https://m.media-amazon.com/images/I/61r6tpWTdcL._AC_UF894,1000_QL80_.jpg",
+			],
+		},
+		{
+			name: "lobo2",
+			value: 5555,
+			path: [
+				"https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png",
+				"https://i.pinimg.com/1200x/fa/8d/14/fa8d1414bd5f7897edfaee3e8e288a07.jpg",
+			],
+		},
+		{
+			name: "lobo2",
+			value: 554,
+			path: [
+				"https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png",
+				"https://i.pinimg.com/1200x/fa/8d/14/fa8d1414bd5f7897edfaee3e8e288a07.jpg",
+			],
+		},
+		{
+			name: "lobo1",
+			value: 5524,
+			path: [
+				"https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png",
+				"https://m.media-amazon.com/images/I/61r6tpWTdcL._AC_UF894,1000_QL80_.jpg",
+			],
+		},
+		{
+			name: "lobo2",
+			value: 5555,
+			path: [
+				"https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png",
+				"https://i.pinimg.com/1200x/fa/8d/14/fa8d1414bd5f7897edfaee3e8e288a07.jpg",
+			],
+		},
 		{
 			name: "lobo2",
 			value: 554,
@@ -139,7 +239,7 @@ const YourLookSection = () => {
 		setNoVisibleElements(visibleElements.slice(0, mayoA1025() ? 4 : 2));
 	};
 	const data = Array.from({
-		length: 3,
+		length: 13,
 	}).map((_, i) => ({
 		href: "https://ant.design",
 		title: `ant design part ${i}`,
@@ -285,84 +385,14 @@ const YourLookSection = () => {
 			}
 		},
 	};
+	const loadMoreItems = () => {
+		// Incrementa el número de elementos cargados
+		setLoadedItems(loadedItems + 10);
+	};
+
 	return (
 		<>
-			<Row
-				justify={"space-around"}
-				type={"flex"}
-				style={{ width: "100%", alignItems: "center" }}
-			>
-				<Col
-					xs={4}
-					style={{ display: "flex", justifyContent: "center" }}
-				>
-					<a className="footer-anga" href="/">
-						<HomeOutlined style={{ fontSize: "30px" }} />
-					</a>
-				</Col>
-				<Col
-					xs={4}
-					style={{ display: "flex", justifyContent: "center" }}
-				>
-					<a href="/mujer" className="footer-anga">
-						<ShopOutlined style={{ fontSize: "30px" }} />
-					</a>
-				</Col>
-				<Col
-					xs={4}
-					style={{ display: "flex", justifyContent: "center" }}
-				>
-					<Upload {...props}>
-						<Button
-							className="footer-anga"
-							style={{
-								background: "transparent",
-								border: "1px solid transparent",
-							}}
-							icon={
-								<PlusCircleOutlined
-									style={{ fontSize: "30px" }}
-								/>
-							}
-						/>
-					</Upload>
-				</Col>
-				<Col
-					xs={4}
-					style={{
-						display: "flex",
-						justifyContent: "center",
-						background:
-							1 == 1
-								? "linear-gradient(to bottom, rgba(0, 0, 0, 0.3) -50%, rgba(44, 4, 4, 0) 90%)"
-								: "",
-						clipPath:
-							1 == 1
-								? "polygon(5% 100%, 25% 0px, 75% 0px, 95% 100%)"
-								: "",
-						borderTop: 1 == 1 ? "4px solid #787878" : "",
-					}}
-				>
-					<a className="footer-anga">
-						<Button
-							style={{
-								background: "transparent",
-								border: "1px solid transparent",
-							}}
-							className="footer-anga"
-							icon={
-								<HeartOutlined style={{ fontSize: "30px" }} />
-							}
-						/>
-					</a>
-				</Col>
-				<Col
-					xs={4}
-					style={{ display: "flex", justifyContent: "center" }}
-				>
-					<BurgerMenu />
-				</Col>
-			</Row>
+			<NavYourLook props={props} />
 			<Divider />
 			<Row
 				justify={"space-around"}
@@ -431,9 +461,9 @@ const YourLookSection = () => {
 						itemLayout="vertical"
 						size="large"
 						pagination={false}
-						dataSource={data}
+						dataSource={data.slice(0, loadedItems)}
 						footer={false}
-						renderItem={(item) => (
+						renderItem={(item, index) => (
 							<>
 								<List.Item
 									footer={"hola"}
@@ -502,10 +532,17 @@ const YourLookSection = () => {
 									>
 										<Col>{likeButton("156")}</Col>
 										<Col>
-											<IconText
-												icon={MessageOutlined}
-												text="156"
-												key="list-vertical-like-o"
+											<ComentModal
+												item={item}
+												IconText={IconText}
+												shareModal={shareModal}
+												likeButton={likeButton}
+												MessageOutlined={
+													MessageOutlined
+												}
+												anchoPagina={anchoPagina}
+												props={props}
+												Upload={Upload}
 											/>
 										</Col>
 										<Col>
@@ -520,63 +557,18 @@ const YourLookSection = () => {
 											ver mas comentario
 										</Button>
 									</Row>
-									<Row
-										style={{ width: "100%" }}
-										justify={"space-evenly"}
-									>
-										<Col style={{ width: "8%" }}>
-											<Avatar src={item.avatar} />
-										</Col>
-										<Col style={{ width: "88%" }}>
-											<div
-												style={{
-													background: "#e0e0e0",
 
-													height: "auto",
-													borderRadius: "15px",
-													padding: "1%",
-												}}
-											>
-												<Row
-													justify={"center"}
-													style={{
-														width: "100%",
-														display: "flex",
-													}}
-												>
-													<TextArea
-														style={{
-															background:
-																"transparent",
-															border: "1px solid transparent",
-															boxShadow:
-																"transparent",
-														}}
-														rows={2}
-													/>
-												</Row>
-												<Row
-													justify={"center"}
-													style={{
-														width: 50,
-														display: "flex",
-													}}
-												>
-													<Col>
-														<Avatar
-															src={item.avatar}
-														/>
-													</Col>
-												</Row>
-											</div>
-										</Col>
-									</Row>
 									<br />
 								</List.Item>
 								<Divider />
 							</>
 						)}
 					/>
+					{loadedItems < data.length && (
+						<Button type="ghost" onClick={loadMoreItems}>
+							Cargar más elementos
+						</Button>
+					)}
 				</Col>
 			</Row>
 		</>
