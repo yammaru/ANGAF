@@ -43,6 +43,8 @@ import Entrenamiento from "../../pages/entrenamiento";
 import IncioComunidad from "../../pages/incioComunidad";
 import MundoAnga from "../../pages/mundoAnga";
 import GenteAnga from "../../pages/genteAnga";
+import YourMarketLook from "../../pages/yourlook/yourmarketlook";
+import LikeLook from "../../pages/yourlook/likelook";
 
 const Routes = ({}) => {
 	return (
@@ -63,6 +65,8 @@ const Routes = ({}) => {
 			<Route exact path="/checkout" component={Checkout} />
 			<Route exact path="/checkout/shipping" component={Shipping} />
 			<Route exact path="/yourlook" component={YourLookPage} />
+			<Route exact path="/yourlook/yourmarketlook" component={YourMarketLook} />
+			<Route exact path="/yourlook/likelook" component={LikeLook} />
 			<Route exact path="/escribenos" component={WriteToUsPage} />
 			<Route exact path="/conviccion" component={conviccionPage} />
 			<Route exact path="/envios" component={Envios} />
