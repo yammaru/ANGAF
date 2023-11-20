@@ -1,23 +1,83 @@
 import { LeftOutlined, MenuOutlined, RightOutlined } from "@ant-design/icons";
 import { Button, Divider, Drawer, Space } from "antd";
 import React, { useState } from "react";
-
+import kisd from "../../../../../includes/images/kids.png";
 const BurgerMenu = () => {
 	const [open, setOpen] = useState(false);
-	const [saleBottonState, setSaleBottonState] = useState(false);
+	const [saleBottonState, setSaleBottonState] = useState("");
 	const showDrawer = () => {
 		setOpen(true);
 	};
 	const onClose = () => {
 		setOpen(false);
 	};
-	const saleBotton = () => {
-		if (saleBottonState == true) {
-			setSaleBottonState(false);
-		} else {
-			setSaleBottonState(true);
-		}
+	const saleBotton = (data) => {
+		setSaleBottonState(data);
 	};
+	const KidsMenu = (
+		<ul
+			style={{
+				display: "flex",
+				flexDirection: "column",
+				alignItems: "flex-start",
+				gap: "30px",
+			}}
+		>
+			<Button
+				style={{
+					padding: 0,
+					border: "1px solid transparent",
+					boxShadow: "transparent",
+					display: "flex",
+					
+					alignItems: "center",
+				}}
+				onClick={() => saleBotton("")}
+				block
+			>
+				<h3>
+					<b>
+						<LeftOutlined />
+					</b>
+				</h3>
+				<img src={kisd} alt="" />
+			</Button>
+
+			<li data-url="/all">
+				<a
+					className="b2canga-header-0-x-menu--link"
+					href="/all"
+					target="_self"
+				>
+					<h3>
+						<b>todos</b>
+					</h3>
+				</a>
+			</li>
+			<li data-url="/mujer">
+				<a
+					className="b2canga-header-0-x-menu--link"
+					href="/mujer"
+					target="_self"
+				>
+					<h3>
+						<b>niñas</b>
+					</h3>
+				</a>
+			</li>
+			<li data-url="/hombre">
+				<a
+					className="b2canga-header-0-x-menu--link"
+					href="/hombre"
+					target="_self"
+				>
+					<h3>
+						<b>niños</b>
+					</h3>
+				</a>
+			</li>
+		</ul>
+	);
 	const SaleMenu = (
 		<ul
 			style={{
@@ -28,11 +88,17 @@ const BurgerMenu = () => {
 			}}
 		>
 			<Button
-				style={{ padding: 0, backgroundColor: "gold", display: "flex",gap:"10px",alignItems:"center" }}
-				onClick={saleBotton}
+				style={{
+					padding: 0,
+					backgroundColor: "gold",
+					display: "flex",
+					gap: "10px",
+					alignItems: "center",
+				}}
+				onClick={() => saleBotton("")}
 				block
 			>
-				<h3 >
+				<h3>
 					<b>
 						<LeftOutlined />
 					</b>
@@ -41,7 +107,7 @@ const BurgerMenu = () => {
 					<b>SALE</b>
 				</h3>
 			</Button>
-			
+
 			<li data-url="/all">
 				<a
 					className="b2canga-header-0-x-menu--link"
@@ -108,18 +174,26 @@ const BurgerMenu = () => {
 					</h3>
 				</a>
 			</li>
+			<Button
+				style={{
+					padding: 0,
+					border: "1px solid transparent",
+					boxShadow: "transparent",
+					display: "flex",
+					justifyContent: "space-between",
+					alignItems: "center",
+				}}
+				onClick={() => saleBotton("k")}
+				block
+			>
+				<img src={kisd} alt="" />
+				<h3>
+					<b>
+						<RightOutlined />
+					</b>
+				</h3>
+			</Button>
 
-			<li data-url="/cosas">
-				<a
-					className="b2canga-header-0-x-menu--link"
-					href="/kids"
-					target="_self"
-				>
-					<h3>
-						<b>kids</b>
-					</h3>
-				</a>
-			</li>
 			<li data-url="/cosas">
 				<a
 					className="b2canga-header-0-x-menu--link"
@@ -136,9 +210,10 @@ const BurgerMenu = () => {
 					padding: 0,
 					backgroundColor: "gold",
 					display: "flex",
-					justifyContent: "space-between",alignItems:"center"
+					justifyContent: "space-between",
+					alignItems: "center",
 				}}
-				onClick={saleBotton}
+				onClick={() => saleBotton("s")}
 				block
 			>
 				<h3>
@@ -155,10 +230,21 @@ const BurgerMenu = () => {
 	return (
 		<>
 			<Space>
-				<Button 	className="footer-anga"
+				<Button
+					className="footer-anga"
 					type="ghost"
 					style={{ borderColor: "transparent" }}
-					icon={<MenuOutlined style={{ fontSize: window.location.pathname.includes("yourlook") ?"30px":""}} />}
+					icon={
+						<MenuOutlined
+							style={{
+								fontSize: window.location.pathname.includes(
+									"yourlook"
+								)
+									? "30px"
+									: "",
+							}}
+						/>
+					}
 					onClick={showDrawer}
 				/>
 			</Space>
@@ -176,7 +262,6 @@ const BurgerMenu = () => {
 							flexDirection: "column",
 							alignItems: "flex-start",
 							gap: "30px",
-							height: "50vh",
 						}}
 					>
 						<li data-url="/tiendas">
@@ -204,7 +289,11 @@ const BurgerMenu = () => {
 					</ul>
 				}
 			>
-				{saleBottonState ? SaleMenu : InitialMenu}
+				{saleBottonState == ""
+					? InitialMenu
+					: saleBottonState == "s"
+					? SaleMenu
+					: KidsMenu}
 			</Drawer>
 		</>
 	);
