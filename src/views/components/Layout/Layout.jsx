@@ -45,7 +45,7 @@ const LayoutComponent = ({ user, dispatchLogoutAction }) => {
 						position: "fixed",
 						right: "2%",
 						bottom: "6%",
-						zIndex: 5000,
+						zIndex: 5,
 					}}
 				>
 					<a
