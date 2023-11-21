@@ -19,7 +19,7 @@ import HeaderFilterProduct from "./FilterItems/HeaderFilterProduct";
 import { Link } from "react-router-dom/cjs/react-router-dom";
 import BestSelling from "../Ventas/BestSelling";
 import ColumnFilter from "./FilterItems/ColumFilter";
-import { useWindowWidth  } from "../../handle/size/size";
+import { useWindowWidth } from "../../handle/size/size";
 import { useEffect } from "react";
 
 const { Meta } = Card;
@@ -36,72 +36,20 @@ const { Panel } = Collapse;
 const FilterSection = () => {
 	const [isHovered, setIsHovered] = useState(false);
 	const [hoveredCardIndex, setHoveredCardIndex] = useState(null);
-	const elements = [
-		{
-			name: "lobo1",
-			value: 5524,
-			path: [
-				"https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png",
-				"https://m.media-amazon.com/images/I/61r6tpWTdcL._AC_UF894,1000_QL80_.jpg",
-			],
-		},
-		{
-			name: "lobo2",
-			value: 5524,
-			path: [
-				"https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png",
-				"https://i.pinimg.com/1200x/fa/8d/14/fa8d1414bd5f7897edfaee3e8e288a07.jpg",
-			],
-		},
-		{
-			name: "lobo3",
-			value: 5524,
-			path: [
-				"https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png",
-				"https://m.media-amazon.com/images/I/61r6tpWTdcL._AC_UF894,1000_QL80_.jpg",
-			],
-		},
-		{
-			name: "lobo4",
-			value: 5524,
-			path: [
-				"https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png",
-				"https://i.pinimg.com/1200x/fa/8d/14/fa8d1414bd5f7897edfaee3e8e288a07.jpg",
-			],
-		},
-		{
-			name: "lobo5",
-			value: 5524,
-			path: [
-				"https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png",
-				"https://m.media-amazon.com/images/I/61r6tpWTdcL._AC_UF894,1000_QL80_.jpg",
-			],
-		},
-		{
-			name: "lobo6",
-			value: 5524,
-			path: [
-				"https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png",
-				"https://i.pinimg.com/1200x/fa/8d/14/fa8d1414bd5f7897edfaee3e8e288a07.jpg",
-			],
-		},
-		{
-			name: "lobo7",
-			value: 5524,
-			path: [
-				"https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png",
-				"https://m.media-amazon.com/images/I/61r6tpWTdcL._AC_UF894,1000_QL80_.jpg",
-			],
-		},
-		{
-			name: "lobo8",
-			value: 5524,
-			path: [
-				"https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png",
-				"https://i.pinimg.com/1200x/fa/8d/14/fa8d1414bd5f7897edfaee3e8e288a07.jpg",
-			],
-		},
-	];
+	const elements = Array.from({
+		length: 13,
+	}).map((_, i) => ({
+		name: `lobo ${i}`,
+		value: i % 0 ? 5000 : 54129,
+		value: 85,
+		categoria: i % 0 ? "pantalones" : "camisetas",
+		path: [
+			"https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png",
+			"https://m.media-amazon.com/images/I/61r6tpWTdcL._AC_UF894,1000_QL80_.jpg",
+		],
+		color: i % 0 ? "rojo" : "verde",
+		talla: i % 0 ? "S" : "M",
+	}));
 	const colorArray = [
 		{ name: "rojo", color: "#FF5733" },
 		{ name: "azul", color: "#3366CC" },
@@ -144,7 +92,6 @@ const FilterSection = () => {
 	const anchoPagina = useWindowWidth(useState, useEffect);
 	return (
 		<>
-			
 			{lastWord != "cosas" ? (
 				lastWord != "sale" ? (
 					<HeaderFilterProduct
@@ -154,41 +101,55 @@ const FilterSection = () => {
 				) : null
 			) : null}
 			<Row
-				justify={"end"}
+				justify={anchoPagina > 766 ? "end" : "space-around"}
 				align={"middle"}
 				style={{ gap: "1%", paddingBottom: "1%" }}
-			>
-				Ordenar por:{" "}
-				<Select value={1} style={{ width: "10%" }}>
-					<Select.Option value={1}>Nuevo</Select.Option>
-					<Select.Option value={2}>Mayor Precio</Select.Option>
-					<Select.Option value={3}>Menor Precio</Select.Option>
-				</Select>
+			>	{anchoPagina <= 766 ? (
+					<ColumnFilter
+						categoryArray={categoryArray}
+						tallaArray={tallaArray}
+						colorArray={colorArray}
+						anchoPagina={anchoPagina}
+					/>
+				) : null}
+				<Col style={{ width: anchoPagina > 766 ? "80%" : "" }}>
+					Ordenar por: <br />
+					<Select defaultValue={1}>
+						<Select.Option value={1}>Nuevo</Select.Option>
+						<Select.Option value={2}>Mayor Precio</Select.Option>
+						<Select.Option value={3}>Menor Precio</Select.Option>
+					</Select>
+				</Col>
+			
 			</Row>
 			<Row style={{ width: "100%" }}>
-				<ColumnFilter
-					categoryArray={categoryArray}
-					tallaArray={tallaArray}
-					colorArray={colorArray}
-					anchoPagina={anchoPagina}
-				/>
-
-				<Col style={{ width: anchoPagina>766?"80%":"100%" }}>
+				{anchoPagina > 766 ? (
+					<ColumnFilter
+						categoryArray={categoryArray}
+						tallaArray={tallaArray}
+						colorArray={colorArray}
+						anchoPagina={anchoPagina}
+					/>
+				) : null}
+				<Col style={{ width: anchoPagina > 766 ? "80%" : "100%" }}>
 					<Row justify={"space-around"} style={{ width: "100%" }}>
 						{elements.map((element, index) => (
 							<Link to={`/producto/${element.name}`}>
 								<Card
 									hoverable
 									style={{
-										height: 500,
-										width: 300,
+										height: anchoPagina > 766 ? 500 : 300,
+										width: anchoPagina > 766 ? 300 : 180,
 										overflow: "hidden",
 										padding: "5px",
 									}}
 									cover={
 										<img
 											style={{
-												height: 420,
+												height:
+													anchoPagina > 766
+														? 420
+														: 220,
 												width: "100%",
 												overflow: "hidden",
 											}}
