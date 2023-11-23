@@ -82,7 +82,7 @@ const ShoppingItem = ({ anchoPagina }) => {
 					</div>
 				}
 				style={{ zIndex: 5001 }}
-				width={anchoPagina < 500 ? "85vw" : ""}
+				width={anchoPagina < 500 ? "85vw" : "35vw"}
 				placement="right"
 				closable={true}
 				onClose={closeDrawer}
