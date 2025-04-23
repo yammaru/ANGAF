@@ -24,7 +24,7 @@ const CenterItems = ({ WhoWeAre }) => {
 							href="/hombre"
 							target="_self"
 						>
-							caballeros
+							Caballeros
 						</a>
 					</li>
 

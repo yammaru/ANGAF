@@ -28,7 +28,7 @@ const RightItems = ({ anchoPagina }) => {
 		<div
 			style={{
 				display: "flex",
-				justifyContent: "space-around",
+				justifyContent: anchoPagina >= 768 ?"space-around":"flex-end",
 				justifyItems: "center",
 			}}
 		>
@@ -49,8 +49,8 @@ const RightItems = ({ anchoPagina }) => {
 					onClick={showModal}
 				/>
 			) : null}
-		<SearchItem  anchoPagina={anchoPagina}/>
-			<ShoppingItem  anchoPagina={anchoPagina}/>
+			<SearchItem anchoPagina={anchoPagina} />
+			<ShoppingItem anchoPagina={anchoPagina} />
 
 			<Modal
 				title="Mi Cuenta"

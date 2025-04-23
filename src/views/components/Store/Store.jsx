@@ -319,10 +319,12 @@ const Store = () => {
 				}}
 			>
 				<h1
-					style={{
-						mixBlendMode: "difference",
-						color: "white",
-					}}
+				style={{
+					//mixBlendMode: "difference",
+					color: "white",
+					textShadow: "2px 0px 0px black, 0px 2px 0px black, -2px 0px 0px black, 0px -2px 0px black"
+				  }}
+				  
 				>
 					<b>Tiendas</b>
 				</h1>

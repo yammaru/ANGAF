@@ -45,7 +45,7 @@ const WebRedes = ({ anchoPagina }) => {
 			),
 		},
 		{
-			path: "https://www.youtube.com/user/anga_col",
+			path: "https://www.youtube.com/@anga_col",
 			icon: <YoutubeOutlined className="social-icon" />,
 		},
 		{

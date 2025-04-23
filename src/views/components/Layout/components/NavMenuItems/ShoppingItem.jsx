@@ -170,12 +170,13 @@ const ShoppingItem = ({ anchoPagina }) => {
 								}}
 								justify={"space-between"}
 							>
-								<Col style={{ width: "20%" }}>
+								<Col style={{ width: "20%",height: "100px", }}>
 									<Image
 										preview={false}
 										height={"100%"}
 										width={"100%"}
 										src={element.imagen}
+										style={{ objectFit: "contain" }}
 									/>
 								</Col>
 								<Col
@@ -211,7 +212,7 @@ const ShoppingItem = ({ anchoPagina }) => {
 										alignItems: "flex-end",
 									}}
 								>
-									<div style={{ padding: "2%" }}>
+									<div style={{ padding: "0%" }}>
 										<DeleteOutlined
 											style={{
 												color: "rgb(114, 114, 115)",
